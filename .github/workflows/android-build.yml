@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout
+    - name: Checkout repo
       uses: actions/checkout@v4
 
     - name: Setup Node
@@ -20,13 +20,21 @@ jobs:
       run: npm install
 
     - name: Install Capacitor
-      run: npm install @capacitor/core @capacitor/cli @capacitor/android@5
+      run: |
+        npm install @capacitor/core@5 @capacitor/cli@5 @capacitor/android@5
 
-    - name: Init Capacitor
-      run: npx cap init "LineageDB" "com.fajar.lineage" --web-dir www
+    - name: Verify Capacitor CLI
+      run: npx cap --version
 
-    - name: Add Android
-      run: npx cap add android
+    - name: Init Capacitor (SAFE CHECK)
+      run: |
+        if [ ! -f capacitor.config.json ]; then
+          npx cap init "LineageDB" "com.fajar.lineage" --web-dir www
+        fi
+
+    - name: Add Android platform
+      run: |
+        npx cap add android || echo "Android already exists"
 
     - name: Sync Capacitor
       run: npx cap sync
@@ -40,5 +48,5 @@ jobs:
     - name: Upload APK
       uses: actions/upload-artifact@v4
       with:
-        name: app-debug
+        name: lineage-apk
         path: android/app/build/outputs/apk/debug/app-debug.apk
