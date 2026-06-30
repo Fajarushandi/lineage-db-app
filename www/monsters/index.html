@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b0e16">
+<meta name="description" content="Database monster Lineage Classic - cari, filter region & level, lihat drop item">
+<title>LC Monster DB</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="apple-touch-icon" href="/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink-0:#0b0e16; --ink-1:#11151f; --ink-2:#171c28; --ink-3:#222838;
+  --rune:#7c9eff; --rune-dim:#3d4a72; --ember:#e8654f; --ember-dim:#5a2e26;
+  --parch:#f0ead6; --parch-dim:#9aa0b4; --parch-faint:#5c6378;
+  --line:#252b3b;
+  --r:14px;
+  --maxw:1320px;
+  --header-h:0px;
+}
+*{box-sizing:border-box; -webkit-tap-highlight-color:transparent;}
+html,body{margin:0;padding:0;}
+body{
+  background:var(--ink-0);
+  background-image:
+    radial-gradient(circle at 15% 0%, rgba(124,158,255,0.07), transparent 40%),
+    radial-gradient(circle at 85% 100%, rgba(232,101,79,0.05), transparent 45%);
+  color:var(--parch);
+  font-family:'Inter',system-ui,sans-serif;
+  min-height:100vh;
+  padding-bottom:40px;
+}
+@media (prefers-reduced-motion: reduce){
+  *{animation-duration:0.001ms !important; transition-duration:0.001ms !important;}
+}
+
+/* ===== Header ===== */
+header.top{
+  position:sticky; top:0; z-index:30;
+  background:rgba(11,14,22,0.92);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+  padding:16px 16px 12px;
+}
+.headerInner{width:100%;}
+.brand{display:flex; align-items:center; gap:10px; margin-bottom:12px;}
+.brand .mark{
+  width:34px; height:34px; border-radius:9px;
+  background:linear-gradient(155deg, var(--rune), #4f63b8);
+  display:flex; align-items:center; justify-content:center;
+  font-family:'Cormorant Garamond',serif; font-weight:700; font-size:18px; color:#0b0e16;
+  flex-shrink:0;
+  box-shadow:0 0 18px rgba(124,158,255,0.35);
+}
+.brand h1{
+  font-family:'Cormorant Garamond',serif; font-weight:700; font-size:21px;
+  margin:0; letter-spacing:0.2px; color:var(--parch);
+}
+.brand .sub{font-size:11px; color:var(--parch-faint); margin-top:1px; letter-spacing:0.3px;}
+
+.searchRow{position:relative; margin-bottom:10px;}
+.searchRow input{
+  width:100%; padding:11px 38px 11px 14px;
+  background:var(--ink-2); border:1px solid var(--line); border-radius:11px;
+  color:var(--parch); font-size:15px; font-family:'Inter',sans-serif;
+  outline:none;
+}
+.searchRow input:focus{border-color:var(--rune-dim);}
+.searchRow input::placeholder{color:var(--parch-faint);}
+.searchRow .clear{
+  position:absolute; right:8px; top:50%; transform:translateY(-50%);
+  width:26px; height:26px; border:none; border-radius:7px; background:none;
+  color:var(--parch-faint); font-size:16px; cursor:pointer; display:none; align-items:center; justify-content:center;
+}
+.searchRow .clear.show{display:flex;}
+
+.filterRow{display:flex; gap:8px; flex-wrap:wrap;}
+.dropdown{position:relative; flex:1; min-width:128px;}
+.dropdown .ddBtn{
+  width:100%; display:flex; align-items:center; justify-content:space-between; gap:8px;
+  padding:9px 12px; border-radius:9px; border:1px solid var(--line);
+  background:var(--ink-2); color:var(--parch-dim); font-size:13px; font-weight:600;
+  cursor:pointer; user-select:none; font-family:'Inter',sans-serif;
+}
+.dropdown .ddBtn .lbl{color:var(--parch-faint); font-weight:500; margin-right:2px;}
+.dropdown .ddBtn .val{color:var(--parch); flex:1; text-align:left; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+.dropdown .ddBtn .arrow{font-size:10px; color:var(--parch-faint); transition:transform .15s; flex-shrink:0;}
+.dropdown.open .ddBtn{border-color:var(--rune-dim);}
+.dropdown.open .ddBtn .arrow{transform:rotate(180deg);}
+.dropdown.filled .ddBtn .val{color:var(--rune);}
+.dropdown .ddPanel{
+  position:absolute; top:calc(100% + 6px); left:0; right:0; z-index:25;
+  background:var(--ink-2); border:1px solid var(--line); border-radius:11px;
+  padding:6px; display:none; max-height:280px; overflow-y:auto;
+  box-shadow:0 12px 28px rgba(0,0,0,0.45);
+}
+.dropdown.open .ddPanel{display:block;}
+.ddOption{
+  padding:9px 11px; border-radius:8px; font-size:13.5px; font-weight:500;
+  color:var(--parch-dim); cursor:pointer; user-select:none;
+}
+.ddOption:active{background:var(--ink-3);}
+.ddOption.active{background:rgba(124,158,255,0.14); color:var(--rune); font-weight:700;}
+.ddOption.indent{padding-left:20px;}
+.ddCategory{
+  padding:9px 11px 4px; font-size:10.5px; font-weight:700; text-transform:uppercase;
+  letter-spacing:0.4px; color:var(--parch-faint); user-select:none;
+}
+.ddCategory:not(:first-child){margin-top:4px; border-top:1px solid var(--line); padding-top:10px;}
+
+.iconBtn{
+  flex:0 0 auto; width:42px; display:flex; align-items:center; justify-content:center;
+  padding:9px 10px; border-radius:9px; border:1px solid var(--line);
+  background:var(--ink-2); color:var(--parch-dim); font-size:14px; font-weight:700;
+  cursor:pointer; user-select:none; font-family:'Inter',sans-serif;
+}
+.iconBtn.active{border-color:var(--rune-dim); color:var(--rune);}
+
+@media(min-width:880px){
+  header.top{padding:16px 28px 12px;}
+  .headerInner{display:flex; align-items:center; gap:24px;}
+  .brand{margin-bottom:0; flex-shrink:0;}
+  .searchRow{flex:1 1 320px; margin-bottom:0; max-width:420px;}
+  .filterRow{flex-shrink:0; width:auto; flex-wrap:nowrap;}
+  .dropdown{flex:0 0 168px; min-width:0;}
+}
+
+.statsRow{
+  display:flex; justify-content:space-between; align-items:center;
+  font-size:12px; color:var(--parch-faint); padding:14px 16px 0; font-family:'JetBrains Mono',monospace;
+  max-width:var(--maxw); margin:0 auto;
+}
+@media(min-width:880px){.statsRow{padding:16px 28px 0;}}
+.statsRow button{
+  background:none; border:1px solid var(--line); color:var(--parch-dim);
+  border-radius:8px; padding:5px 10px; font-size:11.5px; font-family:'Inter',sans-serif; font-weight:600;
+  cursor:pointer;
+}
+.statsRow button.active{border-color:#f0c14b; color:#f0c14b;}
+
+/* ===== Top stat boxes ===== */
+.topStats{display:grid; grid-template-columns:repeat(4,1fr); gap:8px; padding:10px 16px 0; max-width:var(--maxw); margin:0 auto;}
+@media(min-width:880px){.topStats{padding:12px 28px 0;}}
+.topStats .statBox .val{font-size:18px;}
+@media(max-width:480px){.topStats{grid-template-columns:repeat(2,1fr);}}
+
+/* ===== Grid ===== */
+.grid{
+  display:grid; grid-template-columns:1fr; gap:10px;
+  padding:12px 16px 8px;
+  max-width:var(--maxw); margin:0 auto;
+}
+@media(min-width:880px){.grid{padding:12px 28px 8px;}}
+@media(min-width:640px){.grid{grid-template-columns:1fr 1fr;}}
+@media(min-width:980px){.grid{grid-template-columns:1fr 1fr 1fr;}}
+.grid.list{grid-template-columns:1fr;}
+
+.card{
+  background:linear-gradient(160deg, var(--ink-2), var(--ink-1));
+  border:1px solid var(--line); border-radius:var(--r);
+  padding:14px; position:relative; cursor:pointer;
+  transition:border-color .15s, transform .1s;
+  overflow:hidden;
+}
+.card:hover{border-color:var(--rune-dim);}
+.card:active{transform:scale(0.985);}
+.card::before{
+  content:''; position:absolute; inset:0; border-radius:var(--r);
+  background:linear-gradient(160deg, rgba(124,158,255,0.06), transparent 50%);
+  pointer-events:none;
+}
+.cardTop{display:flex; gap:11px; align-items:flex-start;}
+.icon{
+  width:46px; height:46px; border-radius:10px; flex-shrink:0;
+  background:var(--ink-3); border:1px solid var(--line);
+  display:flex; align-items:center; justify-content:center; overflow:hidden;
+}
+.icon img{width:100%; height:100%; object-fit:contain; image-rendering:pixelated;}
+.icon.clickable{cursor:pointer; transition:transform 0.15s ease, border-color 0.15s ease;}
+.icon.clickable:hover{transform:scale(1.05); border-color:var(--rune-dim);}
+.icon.clickable:active{transform:scale(0.97);}
+.fallbackIcon{font-family:'Cormorant Garamond',serif; font-weight:700; color:var(--rune); font-size:14px;}
+.cardInfo{flex:1; min-width:0;}
+.cardName{
+  font-family:'Cormorant Garamond',serif; font-weight:700; font-size:18px;
+  color:var(--parch); margin:0 0 4px; line-height:1.15;
+  overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
+}
+.cardTags{display:flex; align-items:center; gap:6px; flex-wrap:wrap;}
+.catBadge{
+  font-size:10px; font-weight:700; padding:2.5px 7px; border-radius:6px;
+  border:1px solid; letter-spacing:0.2px; font-family:'Inter',sans-serif;
+}
+.favstar{
+  position:absolute; top:10px; right:10px; width:30px; height:30px;
+  border:none; background:none; color:var(--parch-faint); font-size:17px;
+  cursor:pointer; z-index:2; display:flex; align-items:center; justify-content:center;
+}
+.favstar.active{color:#f0c14b;}
+
+.cardDesc{
+  font-size:12.5px; color:var(--parch-dim); margin:10px 0 0; line-height:1.5;
+  display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;
+}
+.cardMeta{
+  display:flex; gap:12px; margin-top:11px; padding-top:10px; border-top:1px solid var(--line);
+  font-family:'JetBrains Mono',monospace; font-size:11.5px;
+}
+.metaItem{display:flex; align-items:center; gap:4px; color:var(--parch-faint);}
+.metaItem .v{color:var(--parch);}
+.metaItem.region .v{color:var(--rune);}
+.metaItem.drop .v{color:var(--ember);}
+
+.grid.list .card{padding:12px 14px;}
+.grid.list .cardDesc{-webkit-line-clamp:1;}
+
+.empty{display:none; text-align:center; padding:60px 20px; color:var(--parch-faint);}
+.empty.show{display:block;}
+.empty .glyph{font-family:'Cormorant Garamond',serif; font-size:40px; color:var(--rune-dim); margin-bottom:10px;}
+
+/* ===== Modal ===== */
+.overlay{
+  position:fixed; inset:0; background:rgba(5,7,12,0.7); backdrop-filter:blur(3px);
+  display:none; align-items:flex-end; justify-content:center; z-index:50;
+}
+.overlay.show{display:flex;}
+@media(min-width:640px){.overlay{align-items:center;}}
+.sheet{
+  background:var(--ink-1); border:1px solid var(--line);
+  border-radius:20px 20px 0 0; width:100%; max-width:560px;
+  max-height:88vh; overflow-y:auto; padding:22px 20px 28px;
+  animation:slideUp .22s ease-out;
+}
+@media(min-width:640px){.sheet{border-radius:18px; max-height:80vh;}}
+@keyframes slideUp{from{transform:translateY(24px); opacity:0;} to{transform:translateY(0); opacity:1;}}
+
+/* ===== Lightbox ===== */
+.lightbox{
+  position:fixed; inset:0; background:rgba(0,0,0,0.88); backdrop-filter:blur(6px);
+  display:none; align-items:center; justify-content:center; z-index:100;
+  cursor:zoom-out;
+}
+.lightbox.show{display:flex; animation:lbFadeIn .18s ease-out;}
+@keyframes lbFadeIn{from{opacity:0;} to{opacity:1;}}
+.lightbox img{
+  max-width:90vw; max-height:90vh; object-fit:contain;
+  border-radius:8px; box-shadow:0 8px 40px rgba(0,0,0,0.7);
+  animation:lbScaleIn .18s ease-out;
+  image-rendering:pixelated;
+}
+@keyframes lbScaleIn{from{transform:scale(0.88); opacity:0;} to{transform:scale(1); opacity:1;}}
+.lightbox .lbClose{
+  position:absolute; top:16px; right:16px;
+  width:36px; height:36px; border-radius:9px; border:1px solid rgba(255,255,255,0.2);
+  background:rgba(0,0,0,0.5); color:#fff; font-size:18px; cursor:pointer;
+  display:flex; align-items:center; justify-content:center;
+}
+.sheetHead .icon{cursor:pointer; transition:opacity .15s;}
+.sheetHead .icon:hover{opacity:0.8;}
+.sheetHead{display:flex; gap:13px; align-items:flex-start; margin-bottom:16px;}
+.sheetHead .icon{width:56px; height:56px;}
+.sheetHeadText{flex:1; min-width:0;}
+.sheetTitle{font-family:'Cormorant Garamond',serif; font-weight:700; font-size:24px; margin:0;}
+.sheetTags{display:flex; gap:6px; margin-top:6px; flex-wrap:wrap;}
+.closeBtn{
+  margin-left:auto; width:32px; height:32px; border-radius:9px; border:1px solid var(--line);
+  background:var(--ink-2); color:var(--parch-dim); font-size:16px; cursor:pointer; flex-shrink:0;
+}
+.sheetDesc{font-size:14.5px; line-height:1.6; color:var(--parch-dim); margin-bottom:18px;}
+.statGrid{display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; margin-bottom:18px;}
+.statBox{
+  background:var(--ink-2); border:1px solid var(--line); border-radius:11px; padding:10px; text-align:center;
+}
+.statBox .lbl{font-size:10.5px; color:var(--parch-faint); margin-bottom:4px; letter-spacing:0.3px; text-transform:uppercase;}
+.statBox .val{font-family:'JetBrains Mono',monospace; font-weight:700; font-size:17px; color:var(--parch);}
+.statBox.region .val{color:var(--rune);}
+.statBox.drop .val{color:var(--ember);}
+.classList{margin-bottom:18px;}
+.classList .lbl{font-size:11px; color:var(--parch-faint); margin-bottom:7px; text-transform:uppercase; letter-spacing:0.3px;}
+.classPills{display:flex; gap:6px; flex-wrap:wrap;}
+.classPill{
+  padding:6px 11px; border-radius:8px; background:rgba(124,158,255,0.1);
+  border:1px solid var(--rune-dim); color:var(--rune); font-size:12.5px; font-weight:600;
+}
+.classPill.drop{background:rgba(232,101,79,0.12); border-color:var(--ember-dim); color:var(--ember);}
+.sheetActions{display:flex; gap:8px;}
+.btn{
+  flex:1; padding:11px; border-radius:10px; border:1px solid var(--line);
+  background:var(--ink-2); color:var(--parch); font-size:14px; font-weight:600; cursor:pointer;
+  font-family:'Inter',sans-serif;
+}
+.btn.primary{background:rgba(124,158,255,0.14); border-color:var(--rune-dim); color:var(--rune);}
+.btn.primary.active{background:rgba(240,193,75,0.14); border-color:#5c4a1f; color:#f0c14b;}
+
+.toast{
+  position:fixed; bottom:24px; left:50%; transform:translateX(-50%) translateY(10px);
+  background:var(--ink-3); border:1px solid var(--line); color:var(--parch);
+  padding:10px 18px; border-radius:10px; font-size:13px; opacity:0; pointer-events:none;
+  transition:opacity .2s, transform .2s; z-index:60;
+}
+.toast.show{opacity:1; transform:translateX(-50%) translateY(0);}
+
+footer.credit{text-align:center; padding:18px 16px; color:var(--parch-faint); font-size:11px;}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="headerInner">
+  <div class="brand">
+    <div class="mark">℣</div>
+    <div>
+      <h1>LC Monsters</h1>
+      <div class="sub">Database Monster Lineage Classic</div>
+    </div>
+  </div>
+  <div class="searchRow">
+    <input type="text" id="q" placeholder="Cari monster, region, atau drop...">
+    <button class="clear" id="clearBtn" aria-label="Hapus pencarian">✕</button>
+  </div>
+  <div class="filterRow">
+    <div class="dropdown" id="ddGroup">
+      <button class="ddBtn" type="button"><span class="lbl">Grup:</span><span class="val" id="ddGroupVal">Semua</span><span class="arrow">▾</span></button>
+      <div class="ddPanel" id="ddGroupPanel"></div>
+    </div>
+    <div class="dropdown" id="ddRegion">
+      <button class="ddBtn" type="button"><span class="lbl">Region:</span><span class="val" id="ddRegionVal">Semua</span><span class="arrow">▾</span></button>
+      <div class="ddPanel" id="ddRegionPanel"></div>
+    </div>
+    <button class="iconBtn" id="viewBtn" title="Ganti tampilan">▦</button>
+  </div>
+  </div>
+</header>
+
+<div class="topStats" id="stats"></div>
+
+<div class="statsRow">
+  <span id="count">0 monster ditemukan</span>
+  <button id="favBtn">☆ Favorit</button>
+</div>
+
+<div class="grid" id="grid"></div>
+<div class="empty" id="empty">
+  <div class="glyph">∅</div>
+  Tidak ada monster yang cocok dengan filter ini.
+</div>
+
+<footer class="credit">LC Monster DB · Data monster Lineage Classic</footer>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-label="Gambar monster besar">
+  <img id="lightboxImg" src="" alt="">
+  <button class="lbClose" id="lbClose" aria-label="Tutup">✕</button>
+</div>
+
+<div class="overlay" id="modal" aria-hidden="true">
+  <div class="sheet" id="sheet">
+    <div class="sheetHead">
+      <div class="icon" id="sheetIcon"></div>
+      <div class="sheetHeadText">
+        <h2 class="sheetTitle" id="sheetTitle"></h2>
+        <div class="sheetTags" id="sheetTags"></div>
+      </div>
+      <button class="closeBtn" id="closeModal" aria-label="Tutup">✕</button>
+    </div>
+    <p class="sheetDesc" id="sheetDesc"></p>
+    <div class="statGrid">
+      <div class="statBox"><div class="lbl">Level</div><div class="val" id="statLvl">-</div></div>
+      <div class="statBox region"><div class="lbl">Region</div><div class="val" id="statRegionCount">-</div></div>
+      <div class="statBox drop"><div class="lbl">Drop</div><div class="val" id="statDropCount">-</div></div>
+    </div>
+    <div class="classList">
+      <div class="lbl">Muncul di</div>
+      <div class="classPills" id="regionPills"></div>
+    </div>
+    <div class="classList" id="dropSection">
+      <div class="lbl">Drop Item</div>
+      <div class="classPills" id="dropPills"></div>
+    </div>
+    <div class="sheetActions">
+      <button class="btn primary" id="favDetail">☆ Favorit</button>
+      <button class="btn" id="copyDetail">Copy</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const EMBEDDED_MONSTERS = [{"id":535,"name":"Anemon Laut","image":"monster_icons/535.png","formName":"","level":1,"regionNames":["Kerajaan Eva"],"groups":["Dungeon"],"rewardNames":[]},{"id":536,"name":"Anemon Laut","image":"monster_icons/536.png","formName":"","level":1,"regionNames":["Kerajaan Eva"],"groups":["Dungeon"],"rewardNames":[]},{"id":723,"name":"Ratu Es","image":"monster_icons/723.png","formName":"","level":1,"regionNames":["Gua Kristal Es Lantai 3"],"groups":["Dungeon"],"rewardNames":[]},{"id":0,"name":"Orc","image":"monster_icons/0.png","formName":"","level":2,"regionNames":["Pulau Berbicara","Pulau Berbicara","Dungeon Pulau Berbicara Lantai 1","Dungeon Gurun Lantai 1","Wilayah Kesatria Perak","Gludio","Hutan Peri","Kent","Benua Aden","Dungeon Gludio Lantai 1"],"groups":["Dungeon","Lapangan (Field)"],"rewardNames":["Pedang Bangsa Orc","Zirah Rantai Bangsa Orc","Kulit Hewan","Adena","Belati Bangsa Orc","Helm Bangsa Orc","Tombak Bangsa Orc"]},{"id":156,"name":"Orc","image":"monster_icons/156.png","formName":"","level":2,"regionNames":["Dungeon Hutan Peri Lantai 1","Hutan Peri","Benua Aden"],"groups":["Dungeon","Lapangan (Field)"],"rewardNames":["Tongkat Kayu Pinus","Zirah Rantai Bangsa Orc Terkutuk","Safir","Bola Roh","Helm Bangsa Orc","Bongkahan Mithril Mentah","Belati Bangsa Orc Terkutuk","Pedang Bangsa Orc","Zirah Rantai Bangsa Orc","Gulungan Transformasi","Belati Bangsa Orc","Tongkat Kayu Maple","Anak Panah","Helm Bangsa Orc Terkutuk","Tombak Bangsa Orc"]},{"id":245,"name":"Goblin","image":"monster_icons/245.png","formName":"","level":2,"regionNames":["Pulau Berbicara","Pulau Berbicara","Wilayah Kesatria Perak","Gludio","Kent","Giran","Benua Aden"],"groups":["Lapangan (Field)"],"rewardNames":["Ramuan Merah","Sepatu Bot Pendek","Adena","Pedang Lebar (Broadsword)","Helm","Pemukul (Club)"]},{"id":521,"name":"Ikan","image":"monster_icons/521.png","formName":"","level":2,"regionNames":["Kerajaan Eva"],"groups":["Dungeon"],"rewardNames":[]},{"id":522,"name":"Ikan","image":"monster_icons/522.png","formName":"","level":2,"regionNames":["Kerajaan Eva"],"groups":["Dungeon"],"rewardNames":[]},{"id":523,"name":"Ikan","image":"monster_icons/523.png","formName":"","level":2,"regionNames":["Kerajaan Eva"],"groups":["Dungeon"],"rewardNames":[]},{"id":524,"name":"Ikan","image":"monster_icons/524.png","formName":"","level":2,"regionNames":["Kerajaan Eva"],"groups":["Dungeon"],"rewardNames":[]},{"id":525,"name":"Ikan","image":"monster_icons/525.png","formName":"","level":2,"regionNames":["Kerajaan Eva"],"groups":["Dungeon"],"rewardNames":[]},{"id":1,"name":"Pemanah Orc","image":"monster_icons/1.png","formName":"","level":3,"regionNames":["Pulau Berbicara","Pulau Berbicara","Wilayah Kesatria Perak","Hutan Orc","Gludio","Windawood","Kent","Benua Aden","Dungeon Gludio Lantai 1"],"groups":["Dungeon","Lapangan (Field)"],"rewardNames":["Zirah Rantai Bangsa Orc","Jubah Bangsa Orc","Kulit Hewan","Adena","Helm Bangsa Orc","Panah Bangsa Orc","Zirah Rantai Bangsa Orc"]},{"id":147,"name":"Pemanah Orc","image":"monster_icons/147.png","formName":"","level":3,"regionNames":["Dungeon Hutan Peri Lantai 1","Hutan Peri","Benua Aden"],"groups":["Dungeon","Lapangan (Field)"],"rewardNames":["Jubah Bangsa Orc","Zirah Rantai Bangsa Orc Terkutuk","Bola Roh","Panah Bangsa Orc Terkutuk","Helm Bangsa Orc","Anak Panah Perak","Zirah Rantai Bangsa Orc","Ramuan Merah","Zirah Rantai Bangsa Orc","Gulungan Transformasi","Zirah Rantai Bangsa Orc Terkutuk","Anak Panah","Ramuan Giok (Jade)","Panah Bangsa Orc"]},{"id":249,"name":"Kobold","image":"monster_icons/249.png","formName":"","level":3,"regionNames":["Pulau Berbicara","Pulau Berbicara","Wilayah Kesatria Perak","Gludio","Kent","Benua Aden"],"groups":["Lapangan (Field)"],"rewardNames":["Sepatu Bot Pendek","Kulit Hewan","Ramuan Keruh","Adena","Pemukul (Club)"]},{"id":2381,"name":"Deep Flower Tercemar","image":"monster_icons/2381.png","formName":"","level":3,"regionNames":["Tanah Berkat Tercemar"],"groups":["Lapangan (Field)"],"rewardNames":["Adena"]},{"id":2384,"name":"Esensi Tanah Tercemar","image":"monster_icons/2384.png","formName":"","level":3,"regionNames":["Tanah Berkat Tercemar"],"groups":["Lapangan (Field)"],"rewardNames":["Adena"]},{"id":2388,"name":"Petarung Manusia Tercemar","image":"monster_icons/2388.png","formName":"","level":3,"regionNames":["Tanah Berkat Tercemar"],"groups":["Lapangan (Field)"],"rewardNames":["Adena"]},{"id":2396,"name":"Orc Tercemar","image":"monster_icons/2396.png","formName":"","level":3,"regionNames":["Tanah Berkat Tercemar"],"groups":["Lapangan (Field)"],"rewardNames":["Adena"]},{"id":144,"name":"Fungus","image":"monster_icons/144.png","formName":"","level":4,"regionNames":["Dungeon Hutan Peri Lantai 2","Dungeon Hutan Peri Lantai 3","Hutan Peri","Kent","Benua Aden","Gua Kristal Es Lantai 1","Gua Kristal Es Lantai 2"],"groups":["Dungeon","Lapangan (Field)"],"rewardNames":["Sari Spora Jamur"]},{"id":155,"name":"Serigala","image":"monster_icons/155.png","formName":"","level":4,"regionNames":["Hutan Peri","Benua Aden"],"groups":["Lapangan (Field)"],"rewardNames":["Bola Roh","Anak Panah"]},{"id":293,"name":"Idolon","image":"monster_icons/293.png","formName":"","level":4,"regionNames":["Giran","Benua Aden"],"groups":["Lapangan (Field)"],"rewardNames":["Kulit Hewan","Adena"]},{"id":294,"name":"Gremlin","image":"monster_icons/294.png","formName":"","level":4,"regionNames":["Windawood","Kent","Giran","Benua Aden"],"groups":["Lapangan (Field)"],"rewardNames":["Emerald","Safir","Ruby","Berlian"]},{"id":4,"name":"Kurcaci","image":"monster_icons/4.png","formName":"","level":5,"regionNames":["Pulau Berbicara","Pulau Berbicara","Wilayah Kesatria Perak","Gludio","Kent","Lembah Naga","Giran","Benua Aden"],"groups":["Lapangan (Field)"],"rewardNames":["Pedang Bangsa Kurcaci","Jubah Bangsa Kurcaci","Mithril","Helm Besi Bangsa Kurcaci","Gulungan Transformasi","Adena","Perisai Bundar Bangsa Kurcaci","Batangan Besi"]},{"id":145,"name":"Brob","image":"monster_icons/145.png","formName":"","level":5,"regionNames":["Dungeon Hutan Peri Lantai 2","Dungeon Hutan Peri Lantai 3","Dungeon Gurun Lantai 2"],"groups":["Dungeon"],"rewardNames":[]},{"id":163,"name":"Kurcaci","image":"monster_icons/163.png","formName":"","level":5,"regionNames":["Hutan Peri","Benua Aden"],"groups":["Lapangan (Field)"],"rewardNames":["Ramuan Merah","Ramuan Keruh","Batu Kekuatan Sihir","Bola Roh","Batangan Besi","Bongkahan Mithril Mentah","Anak Panah Perak"]},{"id":178,"name":"Collie","image":"monster_icons/178.png","formName":"","level":5,"regionNames":["Benteng Perbatasan","Oren","Benua Aden"],"groups":["Lapangan (Field)"],"rewardNames":["Adena"]},{"id":179,"name":"Anjing Gembala (Shepherd)","image":"monster_icons/179.png","formName":"","level":5,"regionNames":["Pulau Berbicara","Pulau Berbicara","Gludio","Windawood","Kent","Benua Aden"],"groups":["Lapangan (Field)"],"rewardNames":["Daging","Kulit Hewan","Adena"]},{"id":295,"name":"Imp","image":"monster_icons/295.png","formName":"","level":5,"regionNames":["Kent","Giran","Benua Aden"],"groups":["Lapangan (Field)"],"rewardNames":["Kulit Hewan","Adena"]},{"id":465,"name":"Rubah","image":"monster_icons/465.png","formName":"","level":5,"regionNames":["Oren","Benua Aden"],"groups":["Lapangan (Field)"],"rewardNames":["Adena"]},{"id":516,"name":"Beruang","image":"monster_icons/516.png","formName":"","level":5,"regionNames":["Oren","Benua Aden"],"groups":["Lapangan (Field)"],"rewardNames":["Adena"]},{"id":706,"name":"Husky","image":"monster_icons/706.png","formName":"","level":5,"regionNames":["Benteng Perbatasan","Oren","Benua Aden"],"groups":["Lapangan (Field)"],"rewardNames":["Adena"]},{"id":9,"name":"Serigala","image":"monster_icons/9.png","formName":"","level":6,"regionNames":["Pulau Berbicara","Pulau Berbicara","Wilayah Kesatria Perak","Hutan Orc","Gludio","Windawood","Kent","Lembah Naga","Benua Aden"],"groups":["Lapangan (Field)"],"rewardNames":["Daging","Kulit Hewan"]},{"id":27,"name":"Zombie","image":"monster_icons/27.png","formName":"Undead","level":6,"regionNames":["Pulau Berbicara","Pulau Berbicara","Dungeon Pulau Berbicara Lantai 1","Dungeon Pulau Berbicara Lantai 2","Dungeon Gurun Lantai 1","Dungeon Gurun Lantai 2","Medan Tempur Elmore","Wilayah Kesatria Perak","Gludio","Oren","Benua Aden","Dungeon Gludio Lantai 1","Dungeon Gludio Lantai 2","Dungeon Gludio Lantai 3","Dungeon Gludio Lantai 4","Dungeon Kastil Windawood Lantai 1"],"groups":["Dungeon","Lapangan (Field)"],"rewardNames":["Gulungan Kebangkitan (Resurrection)","Adena","Gulungan Teleport Diberkati","Buku Sihir (Vampiric Touch)","Buku Sihir (Darkness)"]},{"id":164,"name":"Zombie","image":"monster_icons/164.png","formName":"Undead","level":6,"regionNames":["Dungeon Hutan Peri Lantai 1","Hutan Peri","Benua Aden"],"groups":["Dungeon","Lapangan (Field)"],"rewardNames":["Gulungan Teleport","Gulungan Kebangkitan (Resurrection)","Bola Roh","Anak Panah","Buku Sihir (Vampiric Touch)","Bongkahan Mithril Mentah","Kristal Roh (Blood to Soul)"]},{"id":177,"name":"Doberman","image":"monster_icons/177.png","formName":"","level":6,"regionNames":["Pulau Berbicara","Pulau Berbicara","Gludio","Windawood","Kent","Benua Aden"],"groups":["Lapangan (Field)"],"rewardNames":["Daging","Kulit Hewan","Adena"]},{"id":190,"name":"Babi Hutan","image":"monster_icons/190.png","formName":"","level":6,"regionNames":["Pulau Berbicara","Pulau Berbicara","Wilayah Kesatria Perak","Hutan Orc","Gludio","Windawood","Hutan Peri","Kent","Benua Aden"],"groups":["Lapangan (Field)"],"rewardNames":["Daging","Kulit Hewan","Adena"]},{"id":296,"name":"Sesepuh Imp","image":"monster_icons/296.png","formName":"","level":6,"regionNames":["Kent","Giran","Benua Aden"],"groups":["Lapangan (Field)"],"rewardNames":["Emerald","Kulit Kualitas Tinggi","Kulit Hewan","Adena","Batu Kekuatan Sihir","Ramuan Biru","Buku Sihir (Earth Jail)"]},{"id":2382,"name":"Roh Air Tercemar","image":"monster_icons/2382.png","formName":"","level":6,"regionNames":["Tanah Berkat Tercemar"],"groups":["Lapangan (Field)"],"rewardNames":["Adena"]},{"id":2389,"name":"Prajurit Kapak Manusia Tercemar","image":"monster_icons/2389.png","formName":"","level":6,"regionNames":["Tanah Berkat Tercemar"],"groups":["Lapangan (Field)"],"rewardNames":["Adena"]},{"id":2393,"name":"Ent Tercemar","image":"monster_icons/2393.png","formName":"","level":6,"regionNames":["Tanah Berkat Tercemar"],"groups":["Lapangan (Field)"],"rewardNames":["Adena"]},{"id":2397,"name":"Prajurit Kapak Orc Tercemar","image":"monster_icons/2397.png","formName":"","level":6,"regionNames":["Tanah Berkat Tercemar"],"groups":["Lapangan (Field)"],"rewardNames":["Adena"]},{"id":11,"name":"Mata Monster","image":"monster_icons/11.png","formName":"","level":7,"regionNames":["Pulau Berbicara","Pulau Berbicara","Dungeon Pulau Berbicara Lantai 1","Dungeon Pulau Berbicara Lantai 2","Dungeon Gurun Lantai 1","Windawood","Benua Aden","Dungeon Gludio Lantai 6"],"groups":["Dungeon","Lapangan (Field)"],"rewardNames":["Daging Mata Monster","Batu Kekuatan Sihir"]},{"id":2,"name":"Petarung Orc","image":"monster_icons/2.png","formName":"","level":8,"regionNames":["Pulau Berbicara","Pulau Berbicara","Dungeon Pulau Berbicara Lantai 1","Dungeon Gurun Lantai 1","Wilayah Kesatria Perak","Hutan Orc","Gludio","Windawood","Kent","Benua Aden","Dungeon Gludio Lantai 1"],"groups":["Dungeon","Lapangan (Field)"],"rewardNames":["Perisai Urukhai Terkutuk","Zirah Rantai Bangsa Orc","Jubah Bangsa Orc","Lampu Minyak","Adena","Zirah Rantai Bangsa Orc Terkutuk","Zirah Rantai (Chain Mail)","Perisai Urukhai","Helm Bangsa Orc","Zirah Rantai Bangsa Orc"]},{"id":64,"name":"Crawling Crow","image":"monster_icons/64.png","formName":"","level":8,"regionNames":["Dungeon Gludio Lantai 6","Dungeon Gludio Lantai 7","Dungeon Kastil Windawood Lantai 2"],"groups":["Dungeon"],"rewardNames":["Power Glove","Sarung Tangan","Adena","Batu Kekuatan Sihir"]},{"id":148,"name":"Petarung Orc","image":"monster_icons/148.png","formName":"","level":8,"regionNames":["Dungeon Hutan Peri Lantai 1","Dungeon Hutan Peri Lantai 2","Hutan Peri","Benua Aden"],"groups":["Dungeon","Lapangan (Field)"],"rewardNames":["Ramuan Merah","Perisai Urukhai Terkutuk","Zirah Rantai Bangsa Orc","Jubah Bangsa Orc","Lampu Minyak","Bola Roh","Anak Panah","Zirah Rantai (Chain Mail)","Perisai Urukhai","Helm Bangsa Orc","Zirah Rantai Bangsa Orc"]},{"id":459,"name":"Gnoll","image":"monster_icons/459.png","formName":"","level":8,"regionNames":["Wilayah Kesatria Perak","Benua Aden"],"groups":["Lapangan (Field)"],"rewardNames":["Emerald","Adena","Safir","Batu Kekuatan Sihir","Ruby","Lentera","Berlian"]},{"id":512,"name":"Coelacanth","image":"monster_icons/512.png","formName":"","level":8,"regionNames":["Kerajaan Eva"],"groups":["Dungeon"],"rewardNames":["Adena"]},{"id":8,"name":"Manusia Serigala","image":"monster_icons/8.png","formName":"","level":9,"regionNames":["Pulau Berbicara","Pulau Berbicara","Dungeon Pulau Berbicara Lantai 1","Dungeon Pulau Berbicara Lantai 2","Dungeon Gurun Lantai 1","Wilayah Kesatria Perak","Hutan Orc","Gludio","Windawood","Kent","Lembah Naga","Giran","Benua Aden"],"groups":["Dungeon","Lapangan (Field)"],"rewardNames":["Pedang Panjang","Zirah Rantai (Chain Mail) Terkutuk","Buku Sihir (Enchant Dexterity)","Zirah Kulit Berpaku Terkutuk","Gada Besi (Mace)","Sepatu Bot Pendek Terkutuk","Sepatu Bot Pendek","Adena","Cambuk Tinju (Flail)","Zirah Sisik Terkutuk","Perisai Kecil","Buku Sihir (Vampiric Touch)","Zirah Kulit Berpaku","Pemukul (Club)"]},{"id":154,"name":"Manusia Serigala","image":"monster_icons/154.png","formName":"","level":9,"regionNames":["Dungeon Hutan Peri Lantai 2","Hutan Peri","Benua Aden"],"groups":["Dungeon","Lapangan (Field)"],"rewardNames":["Pedang Panjang","Buku Sihir (Enchant Dexterity)","Zirah Sisik","Bola Roh","Zirah Rantai (Chain Mail)","Zirah Kulit Berpaku Terkutuk","Gada Besi (Mace)","Sepatu Bot Pendek Terkutuk","Sepatu Bot Pendek","Ramuan Keruh","Cambuk Tinju (Flail)","Anak Panah","Buku Sihir (Vampiric Touch)","Zirah Kulit Berpaku","Pemukul (Club)"]},{"id":324,"name":"Petarung Bangsa Kurcaci","image":"monster_icons/324.png","formName":"","level":9,"regionNames":["Wilayah Kesatria Perak","Windawood","Kent","Lembah Naga","Giran","Benua Aden"],"groups":["Lapangan (Field)"],"rewardNames":["Pedang Bangsa Kurcaci","Jubah Bangsa Kurcaci","Helm Besi Bangsa Kurcaci","Ramuan Hijau","Adena","Kapak Bangsa Kurcaci","Perisai Bundar Bangsa Kurcaci","Ramuan Hijau Tingkat Lanjut","Batangan Besi"]},{"id":514,"name":"Ubur-Ubur","image":"monster_icons/514.png","formName":"","level":9,"regionNames":["Kerajaan Eva"],"groups":["Dungeon"],"rewardNames":["Adena"]},{"id":515,"name":"Ubur-Ubur","image":"monster_icons/515.png","formName":"","level":9,"regionNames":["Kerajaan Eva"],"groups":["Dungeon"],"rewardNames":["Adena"]},{"id":25,"name":"Kerangka (Skeleton)","image":"monster_icons/25.png","formName":"Undead","level":10,"regionNames":["Dungeon Pulau Berbicara Lantai 2"],"groups":["Dungeon"],"rewardNames":["Jubah Sihir Diberkati","Tongkat Kayu Pinus","Ramuan Hijau","Adena","Batu Kekuatan Sihir","Perisai Besar","Gulungan Teleport Diberkati","Helm","Ramuan Hijau Tingkat Lanjut","Tombak","Guandao (Pedang Bulan Sabit) Diberkati","Kunci Abu-Abu Perak"]},{"id":29,"name":"Kerangka (Skeleton)","image":"monster_icons/29.png","formName":"Undead","level":10,"regionNames":["Pulau Berbicara","Pulau Berbicara","Dungeon Pulau Berbicara Lantai 1","Dungeon Pulau Berbicara Lantai 2","Dungeon Gurun Lantai 1","Dungeon Gurun Lantai 3","Wilayah Kesatria Perak","Gludio","Benua Aden","Dungeon Gludio Lantai 1","Dungeon Gludio Lantai 2","Dungeon Gludio Lantai 3","Dungeon Gludio Lantai 4","Dungeon Gludio Lantai 5","Dungeon Kastil Windawood Lantai 1"],"groups":["Dungeon","Lapangan (Field)"],"rewardNames":["Helm Terkutuk","Ramuan Hijau","Buku Sihir (Enchant Dexterity)","Batu Kekuatan Sihir","Jubah Sihir Terkutuk","Tengkorak Kepala","Adena","Guandao (Pedang Bulan Sabit)","Perisai Besar","Jubah Sihir","Helm","Guandao (Pedang Bulan Sabit) Terkutuk","Kunci Mayat Hidup","Ramuan Hijau Tingkat Lanjut","Pecahan Tulang"]},{"id":94,"name":"Orc Gandhi","image":"monster_icons/94.png","formName":"","level":10,"regionNames":["Hutan Orc","Benua Aden"],"groups":["Lapangan (Field)"],"rewardNames":["Ramuan Merah","Buku Sihir Orc Gandhi","Adena","Batu Kekuatan Sihir","Totem Gandhi","Lilin"]},{"id":152,"name":"Orc Gandhi","image":"monster_icons/152.png","formName":"","level":10,"regionNames":["Dungeon Hutan Peri Lantai 2","Hutan Peri","Benua Aden"],"groups":["Dungeon","Lapangan (Field)"],"rewardNames":["Ramuan Merah","Bola Roh","Batu Kekuatan Sihir","Anak Panah","Lilin"]},{"id":299,"name":"Zombie Orc","image":"monster_icons/299.png","formName":"Undead","level":10,"regionNames":["Dungeon Giran Lantai 1","Dungeon Giran Lantai 2","Dungeon Giran Lantai 3"],"groups":["Dungeon"],"rewardNames":["Zirah Rantai Bangsa Orc","Gulungan Teleport","Gulungan Kebangkitan (Resurrection)","Belati Sial","Adena","Perisai Urukhai","Helm Bangsa Orc","Zirah Rantai Bangsa Orc"]},{"id":472,"name":"Buaya","image":"monster_icons/472.png","formName":"","level":10,"regionNames":["Saluran Bawah Tanah Lantai 1","Saluran Bawah Tanah Lantai 2","Saluran Bawah Tanah Lantai 3","Heine","Benua Aden"],"groups":["Dungeon","Lapangan (Field)"],"rewardNames":["Ramuan Keberanian","Emerald","Buku Sihir (Call Lightning)","Adena","Helm Sihir: Penyembuhan"]},{"id":972,"name":"Pelayan Ratu Es","image":"monster_icons/972.png","formName":"","level":10,"regionNames":["Gua Kristal Es Lantai 3"],"groups":["Dungeon"],"rewardNames":["Buku Sihir (Mass Teleport)","Kantong Misterius","Buku Sihir (Lightning Storm)"]},{"id":2383,"name":"Roh Api Tercemar","image":"monster_icons/2383.png","formName":"","level":10,"regionNames":["Tanah Berkat Tercemar"],"groups":["Lapangan (Field)"],"rewardNames":["Adena"]},{"id":2391,"name":"Pendekar Pedang Manusia Tercemar","image":"monster_icons/2391.png","formName":"","level":10,"regionNames":["Tanah Berkat Tercemar"],"groups":["Lapangan (Field)"],"rewardNames":["Adena"]},{"id":2394,"name":"Pan Tercemar","image":"monster_icons/2394.png","formName":"","level":10,"regionNames":["Tanah Berkat Tercemar"],"groups":["Lapangan (Field)"],"rewardNames":["Adena"]},{"id":2399,"name":"Petarung Orc Tercemar","image":"monster_icons/2399.png","formName":"","level":10,"regionNames":["Tanah Berkat Tercemar"],"groups":["Lapangan (Field)"],"rewardNames":["Adena"]},{"id":235,"name":"Semut Raksasa","image":"monster_icons/235.png","formName":"","level":12,"regionNames":["Windawood","Benua Aden","Dungeon Sarang Semut Lantai 1","Dungeon Sarang Semut Lantai 1","Dungeon Sarang Semut Lantai 1","Dungeon Sarang Semut Lantai 1","Dungeon Sarang Semut Lantai 1","Dungeon Sarang Semut Lantai 1","Dungeon Sarang Semut Lantai 1","Dungeon Sarang Semut Lantai 1","Dungeon Sarang Semut Lantai 2"],"groups":["Dungeon","Lapangan (Field)"],"rewardNames":["Ramuan Keberanian","Emerald","Ramuan Hijau","Adena","Gulungan Teleport Diberkati","Helm Sihir: Penyembuhan","Ramuan Hijau Tingkat Lanjut"]},{"id":274,"name":"Penyihir Orc","image":"monster_icons/274.png","formName":"","level":12,"regionNames":["Wilayah Kesatria Perak","Hutan Orc","Gludio","Windawood","Benua Aden"],"groups":["Lapangan (Field)"],"rewardNames":["Buku Sihir (Sun Burst)","Adena","Batu Kekuatan Sihir","Ramuan Biru","Buku Sihir (Greater Heal)","Tongkat Kekuatan","Tongkat Penyihir","Tongkat Kayu Ek (Oak)"]},{"id":276,"name":"Kerangka Pemanah","image":"monster_icons/276.png","formName":"Undead","level":12,"regionNames":["Dungeon Pulau Berbicara Lantai 1","Dungeon Pulau Berbicara Lantai 2","Dungeon Gurun Lantai 1","Dungeon Gurun Lantai 3","Gludio","Benua Aden","Dungeon Gludio Lantai 1","Dungeon Gludio Lantai 2","Dungeon Gludio Lantai 3","Dungeon Gludio Lantai 4","Dungeon Gludio Lantai 5","Dungeon Gludio Lantai 6","Dungeon Gludio Lantai 7","Dungeon Kastil Windawood Lantai 1"],"groups":["Dungeon","Lapangan (Field)"],"rewardNames":["Ramuan Hijau","Adena","Buku Sihir (Enchant Dexterity)","Batu Kekuatan Sihir","Jubah Sihir","Helm","Panah","Ramuan Hijau Tingkat Lanjut","Pecahan Tulang"]},{"id":500,"name":"Bakuk","image":"monster_icons/500.png","formName":"","level":12,"regionNames":["Saluran Bawah Tanah Lantai 1","Saluran Bawah Tanah Lantai 2"],"groups":["Dungeon"],"rewardNames":["Ruby Kualitas Tinggi","Ramuan Hijau","Adena","Helm","Ramuan Hijau Tingkat Lanjut"]},{"id":5,"name":"Stone Golem","image":"monster_icons/5.png","formName":"","level":13,"regionNames":["Pulau Berbicara","Pulau Berbicara","Wilayah Kesatria Perak","Gludio","Windawood","Kent","Benua Aden"],"groups":["Lapangan (Field)"],"rewardNames":["Atam","Adena","Batu Kekuatan Sihir","Ramuan Biru","Cambuk Tinju (Flail)","Buku Sihir (Earth Jail)","Tongkat Kayu Eboni","Bongkahan Mithril Mentah","Rahasia Kehidupan","Kapak","Pemukul (Club)","Ruby Kualitas Terbaik"]},{"id":6,"name":"Stone Golem","image":"monster_icons/6.png","formName":"","level":13,"regionNames":["Dungeon Pulau Berbicara Lantai 1","Dungeon Pulau Berbicara Lantai 2","Dungeon Gurun Lantai 1","Dungeon Gludio Lantai 3"],"groups":["Dungeon"],"rewardNames":["Adena","Batu Kekuatan Sihir","Ramuan Biru","Cambuk Tinju (Flail)","Buku Sihir (Earth Jail)","Tongkat Kayu Eboni","Bongkahan Mithril Mentah","Kapak","Pemukul (Club)","Ruby Kualitas Terbaik"]},{"id":95,"name":"Orc Roba","image":"monster_icons/95.png","formName":"","level":13,"regionNames":["Hutan Orc","Benua Aden"],"groups":["Lapangan (Field)"],"rewardNames":["Ramuan Hijau","Adena","Totem Roba","Zirah Rantai (Chain Mail)","Ruby","Minyak Lentera","Ramuan Hijau Tingkat Lanjut","Lentera"]},{"id":153,"name":"Orc Roba","image":"monster_icons/153.png","formName":"","level":13,"regionNames":["Dungeon Hutan Peri Lantai 2","Hutan Peri","Benua Aden"],"groups":["Dungeon","Lapangan (Field)"],"rewardNames":["Ramuan Merah","Emerald","Ramuan Hijau","Bola Roh","Zirah Rantai (Chain Mail)","Minyak Lentera","Lentera"]},{"id":162,"name":"Stone Golem","image":"monster_icons/162.png","formName":"","level":13,"regionNames":["Hutan Peri","Benua Aden"],"groups":["Lapangan (Field)"],"rewardNames":["Atam","Batu Kekuatan Sihir","Bola Roh","Ramuan Biru","Cambuk Tinju (Flail)","Anak Panah","Berlian Kualitas Tinggi","Gada Besi (Mace)","Tongkat Kayu Eboni","Bongkahan Mithril Mentah","Kapak","Pemukul (Club)"]},{"id":277,"name":"Kerangka Prajurit Kapak","image":"monster_icons/277.png","formName":"Undead","level":13,"regionNames":["Dungeon Pulau Berbicara Lantai 2","Dungeon Gurun Lantai 3","Dungeon Gludio Lantai 5","Dungeon Kastil Windawood Lantai 1"],"groups":["Dungeon"],"rewardNames":["Tongkat Kayu Pinus","Ramuan Hijau","Adena","Batu Kekuatan Sihir","Jubah Sihir","Helm","Ramuan Hijau Tingkat Lanjut","Kapak","Pecahan Tulang"]},{"id":278,"name":"Kerangka Prajurit Tombak","image":"monster_icons/278.png","formName":"Undead","level":13,"regionNames":["Dungeon Pulau Berbicara Lantai 2","Dungeon Gurun Lantai 3","Dungeon Gludio Lantai 2","Dungeon Gludio Lantai 5","Dungeon Kastil Windawood Lantai 1"],"groups":["Dungeon"],"rewardNames":["Ramuan Hijau","Adena","Buku Sihir (Enchant Dexterity)","Batu Kekuatan Sihir","Jubah Sihir","Helm","Ramuan Hijau Tingkat Lanjut","Tombak","Pecahan Tulang"]},{"id":2386,"name":"Roh Kegelapan Tercemar","image":"monster_icons/2386.png","formName":"","level":13,"regionNames":["Tanah Berkat Tercemar"],"groups":["Lapangan (Field)"],"rewardNames":["Adena"]},{"id":2390,"name":"Pemanah Manusia Tercemar","image":"monster_icons/2390.png","formName":"","level":13,"regionNames":["Tanah Berkat Tercemar"],"groups":["Lapangan (Field)"],"rewardNames":["Adena"]},{"id":2395,"name":"Arachne Tercemar","image":"monster_icons/2395.png","formName":"","level":13,"regionNames":["Tanah Berkat Tercemar"],"groups":["Lapangan (Field)"],"rewardNames":["Adena"]},{"id":2398,"name":"Pemanah Orc Tercemar","image":"monster_icons/2398.png","formName":"","level":13,"regionNames":["Tanah Berkat Tercemar"],"groups":["Lapangan (Field)"],"rewardNames":["Adena"]},{"id":2402,"name":"Panggilan Spirit","image":"monster_icons/2402.png","formName":"","level":13,"regionNames":["Tanah Berkat Tercemar"],"groups":["Lapangan (Field)"],"rewardNames":[]},{"id":17,"name":"Shelob","image":"monster_icons/17.png","formName":"","level":14,"regionNames":["Pulau Berbicara","Pulau Berbicara","Dungeon Pulau Berbicara Lantai 2","Dungeon Gurun Lantai 1","Gludio","Kent","Giran","Heine","Benua Aden","Dungeon Gludio Lantai 2","Dungeon Gludio Lantai 4"],"groups":["Dungeon","Lapangan (Field)"],"rewardNames":["Tongkat Kayu Pinus","Buku Sihir (Slow)","Ramuan Hijau","Adena","Gulungan Teleport Diberkati","Cakar Shelob","Ramuan Hijau Tingkat Lanjut","Tongkat Kayu Eboni","Buku Sihir (Eruption)"]},{"id":116,"name":"Pengintai Orc","image":"monster_icons/116.png","formName":"","level":14,"regionNames":["Hutan Orc"],"groups":["Lapangan (Field)"],"rewardNames":["Adena","Lentera"]},{"id":323,"name":"Hobgoblin","image":"monster_icons/323.png","formName":"","level":14,"regionNames":["Wilayah Kesatria Perak","Gludio","Windawood","Kent","Giran","Benua Aden"],"groups":["Lapangan (Field)"],"rewardNames":["Lampu Minyak","Ramuan Hijau","Adena","Pedang Lebar (Broadsword)","Helm","Batangan Besi","Ramuan Hijau Tingkat Lanjut"]},{"id":91,"name":"Orc Atuba","image":"monster_icons/91.png","formName":"","level":15,"regionNames":["Hutan Orc","Benua Aden"],"groups":["Lapangan (Field)"],"rewardNames":["Ramuan Keberanian","Pedang Damaskus","Adena","Perisai Urukhai","Helm","Zirah Pelat Perunggu","Ruby","Buku Sihir Orc Atuba","Totem Atuba","Zirah Rantai Bangsa Orc","Kalung Petarung Orc","Lentera"]},{"id":93,"name":"Orc Duda-Mara","image":"monster_icons/93.png","formName":"","level":15,"regionNames":["Hutan Orc","Benua Aden"],"groups":["Lapangan (Field)"],"rewardNames":["Ruby Kualitas Tinggi","Ramuan Hijau","Totem Duda-Mara","Adena","Buku Sihir Orc Duda Mara","Batu Kekuatan Sihir","Ramuan Kebijaksanaan","Perisai Urukhai","Helm","Ramuan Hijau Tingkat Lanjut","Kalung Petarung Orc","Lentera"]},{"id":149,"name":"Orc Atuba","image":"monster_icons/149.png","formName":"","level":15,"regionNames":["Dungeon Hutan Peri Lantai 3","Hutan Peri","Benua Aden"],"groups":["Dungeon","Lapangan (Field)"],"rewardNames":["Pedang Damaskus","Ramuan Hijau","Bola Roh","Anak Panah","Perisai Urukhai","Helm","Zirah Pelat (Plate Armor)","Ramuan Hijau Tingkat Lanjut","Zirah Rantai Bangsa Orc","Lentera"]},{"id":151,"name":"Orc Duda-Mara","image":"monster_icons/151.png","formName":"","level":15,"regionNames":["Dungeon Hutan Peri Lantai 2","Hutan Peri","Benua Aden"],"groups":["Dungeon","Lapangan (Field)"],"rewardNames":["Ruby Kualitas Tinggi","Ramuan Hijau","Bola Roh","Batu Kekuatan Sihir","Anak Panah","Perisai Urukhai","Helm","Ramuan Hijau Tingkat Lanjut","Lentera"]},{"id":298,"name":"Owlbear","image":"monster_icons/298.png","formName":"","level":15,"regionNames":["Dungeon Giran Lantai 1","Dungeon Giran Lantai 2","Dungeon Giran Lantai 3","Dungeon Giran Lantai 4","Kent","Giran","Heine","Benua Aden"],"groups":["Dungeon","Lapangan (Field)"],"rewardNames":["Ramuan Keberanian","Kulit Kualitas Tinggi","Adena"]},{"id":331,"name":"Lizard Man","image":"monster_icons/331.png","formName":"","level":15,"regionNames":["Saluran Bawah Tanah Lantai 1","Windawood","Giran","Heine","Benua Aden"],"groups":["Dungeon","Lapangan (Field)"],"rewardNames":["Gulungan Teleport","Ramuan Hijau","Adena","Safir","Perisai Besar","Pedang Perak","Helm","Ramuan Hijau Tingkat Lanjut"]},{"id":506,"name":"Manusia Gua","image":"monster_icons/506.png","formName":"","level":15,"regionNames":["Saluran Bawah Tanah Lantai 1"],"groups":["Dungeon"],"rewardNames":["Zirah Sisik (Scale Armor)","Kapak Besar","Adena","Kapak Tempur","Gulungan Teleport Diberkati"]},{"id":568,"name":"Manusia Gua","image":"monster_icons/568.png","formName":"","level":15,"regionNames":["Heine","Benua Aden"],"groups":["Lapangan (Field)"],"rewardNames":["Zirah Sisik (Scale Armor)","Kapak Besar","Adena","Kapak Tempur","Gulungan Teleport Diberkati"]},{"id":15,"name":"Kesatria Hitam","image":"monster_icons/15.png","formName":"","level":16,"regionNames":["Pulau Berbicara","Wilayah Kesatria Perak","Benua Aden"],"groups":["Lapangan (Field)"],"rewardNames":["Emerald","Tombak Kavaleri (Lance) Diberkati","Safir","Ramuan Biru","Dokumen Perdagangan Lusuh","Ruby","Zirah Pelat Perunggu","Kaos","Partisan (Tombak)","Berlian","Sepatu Bot Pendek","Ramuan Keberanian","Surat Janji Kesatria Hitam","Trisula (Trident)","Adena","Jubah Pelindung","Sepatu Bot","Helm","Pedang Dua Tangan","Halberd Diberkati"]},{"id":28,"name":"Ghoul","image":"monster_icons/28.png","formName":"Undead","level":16,"regionNames":["Dungeon Hutan Peri Lantai 3","Dungeon Gurun Lantai 2","Dungeon Gurun Lantai 3","Dungeon Giran Lantai 1","Dungeon Giran Lantai 2","Medan Tempur Elmore","Wilayah Kesatria Perak","Hutan Orc","Gludio","Oren","Benua Aden","Dungeon Gludio Lantai 1","Dungeon Gludio Lantai 2","Dungeon Gludio Lantai 3","Dungeon Gludio Lantai 4","Dungeon Gludio Lantai 5","Dungeon Gludio Lantai 6","Dungeon Gludio Lantai 7","Dungeon Kastil Windawood Lantai 1","Dungeon Kastil Windawood Lantai 2"],"groups":["Dungeon","Lapangan (Field)"],"rewardNames":["Cakar Ghoul","Gulungan Kebangkitan (Resurrection)","Adena","Gulungan Teleport Diberkati","Gigi Ghoul","Buku Sihir (Berserkus)","Gulungan Sihir Senjata"]},{"id":30,"name":"Spartoi","image":"monster_icons/30.png","formName":"Undead","level":16,"regionNames":["Dungeon Pulau Berbicara Lantai 2","Dungeon Hutan Peri Lantai 3","Dungeon Gurun Lantai 2","Dungeon Gurun Lantai 3","Dungeon Lembah Naga Lantai 1","Dungeon Giran Lantai 1","Wilayah Kesatria Perak","Hutan Orc","Gludio","Lembah Naga","Benua Aden","Dungeon Gludio Lantai 1","Dungeon Gludio Lantai 2","Dungeon Gludio Lantai 3","Dungeon Gludio Lantai 4","Dungeon Gludio Lantai 5","Dungeon Gludio Lantai 6","Dungeon Gludio Lantai 7","Dungeon Kastil Windawood Lantai 1","Dungeon Kastil Windawood Lantai 2"],"groups":["Dungeon","Lapangan (Field)"],"rewardNames":["Ramuan Hijau","Adena","Guandao (Pedang Bulan Sabit)","Batu Kekuatan Sihir","Perisai Besar","Tongkat Kayu Maple","Helm","Zirah Pelat Perunggu","Ramuan Hijau Tingkat Lanjut","Guandao (Pedang Bulan Sabit) Diberkati"]},{"id":504,"name":"Crab Man","image":"monster_icons/504.png","formName":"","level":16,"regionNames":["Saluran Bawah Tanah Lantai 2","Saluran Bawah Tanah Lantai 3","Kerajaan Eva"],"groups":["Dungeon"],"rewardNames":["Buku Sihir (Weapon Break)","Adena","Gulungan Sihir Zirah","Gulungan Teleport Diberkati","Buku Sihir (Enchant Mighty)"]},{"id":511,"name":"Merman","image":"monster_icons/511.png","formName":"","level":16,"regionNames":["Kerajaan Eva"],"groups":["Dungeon"],"rewardNames":["Adena","Potongan Dokumen Investigasi Robek (3)"]},{"id":518,"name":"Hiu","image":"monster_icons/518.png","formName":"","level":16,"regionNames":["Kerajaan Eva"],"groups":["Dungeon"],"rewardNames":["Safir Kualitas Tinggi","Sabuk Jiwa Lusuh","Safir Kualitas Terbaik","Ramuan Hijau","Adena","Safir","Tongkat Kayu Maple","Ramuan Hijau Tingkat Lanjut"]},{"id":750,"name":"Pasukan Pencari Kesatria Hitam","image":"monster_icons/750.png","formName":"","level":16,"regionNames":["Gludio","Benua Aden"],"groups":["Lapangan (Field)"],"rewardNames":["Emerald","Tombak Kavaleri (Lance) Diberkati","Safir","Ramuan Biru","Ruby","Zirah Pelat Perunggu","Kaos","Partisan (Tombak)","Berlian","Sepatu Bot Pendek","Ramuan Keberanian","Dokumen Pencarian","Trisula (Trident)","Adena","Jubah Pelindung","Sepatu Bot","Helm","Pedang Dua Tangan","Halberd Diberkati"]},{"id":2392,"name":"Pemanah Peri Tercemar","image":"monster_icons/2392.png","formName":"","level":16,"regionNames":["Tanah Berkat Tercemar"],"groups":["Lapangan (Field)"],"rewardNames":["Adena"]},{"id":2400,"name":"Prajurit Tombak Orc Tercemar","image":"monster_icons/2400.png","formName":"","level":16,"regionNames":["Tanah Berkat Tercemar"],"groups":["Lapangan (Field)"],"rewardNames":["Adena"]},{"id":2401,"name":"Roh Agung Cahaya Tercemar","image":"monster_icons/2401.png","formName":"","level":16,"regionNames":["Tanah Berkat Tercemar"],"groups":["Lapangan (Field)"],"rewardNames":["Adena"]},{"id":92,"name":"Orc Neruga","image":"monster_icons/92.png","formName":"","level":17,"regionNames":["Hutan Orc","Benua Aden"],"groups":["Lapangan (Field)"],"rewardNames":["Gladius Terkutuk","Ramuan Hijau","Perisai Urukhai","Ruby","Zirah Rantai Bangsa Orc","Kalung Petarung Orc","Lentera","Pedang Damaskus","Totem Neruga","Buku Sihir Orc Neruga","Adena","Pedang Dua Tangan Terkutuk","Ramuan Hijau Tingkat Lanjut"]},{"id":150,"name":"Orc Neruga","image":"monster_icons/150.png","formName":"","level":17,"regionNames":["Dungeon Hutan Peri Lantai 3","Hutan Peri","Benua Aden"],"groups":["Dungeon","Lapangan (Field)"],"rewardNames":["Pedang Damaskus","Gladius Terkutuk","Ramuan Hijau","Bola Roh","Anak Panah","Perisai Urukhai","Ruby","Pedang Dua Tangan Terkutuk","Ramuan Hijau Tingkat Lanjut","Zirah Rantai Bangsa Orc","Lentera"]},{"id":280,"name":"Lycanthrope","image":"monster_icons/280.png","formName":"","level":17,"regionNames":["Dungeon Giran Lantai 2","Wilayah Kesatria Perak","Hutan Orc","Gludio","Windawood","Kent","Lembah Naga","Giran","Heine","Benua Aden"],"groups":["Dungeon","Lapangan (Field)"],"rewardNames":["Buku Sihir (Slow)","Adena","Kapak Tempur","Buku Sihir (Enchant Dexterity)","Bola Roh","Zirah Sisik","Sepatu Bot","Perisai Besar","Buku Sihir (Vampiric Touch)","Pochard","Zirah Kulit Berpaku","Berlian"]},{"id":10001,"name":"Roh Agung Angin Murka","image":"monster_icons/10001.png","formName":"","level":17,"regionNames":["Musim Panas Tanah Berkat Murka"],"groups":["Lapangan (Field)"],"rewardNames":["Adena"]},{"id":10006,"name":"Orc Gandhi Murka","image":"monster_icons/10006.png","formName":"","level":17,"regionNames":["Musim Panas Tanah Berkat Murka"],"groups":["Lapangan (Field)"],"rewardNames":["Adena"]},{"id":10014,"name":"Fairy Murka","image":"monster_icons/10014.png","formName":"","level":17,"regionNames":["Musim Panas Tanah Berkat Murka"],"groups":["Lapangan (Field)"],"rewardNames":["Adena"]},{"id":10015,"name":"Petarung Tinju Manusia Murka","image":"monster_icons/10015.png","formName":"","level":17,"regionNames":["Musim Panas Tanah Berkat Murka"],"groups":["Lapangan (Field)"],"rewardNames":["Adena"]},{"id":31,"name":"Ungoliant","image":"monster_icons/31.png","formName":"","level":18,"regionNames":["Dungeon Lembah Naga Lantai 1","Kent","Giran","Heine","Benua Aden","Dungeon Gludio Lantai 2","Dungeon Gludio Lantai 3","Dungeon Gludio Lantai 4","Dungeon Gludio Lantai 5","Dungeon Gludio Lantai 6","Dungeon Gludio Lantai 7","Dungeon Kastil Windawood Lantai 1","Dungeon Kastil Windawood Lantai 2"],"groups":["Dungeon","Lapangan (Field)"],"rewardNames":["Buku Sihir (Taming Monster)","Buku Sihir (Slow)","Ramuan Hijau","Adena","Gulungan Sihir Zirah","Gulungan Teleport Diberkati","Buku Sihir (Earth Jail)","Ramuan Giok (Jade)","Ramuan Hijau Tingkat Lanjut","Tongkat Kayu Eboni","Gulungan Sihir Senjata"]},{"id":560,"name":"Doppelganger","image":"monster_icons/560.png","formName":"","level":19,"regionNames":["Heine","Benua Aden"],"groups":["Lapangan (Field)"],"rewardNames":["Gulungan Transformasi","Adena","Ramuan Biru"]},{"id":236,"name":"Semut Tentara Raksasa","image":"monster_icons/236.png","formName":"","level":20,"regionNames":["Benua Aden","Dungeon Sarang Semut Lantai 1","Dungeon Sarang Semut Lantai 1","Dungeon Sarang Semut Lantai 1","Dungeon Sarang Semut Lantai 1","Dungeon Sarang Semut Lantai 1","Dungeon Sarang Semut Lantai 1","Dungeon Sarang Semut Lantai 1","Dungeon Sarang Semut Lantai 1","Dungeon Sarang Semut Lantai 2"],"groups":["Dungeon","Lapangan (Field)"],"rewardNames":["Ruby Kualitas Tinggi","Ramuan Keberanian","Emerald Kualitas Terbaik","Emerald","Ramuan Hijau","Helm Sihir: Kekuatan","Gulungan Teleport Diberkati","Ruby","Zirah Pelat Perunggu","Ramuan Hijau Tingkat Lanjut","Ruby Kualitas Terbaik","Emerald Kualitas Tinggi"]},{"id":505,"name":"Rat Man","image":"monster_icons/505.png","formName":"","level":20,"regionNames":["Saluran Bawah Tanah Lantai 1","Saluran Bawah Tanah Lantai 2","Saluran Bawah Tanah Lantai 3"],"groups":["Dungeon"],"rewardNames":["Zirah Sisik (Scale Armor)","Ramuan Hijau","Adena","Buku Sihir (Enchant Dexterity)","Gulungan Teleport Diberkati","Ramuan Hijau Tingkat Lanjut","Buku Sihir (Haste)"]},{"id":519,"name":"Aste","image":"monster_icons/519.png","formName":"","level":20,"regionNames":["Kerajaan Eva"],"groups":["Dungeon"],"rewardNames":["Ramuan Keberanian","Ramuan Hijau","Adena","Buku Sihir (Cone of Cold)","Gulungan Teleport Diberkati","Ramuan Hijau Tingkat Lanjut"]},{"id":10002,"name":"Roh Agung Air Murka","image":"monster_icons/10002.png","formName":"","level":20,"regionNames":["Musim Panas Tanah Berkat Murka"],"groups":["Lapangan (Field)"],"rewardNames":["Adena"]},{"id":10009,"name":"Pemanah Orc Murka","image":"monster_icons/10009.png","formName":"","level":20,"regionNames":["Musim Panas Tanah Berkat Murka"],"groups":["Lapangan (Field)"],"rewardNames":["Adena"]},{"id":10010,"name":"Pemanah Peri Murka","image":"monster_icons/10010.png","formName":"","level":20,"regionNames":["Musim Panas Tanah Berkat Murka"],"groups":["Lapangan (Field)"],"rewardNames":["Adena"]},{"id":10017,"name":"Pemanah Manusia Murka","image":"monster_icons/10017.png","formName":"","level":20,"regionNames":["Musim Panas Tanah Berkat Murka"],"groups":["Lapangan (Field)"],"rewardNames":["Adena"]},{"id":7,"name":"Sesepuh","image":"monster_icons/7.png","formName":"","level":21,"regionNames":["Pulau Berbicara","Pulau Berbicara","Dungeon Pulau Berbicara Lantai 1","Gludio","Kent","Benua Aden","Dungeon Gludio Lantai 6"],"groups":["Dungeon","Lapangan (Field)"],"rewardNames":["Tongkat Kayu Pinus","Buku Sihir (Call Lightning)","Batu Kekuatan Sihir","Ramuan Biru","Gulungan Pembuka Kutukan","Gulungan Teleport","Adena","Jubah Pelindung","Buku Sihir (Greater Heal)","Ramuan Kebijaksanaan","Tongkat Kayu Maple","Gulungan Konfirmasi","Ramuan Kebijaksanaan Misterius"]},{"id":115,"name":"Gast","image":"monster_icons/115.png","formName":"","level":21,"regionNames":["Dungeon Hutan Peri Lantai 3","Dungeon Giran Lantai 3","Dungeon Giran Lantai 4","Hutan Orc","Giran","Heine","Benua Aden"],"groups":["Dungeon","Lapangan (Field)"],"rewardNames":["Emerald","Kapak Besar","Kapak Tempur","Adena","Ramuan Biru","Buku Sihir (Summon Monster)","Ramuan Giok (Jade)","Emerald Kualitas Tinggi"]},{"id":33,"name":"Bugbear","image":"monster_icons/33.png","formName":"","level":22,"regionNames":["Dungeon Gurun Lantai 2","Dungeon Gurun Lantai 3","Dungeon Gurun Lantai 4","Gludio","Benua Aden","Dungeon Gludio Lantai 2","Dungeon Gludio Lantai 3","Dungeon Gludio Lantai 4","Dungeon Gludio Lantai 5","Dungeon Gludio Lantai 6","Dungeon Gludio Lantai 7","Dungeon Kastil Windawood Lantai 1","Dungeon Kastil Windawood Lantai 2"],"groups":["Dungeon","Lapangan (Field)"],"rewardNames":["Buku Sihir (Weapon Break)","Zirah Sisik (Scale Armor)","Buku Sihir (Sun Burst)","Kapak Besar","Buku Sihir (Fireball)","Adena","Kapak Tempur","Kristal Roh (Return to Nature)","Gulungan Sihir Zirah","Gulungan Teleport Diberkati","Kunci Ruangan Rahasia","Gulungan Sihir Senjata"]},{"id":562,"name":"Lamia","image":"monster_icons/562.png","formName":"","level":22,"regionNames":["Saluran Bawah Tanah Lantai 1","Saluran Bawah Tanah Lantai 2","Saluran Bawah Tanah Lantai 3","Heine","Benua Aden"],"groups":["Dungeon","Lapangan (Field)"],"rewardNames":["Buku Sihir (Weapon Break)","Adena","Sisik Berkilau","Gulungan Teleport Diberkati","Gulungan Sihir Senjata"]},{"id":563,"name":"Lamia","image":"monster_icons/563.png","formName":"","level":22,"regionNames":["Saluran Bawah Tanah Lantai 1","Saluran Bawah Tanah Lantai 2","Saluran Bawah Tanah Lantai 3","Heine","Benua Aden"],"groups":["Dungeon","Lapangan (Field)"],"rewardNames":["Buku Sihir (Weapon Break)","Adena","Sisik Berkilau","Gulungan Teleport Diberkati","Gulungan Sihir Senjata"]},{"id":10000,"name":"Roh Agung Cahaya Murka","image":"monster_icons/10000.png","formName":"","level":22,"regionNames":["Musim Panas Tanah Berkat Murka"],"groups":["Lapangan (Field)"],"rewardNames":["Adena"]},{"id":10005,"name":"Orc Duda-Mara Murka","image":"monster_icons/10005.png","formName":"","level":22,"regionNames":["Musim Panas Tanah Berkat Murka"],"groups":["Lapangan (Field)"],"rewardNames":["Adena"]},{"id":10011,"name":"Mandrake Murka","image":"monster_icons/10011.png","formName":"","level":22,"regionNames":["Musim Panas Tanah Berkat Murka"],"groups":["Lapangan (Field)"],"rewardNames":["Adena"]},{"id":10016,"name":"Pencuri Manusia Murka","image":"monster_icons/10016.png","formName":"","level":22,"regionNames":["Musim Panas Tanah Berkat Murka"],"groups":["Lapangan (Field)"],"rewardNames":["Adena"]},{"id":182,"name":"Cerberus","image":"monster_icons/182.png","formName":"","level":24,"regionNames":["Dungeon Gurun Lantai 4","Dungeon Giran Lantai 4","Dungeon Gludio Lantai 4","Dungeon Gludio Lantai 5","Dungeon Gludio Lantai 6","Dungeon Gludio Lantai 7","Dungeon Kastil Windawood Lantai 1","Dungeon Kastil Windawood Lantai 2"],"groups":["Dungeon"],"rewardNames":["Buku Sihir (Weapon Break)","Ruby Kualitas Tinggi","Ramuan Keberanian","Buku Sihir (Immune to Harm)","Buku Sihir (Fireball)","Adena","Batu Kekuatan Sihir","Bola Roh","Gulungan Teleport Diberkati","Ruby","Tongkat Kekuatan Sihir","Ruby Kualitas Terbaik"]},{"id":503,"name":"Sea Dancer","image":"monster_icons/503.png","formName":"","level":24,"regionNames":["Kerajaan Eva"],"groups":["Dungeon"],"rewardNames":["Buku Sihir (Ice Lance)","Kristal Roh (Nature's Blessing)","Safir Kualitas Tinggi","Safir Kualitas Terbaik","Buku Sihir (Slow)","Kristal Roh (Nature's Touch)","Adena","Safir","Ramuan Biru","Buku Sihir (Cone of Cold)"]},{"id":520,"name":"Turtle Dragon","image":"monster_icons/520.png","formName":"","level":24,"regionNames":["Wilayah Kesatria Perak","Benua Aden"],"groups":["Lapangan (Field)"],"rewardNames":["Ramuan Keberanian","Adena","Buku Sihir (Cone of Cold)","Cangkang Turtle Dragon","Buku Sihir (Cancellation)","Gulungan Teleport Diberkati"]},{"id":246,"name":"Kalajengking (Scorpion)","image":"monster_icons/246.png","formName":"","level":26,"regionNames":["Lembah Naga","Benua Aden"],"groups":["Lapangan (Field)"],"rewardNames":["Helm Sihir: Kecepatan","Ramuan Keberanian","Buku Sihir (Call Lightning)","Ramuan Hijau","Adena","Buku Sihir (Cancellation)","Gulungan Teleport Diberkati","Buku Sihir (Earth Jail)","Buku Sihir (Earthquake)","Ramuan Hijau Tingkat Lanjut"]},{"id":252,"name":"Harpy","image":"monster_icons/252.png","formName":"","level":26,"regionNames":["Windawood","Kent","Lembah Naga","Benua Aden"],"groups":["Lapangan (Field)"],"rewardNames":["Adena","Batu Kekuatan Sihir","Bola Roh","Ramuan Biru","Zirah Sabuk Diberkati","Gulungan Sihir Senjata Diberkati","Kristal Roh (Eye of Storm)","Gulungan Teleport Diberkati","Buku Sihir (Holy Walk)","Buku Sihir (Greater Haste)","Buku Sihir (Haste)"]},{"id":567,"name":"Turtle Dragon","image":"monster_icons/567.png","formName":"","level":26,"regionNames":[],"groups":[],"rewardNames":["Ramuan Keberanian","Adena","Buku Sihir (Cone of Cold)","Buku Sihir (Cancellation)","Gulungan Teleport Diberkati"]},{"id":10003,"name":"Roh Agung Tanah Murka","image":"monster_icons/10003.png","formName":"","level":26,"regionNames":["Musim Panas Tanah Berkat Murka"],"groups":["Lapangan (Field)"],"rewardNames":["Adena"]},{"id":10007,"name":"Penyihir Orc Murka","image":"monster_icons/10007.png","formName":"","level":26,"regionNames":["Musim Panas Tanah Berkat Murka"],"groups":["Lapangan (Field)"],"rewardNames":["Adena"]},{"id":10012,"name":"Penyihir Peri Murka","image":"monster_icons/10012.png","formName":"","level":26,"regionNames":["Musim Panas Tanah Berkat Murka"],"groups":["Lapangan (Field)"],"rewardNames":["Adena"]},{"id":10019,"name":"Penyihir Manusia Murka","image":"monster_icons/10019.png","formName":"","level":26,"regionNames":["Musim Panas Tanah Berkat Murka"],"groups":["Lapangan (Field)"],"rewardNames":["Adena"]},{"id":10021,"name":"Panggilan Spirit Murka","image":"monster_icons/10021.png","formName":"","level":26,"regionNames":["Musim Panas Tanah Berkat Murka"],"groups":["Lapangan (Field)"],"rewardNames":[]},{"id":288,"name":"Kerangka Penembak Jitu","image":"monster_icons/288.png","formName":"Undead","level":27,"regionNames":["Dungeon Lembah Naga Lantai 1","Dungeon Lembah Naga Lantai 2","Dungeon Lembah Naga Lantai 3","Dungeon Lembah Naga Lantai 4","Lembah Naga","Benua Aden"],"groups":["Dungeon","Lapangan (Field)"],"rewardNames":["Jubah Sihir Diberkati","Panah Diberkati","Buku Sihir (Taming Monster)","Kalung Kecekatan Lusuh","Ramuan Hijau","Helm Diberkati","Adena","Buku Sihir (Enchant Dexterity)","Batu Kekuatan Sihir","Perisai Besar Diberkati","Kalung Kecekatan","Ramuan Hijau Tingkat Lanjut"]},{"id":290,"name":"Kerangka Penjaga Kerajaan","image":"monster_icons/290.png","formName":"Undead","level":27,"regionNames":["Dungeon Lembah Naga Lantai 1","Dungeon Lembah Naga Lantai 2","Dungeon Lembah Naga Lantai 3","Dungeon Lembah Naga Lantai 4","Lembah Naga","Benua Aden"],"groups":["Dungeon","Lapangan (Field)"],"rewardNames":["Jubah Sihir Diberkati","Buku Sihir (Taming Monster)","Ramuan Hijau","Helm Diberkati","Adena","Buku Sihir (Enchant Dexterity)","Batu Kekuatan Sihir","Perisai Besar Diberkati","Tombak Lebar Diberkati","Ramuan Hijau Tingkat Lanjut"]},{"id":297,"name":"Dark Elf","image":"monster_icons/297.png","formName":"","level":27,"regionNames":["Dungeon Giran Lantai 4","Hutan Orc","Lembah Naga","Giran","Benua Aden"],"groups":["Dungeon","Lapangan (Field)"],"rewardNames":["Buku Sihir (Tornado)","Buku Sihir (Meditation)","Jubah Bangsa Peri","Anak Panah Mithril","Panah Bangsa Peri","Adena","Bola Roh","Ramuan Biru","Kristal Roh (Return to Nature)","Buku Sihir (Invisibility)","Baju Zirah Dada Bangsa Peri","Elven Wafer"]},{"id":223,"name":"Ogre","image":"monster_icons/223.png","formName":"","level":28,"regionNames":["Hutan Orc","Gludio","Kent","Lembah Naga","Benua Aden"],"groups":["Lapangan (Field)"],"rewardNames":["Zirah Sisik (Scale Armor)","Ramuan Keberanian","Sabuk Ogre","Kapak Besar","Adena","Kapak Tempur","Helm Sihir: Kekuatan","Darah Ogre","Kapak Sang Pengamuk","Gulungan Sihir Zirah","Gulungan Sihir Senjata"]},{"id":279,"name":"Troll","image":"monster_icons/279.png","formName":"","level":28,"regionNames":["Dungeon Lembah Naga Lantai 1","Dungeon Lembah Naga Lantai 2","Dungeon Lembah Naga Lantai 3","Dungeon Lembah Naga Lantai 4"],"groups":["Dungeon"],"rewardNames":["Ramuan Keberanian","Zirah Sisik (Scale Armor)","Kapak Besar","Buku Sihir (Heal All)","Kapak Tempur","Buku Sihir (Greater Heal)","Kapak Sang Pengamuk","Zirah Sisik (Scale Armor) Terkutuk","Helm Sihir: Penyembuhan","Sabuk Troll"]},{"id":464,"name":"Paper Man","image":"monster_icons/464.png","formName":"","level":28,"regionNames":["Menara Gading Lantai 4","Menara Gading Lantai 5"],"groups":["Dungeon"],"rewardNames":["Gulungan Teleport","Gulungan Kembali (Return Scroll)","Gulungan Transformasi","Adena","Gulungan Konfirmasi"]},{"id":507,"name":"Ekekadum","image":"monster_icons/507.png","formName":"","level":28,"regionNames":["Kerajaan Eva"],"groups":["Dungeon"],"rewardNames":["Sabuk Tubuh Lusuh","Berlian Kualitas Terbaik","Buku Sihir (Call Lightning)","Kristal Roh (Nature's Touch)","Ramuan Biru","Berlian","Ramuan Keberanian","Adena","Buku Sihir (Summon Monster)","Gulungan Sihir Zirah","Buku Sihir (Cone of Cold)","Buku Sihir (Lightning Storm)","Gulungan Teleport Diberkati","Berlian Kualitas Tinggi","Tongkat Kayu Eboni"]},{"id":701,"name":"Manusia Salju","image":"monster_icons/701.png","formName":"","level":28,"regionNames":["Tebing Salju Oren","Benteng Perbatasan","Oren","Benua Aden","Gua Kristal Es Lantai 1","Gua Kristal Es Lantai 2"],"groups":["Dungeon","Lapangan (Field)"],"rewardNames":["Gulungan Transformasi","Adena","Kristal Roh (Return to Nature)","Potongan Dokumen Investigasi Robek (1)","Gulungan Teleport Diberkati"]},{"id":735,"name":"Paper Man","image":"monster_icons/735.png","formName":"","level":28,"regionNames":["Menara Gading Lantai 4","Menara Gading Lantai 5"],"groups":["Dungeon"],"rewardNames":["Gulungan Teleport","Gulungan Kembali (Return Scroll)","Gulungan Transformasi","Adena","Gulungan Konfirmasi"]},{"id":879,"name":"Bandit","image":"monster_icons/879.png","formName":"","level":28,"regionNames":["Giran","Benua Aden"],"groups":["Lapangan (Field)"],"rewardNames":["Morning Star","Ramuan Merah","Kalung Curian","Ramuan Hijau","Adena","Helm","Ramuan Bening","Zirah Kulit Berpaku","Ramuan Hijau Tingkat Lanjut","Ramuan Merah Tua (Vermilion)","Pemukul (Club)"]},{"id":289,"name":"Kerangka Prajurit Penyerbu","image":"monster_icons/289.png","formName":"Undead","level":29,"regionNames":["Dungeon Lembah Naga Lantai 1","Dungeon Lembah Naga Lantai 2","Dungeon Lembah Naga Lantai 3","Dungeon Lembah Naga Lantai 4","Lembah Naga","Benua Aden"],"groups":["Dungeon","Lapangan (Field)"],"rewardNames":["Jubah Sihir Diberkati","Ramuan Hijau","Helm Diberkati","Adena","Kalung Stamina Lusuh","Buku Sihir (Enchant Dexterity)","Batu Kekuatan Sihir","Perisai Besar Diberkati","Buku Skill (Solid Carriage)","Kapak Tempur Diberkati","Ramuan Hijau Tingkat Lanjut","Buku Sihir (Haste)"]},{"id":513,"name":"Crustacean","image":"monster_icons/513.png","formName":"","level":29,"regionNames":["Kerajaan Eva"],"groups":["Dungeon"],"rewardNames":["Ramuan Keberanian","Berlian Kualitas Terbaik","Buku Sihir (Weakness)","Adena","Gulungan Sihir Zirah","Berlian Kualitas Tinggi","Sabuk Pikiran Lusuh","Berlian","Gulungan Sihir Senjata"]},{"id":592,"name":"Bunga Bom","image":"monster_icons/592.png","formName":"","level":29,"regionNames":["Sarang Naga Api","Benua Aden"],"groups":["Lapangan (Field)"],"rewardNames":["Buku Sihir (Fog of Sleeping)","Adena","Gulungan Teleport Diberkati"]},{"id":212,"name":"King Bugbear","image":"monster_icons/212.png","formName":"","level":30,"regionNames":["Dungeon Gurun Lantai 4","Dungeon Gludio Lantai 6","Dungeon Gludio Lantai 7","Dungeon Kastil Windawood Lantai 1","Dungeon Kastil Windawood Lantai 2"],"groups":["Dungeon"],"rewardNames":["Ruby Kualitas Tinggi","Buku Sihir (Fireball)","Kapak Tempur","Ramuan Biru","Kapak Sang Pengamuk","Buku Skill (Shock Stun)","Buku Sihir (Remove Curse)","Gulungan Sihir Senjata","Buku Sihir (Weapon Break)","Ramuan Keberanian","Zirah Sisik (Scale Armor)","Kapak Besar","Helm Sihir: Kekuatan","Adena","Gulungan Sihir Zirah","Gulungan Teleport Diberkati","Buku Sihir (Disease)","Pemukul (Club)"]},{"id":281,"name":"Mulian","image":"monster_icons/281.png","formName":"","level":30,"regionNames":["Dungeon Lembah Naga Lantai 2","Dungeon Lembah Naga Lantai 3","Dungeon Lembah Naga Lantai 4","Dungeon Lembah Naga Lantai 5"],"groups":["Dungeon"],"rewardNames":["Gulungan Kembali (Return Scroll)","Gulungan Transformasi","Buku Sihir (Slow)","Jubah Pelindung","Ramuan Biru","Gulungan Sihir Senjata Diberkati","Buku Sihir (Greater Heal)","Gulungan Sihir Zirah","Gulungan Pembuka Kutukan","Buku Sihir (Remove Curse)","Gulungan Sihir Zirah Diberkati","Gulungan Sihir Senjata"]},{"id":708,"name":"Prajurit Zombie Elmore","image":"monster_icons/708.png","formName":"Undead","level":30,"regionNames":["Tebing Salju Oren","Medan Tempur Elmore","Benteng Perbatasan","Sarang Naga Api","Oren","Benua Aden"],"groups":["Lapangan (Field)"],"rewardNames":["Tombak Lebar","Sepatu Bot Pendek","Ramuan Keberanian","Zirah Kulit","Sarung Tangan","Adena","Gulungan Sihir Zirah","Zirah Kulit Berpaku","Pochard","Tombak"]},{"id":709,"name":"Ice Man","image":"monster_icons/709.png","formName":"","level":30,"regionNames":["Benteng Perbatasan","Benua Aden","Gua Kristal Es Lantai 1","Gua Kristal Es Lantai 2","Gua Kristal Es Lantai 3"],"groups":["Dungeon","Lapangan (Field)"],"rewardNames":["Ramuan Hijau","Adena","Kapak Tempur","Ramuan Biru","Batu Kekuatan Sihir","Bola Roh","Ramuan Hijau Tingkat Lanjut"]},{"id":882,"name":"Bandit","image":"monster_icons/882.png","formName":"","level":30,"regionNames":["Giran","Benua Aden"],"groups":["Lapangan (Field)"],"rewardNames":["Helm Kulit","Ramuan Hijau","Panah Pemburu","Ramuan Merah Tua (Vermilion)","Panah Kecil","Ramuan Merah","Kalung Curian","Adena","Sarung Jari Panahan","Helm","Ramuan Bening","Zirah Kulit Berpaku","Ramuan Hijau Tingkat Lanjut"]},{"id":915,"name":"Fungus","image":"monster_icons/915.png","formName":"","level":30,"regionNames":["Pulau Khayalan"],"groups":["Lapangan (Field)"],"rewardNames":["Ramuan Hijau","Adena","Ramuan Biru","Gulungan Sihir Zirah","Gulungan Sihir Senjata"]},{"id":916,"name":"Roh Mimpi","image":"monster_icons/916.png","formName":"","level":30,"regionNames":["Pulau Khayalan"],"groups":["Lapangan (Field)"],"rewardNames":["Gulungan Teleport","Gulungan Transformasi","Gulungan Kembali (Return Scroll)","Adena","Kalung Karisma Lusuh","Gulungan Sihir Zirah","Gulungan Sihir Senjata"]},{"id":2403,"name":"Spirit","image":"monster_icons/2403.png","formName":"","level":30,"regionNames":["Tanah Berkat Tercemar"],"groups":["Lapangan (Field)"],"rewardNames":["Adena"]},{"id":10004,"name":"Roh Agung Kegelapan Murka","image":"monster_icons/10004.png","formName":"","level":30,"regionNames":["Musim Panas Tanah Berkat Murka"],"groups":["Lapangan (Field)"],"rewardNames":["Adena"]},{"id":10008,"name":"Petarung Orc Murka","image":"monster_icons/10008.png","formName":"","level":30,"regionNames":["Musim Panas Tanah Berkat Murka"],"groups":["Lapangan (Field)"],"rewardNames":["Adena"]},{"id":10013,"name":"Pendekar Pedang Peri Murka","image":"monster_icons/10013.png","formName":"","level":30,"regionNames":["Musim Panas Tanah Berkat Murka"],"groups":["Lapangan (Field)"],"rewardNames":["Adena"]},{"id":10018,"name":"Petarung Manusia Murka","image":"monster_icons/10018.png","formName":"","level":30,"regionNames":["Musim Panas Tanah Berkat Murka"],"groups":["Lapangan (Field)"],"rewardNames":["Adena"]},{"id":333,"name":"Griffin","image":"monster_icons/333.png","formName":"","level":31,"regionNames":["Giran","Benua Aden"],"groups":["Lapangan (Field)"],"rewardNames":["Ruby Kualitas Tinggi","Buku Sihir (Tornado)","Buku Sihir (Counter Magic)","Batu Kekuatan Sihir","Emerald Kualitas Tinggi","Safir Kualitas Tinggi","Zirah Sabuk Diberkati","Kristal Roh (Return to Nature)","Kristal Roh (Eye of Storm)","Gulungan Teleport Diberkati","Ramuan Hijau Diberkati","Berlian Kualitas Tinggi","Ramuan Hijau Tingkat Lanjut","Kristal Roh (Wind Walk)"]},{"id":460,"name":"Mimic","image":"monster_icons/460.png","formName":"","level":31,"regionNames":["Menara Gading Lantai 4","Menara Gading Lantai 5"],"groups":["Dungeon"],"rewardNames":["Ramuan Keberanian","Ramuan Hijau","Adena","Ramuan Biru","Ramuan Kebijaksanaan","Helm","Ramuan Hijau Tingkat Lanjut","Ramuan Merah Tua (Vermilion)"]},{"id":703,"name":"Penyihir Zombie Elmore","image":"monster_icons/703.png","formName":"Undead","level":31,"regionNames":["Tebing Salju Oren","Medan Tempur Elmore","Benteng Perbatasan","Sarang Naga Api","Oren","Benua Aden"],"groups":["Lapangan (Field)"],"rewardNames":["Adena","Kalung Pengetahuan Lusuh","Ramuan Biru","Buku Sihir (Cone of Cold)","Buku Sihir (Bless Weapon)","Gulungan Teleport Diberkati","Buku Sihir (Full Heal)","Gulungan Sihir Senjata","Tongkat Kekuatan Sihir"]},{"id":881,"name":"Bandit","image":"monster_icons/881.png","formName":"","level":31,"regionNames":["Giran","Benua Aden"],"groups":["Lapangan (Field)"],"rewardNames":["Ramuan Merah","Kalung Curian","Kapak Besar","Ramuan Hijau","Adena","Kapak Tempur","Zirah Sisik","Kapak Sang Pengamuk","Helm","Ramuan Bening","Ramuan Hijau Tingkat Lanjut","Ramuan Merah Tua (Vermilion)"]},{"id":10125,"name":"Roh Air Tercemar","image":"monster_icons/10125.png","formName":"","level":31,"regionNames":[],"groups":[],"rewardNames":["Kristal Roh Tercemar (Air)"]},{"id":10126,"name":"Roh Api Tercemar","image":"monster_icons/10126.png","formName":"","level":31,"regionNames":[],"groups":[],"rewardNames":["Kristal Roh Tercemar (Api)"]},{"id":10127,"name":"Roh Tanah Tercemar","image":"monster_icons/10127.png","formName":"","level":31,"regionNames":[],"groups":[],"rewardNames":["Kristal Roh Tercemar (Tanah)"]},{"id":10128,"name":"Roh Angin Tercemar","image":"monster_icons/10128.png","formName":"","level":31,"regionNames":[],"groups":[],"rewardNames":["Kristal Roh Tercemar (Angin)"]},{"id":463,"name":"Ice Golem","image":"monster_icons/463.png","formName":"","level":32,"regionNames":["Tebing Salju Oren","Benteng Perbatasan","Benua Aden","Gua Kristal Es Lantai 1","Gua Kristal Es Lantai 2","Gua Kristal Es Lantai 3"],"groups":["Dungeon","Lapangan (Field)"],"rewardNames":["Sarung Tangan Kristal","Buku Sihir (Ice Lance)","Ramuan Keberanian","Kristal Roh (Nature's Touch)","Adena","Ramuan Kebijaksanaan","Buku Sihir (Cone of Cold)","Kapak Perak","Tongkat Kayu Eboni","Gada Besi (Mace)"]},{"id":471,"name":"Crocodile","image":"monster_icons/471.png","formName":"","level":32,"regionNames":["Heine","Benua Aden"],"groups":["Lapangan (Field)"],"rewardNames":["Ramuan Keberanian","Emerald","Buku Sihir (Call Lightning)","Adena","Gulungan Sihir Zirah"]},{"id":880,"name":"Bandit","image":"monster_icons/880.png","formName":"","level":32,"regionNames":["Giran","Benua Aden"],"groups":["Lapangan (Field)"],"rewardNames":["Ramuan Merah","Pedang Damaskus","Kalung Curian","Gladius","Ramuan Hijau","Adena","Zirah Rantai (Chain Mail)","Helm","Ramuan Bening","Ramuan Hijau Tingkat Lanjut","Ramuan Merah Tua (Vermilion)"]},{"id":129,"name":"Gast Lord","image":"monster_icons/129.png","formName":"","level":33,"regionNames":["Hutan Orc","Heine","Benua Aden"],"groups":["Lapangan (Field)"],"rewardNames":["Emerald Kualitas Terbaik","Kapak Besar","Kapak Tempur","Adena","Ramuan Biru","Kapak Sang Pengamuk","Gulungan Sihir Zirah","Gulungan Teleport Diberkati","Helm Sihir: Penyembuhan","Buku Sihir (Disease)","Gulungan Sihir Senjata","Emerald Kualitas Tinggi"]},{"id":286,"name":"Beholder","image":"monster_icons/286.png","formName":"","level":33,"regionNames":["Saluran Bawah Tanah Lantai 2","Saluran Bawah Tanah Lantai 3","Heine","Benua Aden"],"groups":["Dungeon","Lapangan (Field)"],"rewardNames":["Safir Kualitas Tinggi","Safir Kualitas Terbaik","Gulungan Sihir Senjata Terkutuk","Buku Sihir (Weakness)","Adena","Safir","Kristal Roh (Return to Nature)","Kristal Roh (Triple Arrow)","Ramuan Kebijaksanaan","Buku Sihir (Cancellation)","Buku Sihir (Curse: Paralyze)","Buku Sihir (Disease)"]},{"id":473,"name":"Living Armor","image":"monster_icons/473.png","formName":"","level":33,"regionNames":["Menara Gading Lantai 4","Menara Gading Lantai 5"],"groups":["Dungeon"],"rewardNames":["Ramuan Merah","Ramuan Keberanian","Esensi Cahaya Bulan","Buku Sihir (Immune to Harm)","Buku Sihir (Weakness)","Adena","Kapak Tempur","Zirah Sabuk","Ramuan Bening","Zirah Pelat Perunggu","Ramuan Hijau Tingkat Lanjut","Ramuan Merah Tua (Vermilion)"]},{"id":595,"name":"Capung Naga (Dragon Fly)","image":"monster_icons/595.png","formName":"","level":33,"regionNames":["Sarang Naga Api","Benua Aden"],"groups":["Lapangan (Field)"],"rewardNames":["Gulungan Teleport","Ramuan Hijau","Adena","Gulungan Sihir Senjata Diberkati","Buku Sihir (Vampiric Touch)","Ramuan Hijau Tingkat Lanjut","Gulungan Sihir Zirah Diberkati","Sisik Naga Api"]},{"id":702,"name":"Harimau Sabertooth","image":"monster_icons/702.png","formName":"","level":33,"regionNames":["Tebing Salju Oren","Benteng Perbatasan","Oren","Benua Aden","Gua Kristal Es Lantai 1","Gua Kristal Es Lantai 2","Gua Kristal Es Lantai 3"],"groups":["Dungeon","Lapangan (Field)"],"rewardNames":["Ramuan Hijau","Adena","Batu Kekuatan Sihir","Bola Roh","Ramuan Hijau Tingkat Lanjut"]},{"id":704,"name":"Eti","image":"monster_icons/704.png","formName":"","level":33,"regionNames":["Tebing Salju Oren","Benteng Perbatasan","Oren","Benua Aden","Gua Kristal Es Lantai 1","Gua Kristal Es Lantai 2","Gua Kristal Es Lantai 3"],"groups":["Dungeon","Lapangan (Field)"],"rewardNames":["Sarung Tangan Kristal","Ramuan Keberanian","Lucerne Hammer","Adena","Kalung Stamina Lusuh","Bola Roh"]},{"id":884,"name":"Doppelganger","image":"monster_icons/884.png","formName":"","level":33,"regionNames":["Heine","Benua Aden"],"groups":["Lapangan (Field)"],"rewardNames":["Gulungan Transformasi","Adena","Ramuan Biru"]},{"id":248,"name":"Cockatrice","image":"monster_icons/248.png","formName":"","level":34,"regionNames":["Lembah Naga","Benua Aden"],"groups":["Lapangan (Field)"],"rewardNames":["Kristal Roh (Entangle)","Buku Sihir (Slow)","Ramuan Hijau","Buku Sihir (Remove Curse)","Buku Sihir (Earthquake)","Buku Sihir (Curse: Paralyze)","Gulungan Sihir Senjata","Ramuan Keberanian","Adena","Buku Sihir (Greater Heal)","Gulungan Sihir Zirah","Ramuan Kebijaksanaan","Gulungan Teleport Diberkati","Buku Sihir (Earth Jail)","Ramuan Hijau Tingkat Lanjut","Tongkat Kayu Eboni","Buku Sihir (Greater Haste)","Buku Sihir (Eruption)","Buku Sihir (Haste)"]},{"id":287,"name":"Ettin","image":"monster_icons/287.png","formName":"","level":35,"regionNames":["Dungeon Lembah Naga Lantai 3","Dungeon Lembah Naga Lantai 4","Dungeon Lembah Naga Lantai 5","Dungeon Lembah Naga Lantai 6"],"groups":["Dungeon"],"rewardNames":["Ramuan Keberanian","Kalung Karisma Lusuh","Lucerne Hammer Diberkati","Buku Sihir (Earth Jail)","Buku Sihir (Enchant Mighty)","Buku Sihir (Earthquake)","Buku Sihir (Greater Haste)","Buku Sihir (Eruption)","Buku Sihir (Haste)"]},{"id":587,"name":"Petarung Terbakar","image":"monster_icons/587.png","formName":"","level":35,"regionNames":["Sarang Naga Api","Benua Aden"],"groups":["Lapangan (Field)"],"rewardNames":["Ramuan Keberanian","Pedang Panjang","Ramuan Hijau","Adena","Perisai Besar","Zirah Sabuk","Helm","Kalung Kekuatan Lusuh","Ramuan Hijau Tingkat Lanjut","Sisik Naga Api"]},{"id":705,"name":"Jenderal Zombie Elmore","image":"monster_icons/705.png","formName":"Undead","level":35,"regionNames":["Tebing Salju Oren","Medan Tempur Elmore","Sarang Naga Api","Oren","Benua Aden"],"groups":["Lapangan (Field)"],"rewardNames":["Ramuan Hijau","Zirah Sisik","Buku Skill (Shock Stun)","Kalung Kekuatan Lusuh","Zirah Pelat Perunggu","Gulungan Sihir Senjata","Ramuan Keberanian","Sarung Tangan","Adena","Sepatu Bot","Gulungan Sihir Zirah","Buku Skill (Bounce Attack)","Pedang Dua Tangan","Ramuan Hijau Tingkat Lanjut","Buku Skill (Reduction Armor)"]},{"id":707,"name":"Iron Golem","image":"monster_icons/707.png","formName":"","level":35,"regionNames":["Tebing Salju Oren","Benteng Perbatasan","Benua Aden","Gua Kristal Es Lantai 1","Gua Kristal Es Lantai 2","Menara Gading Lantai 4","Menara Gading Lantai 5"],"groups":["Dungeon","Lapangan (Field)"],"rewardNames":["Buku Sihir (Weakness)","Ramuan Biru","Potongan Dokumen Investigasi Robek (2)","Gulungan Pembuka Kutukan","Kristal Roh (Iron Skin)","Buku Sihir (Enchant Mighty)","Kalung Kebijaksanaan Lusuh","Batangan Besi","Bongkahan Mithril Mentah","Kristal Roh (Blood to Soul)","Gulungan Sihir Senjata","Ramuan Keberanian","Adena","Gulungan Sihir Zirah"]},{"id":883,"name":"Bos Bandit","image":"monster_icons/883.png","formName":"","level":35,"regionNames":["Giran","Benua Aden"],"groups":["Lapangan (Field)"],"rewardNames":["Ruby Kualitas Tinggi","Emerald Kualitas Terbaik","Berlian Kualitas Terbaik","Safir Kualitas Terbaik","Ramuan Hijau","Pedang Jepang (Katana)","Ramuan Merah Tua (Vermilion)","Emerald Kualitas Tinggi","Ramuan Merah","Safir Kualitas Tinggi","Adena","Jubah Pelindung","Zirah Sabuk","Helm","Ramuan Bening","Gulungan Teleport Diberkati","Berlian Kualitas Tinggi","Ramuan Hijau Tingkat Lanjut","Ruby Kualitas Terbaik","Pedang Panjang Perak"]},{"id":247,"name":"Basilisk","image":"monster_icons/247.png","formName":"","level":36,"regionNames":["Benua Aden"],"groups":["Lapangan (Field)"],"rewardNames":["Buku Sihir (Slow)","Berlian Kualitas Terbaik","Buku Sihir (Cancellation)","Buku Sihir (Remove Curse)","Buku Sihir (Earthquake)","Gulungan Sihir Senjata","Berlian","Sisik Basilisk","Ramuan Keberanian","Buku Sihir (Greater Heal)","Kristal Roh (Return to Nature)","Gulungan Sihir Zirah","Buku Sihir (Earth Jail)","Berlian Kualitas Tinggi","Buku Sihir (Eruption)"]},{"id":593,"name":"Pemanah Terbakar","image":"monster_icons/593.png","formName":"","level":36,"regionNames":["Sarang Naga Api","Benua Aden"],"groups":["Lapangan (Field)"],"rewardNames":["Kalung Kecekatan Lusuh","Buku Sihir (Slow)","Adena","Buku Sihir (Enchant Dexterity)","Zirah Rantai (Ring)","Sepatu Bot","Panah Pemburu","Helm","Sisik Naga Api"]},{"id":284,"name":"Succubus","image":"monster_icons/284.png","formName":"","level":37,"regionNames":["Dungeon Lembah Naga Lantai 4","Dungeon Lembah Naga Lantai 5","Dungeon Lembah Naga Lantai 6"],"groups":["Dungeon"],"rewardNames":["Buku Sihir (Ice Lance)","Cincin Kendali Transformasi","Buku Sihir (Blizzard)","Kristal Roh (Nature's Touch)","Ramuan Biru","Buku Sihir (Summon Monster)","Kristal Roh (Return to Nature)","Kristal Roh (Triple Arrow)","Ramuan Kebijaksanaan","Buku Sihir (Cone of Cold)","Cincin Curian","Kalung Kebijaksanaan Lusuh"]},{"id":534,"name":"Salamander","image":"monster_icons/534.png","formName":"","level":38,"regionNames":["Sarang Naga Api","Benua Aden"],"groups":["Lapangan (Field)"],"rewardNames":["Buku Sihir (Fire Storm)","Ruby Kualitas Tinggi","Ramuan Hijau","Adena","Buku Skill (Shock Stun)","Kristal Roh (Eye of Storm)","Gulungan Teleport Diberkati","Ramuan Hijau Tingkat Lanjut","Kristal Roh (Erase Magic)","Emerald Kualitas Tinggi","Sisik Naga Api"]},{"id":903,"name":"Salamander","image":"monster_icons/903.png","formName":"","level":38,"regionNames":["Pulau Khayalan"],"groups":["Lapangan (Field)"],"rewardNames":["Buku Sihir (Fire Storm)","Kapak Besar","Adena","Gulungan Sihir Zirah","Pedang Dua Tangan","Gulungan Sihir Senjata"]},{"id":905,"name":"Ice Man","image":"monster_icons/905.png","formName":"","level":38,"regionNames":["Pulau Khayalan"],"groups":["Lapangan (Field)"],"rewardNames":["Ramuan Hijau","Adena","Kalung Pengetahuan Lusuh","Ramuan Biru","Gulungan Sihir Zirah","Gulungan Sihir Senjata"]},{"id":908,"name":"Lebah Pembunuh (Killer Bee)","image":"monster_icons/908.png","formName":"","level":38,"regionNames":["Pulau Khayalan"],"groups":["Lapangan (Field)"],"rewardNames":["Kalung Kecekatan Lusuh","Adena","Gulungan Sihir Zirah","Gulungan Sihir Senjata"]},{"id":911,"name":"Kelinci Berdarah Panas","image":"monster_icons/911.png","formName":"","level":38,"regionNames":["Pulau Khayalan"],"groups":["Lapangan (Field)"],"rewardNames":["Adena","Gulungan Sihir Zirah","Gulungan Sihir Senjata"]},{"id":591,"name":"Telur Api","image":"monster_icons/591.png","formName":"","level":39,"regionNames":["Sarang Naga Api","Giran","Benua Aden"],"groups":["Lapangan (Field)"],"rewardNames":["Gulungan Transformasi","Gulungan Kembali (Return Scroll)","Buku Sihir (Fireball)","Adena","Ramuan Biru","Gulungan Sihir Zirah","Gulungan Pembuka Kutukan","Buku Sihir (Remove Curse)","Sisik Naga Api","Gulungan Sihir Senjata"]},{"id":902,"name":"Telur Api","image":"monster_icons/902.png","formName":"","level":39,"regionNames":["Pulau Khayalan"],"groups":["Lapangan (Field)"],"rewardNames":["Gulungan Teleport","Gulungan Transformasi","Gulungan Kembali (Return Scroll)","Adena","Gulungan Sihir Zirah","Kalung Kekuatan Lusuh","Buku Sihir (Remove Curse)","Gulungan Sihir Senjata"]},{"id":906,"name":"Ice Golem","image":"monster_icons/906.png","formName":"","level":39,"regionNames":["Pulau Khayalan"],"groups":["Lapangan (Field)"],"rewardNames":["Gulungan Kebangkitan (Resurrection)","Adena","Gulungan Sihir Zirah","Kapak Perak","Kristal Roh (Blood to Soul)","Gulungan Sihir Senjata"]},{"id":909,"name":"Bola Petir (Ball Lightning)","image":"monster_icons/909.png","formName":"","level":39,"regionNames":["Pulau Khayalan"],"groups":["Lapangan (Field)"],"rewardNames":["Adena","Gulungan Sihir Zirah","Buku Sihir (Lightning Storm)","Helm Sihir: Penyembuhan","Gulungan Sihir Senjata"]},{"id":912,"name":"Guardian Armor","image":"monster_icons/912.png","formName":"","level":39,"regionNames":["Pulau Khayalan"],"groups":["Lapangan (Field)"],"rewardNames":["Ramuan Hijau","Adena","Kalung Stamina Lusuh","Gulungan Sihir Zirah","Buku Skill (Bounce Attack)","Zirah Pelat Perunggu","Gulungan Sihir Senjata"]},{"id":325,"name":"Cyclops","image":"monster_icons/325.png","formName":"","level":40,"regionNames":["Giran","Benua Aden"],"groups":["Lapangan (Field)"],"rewardNames":["Kristal Roh (Entangle)","Darah Cyclops","Buku Sihir (Weakness)","Buku Sihir (Silence)","Buku Sihir (Enchant Mighty)","Buku Sihir (Earthquake)","Kristal Roh (Bless of Earth)","Gulungan Sihir Senjata","Ramuan Keberanian","Helm Sihir: Kekuatan","Buku Sihir (Summon Monster)","Zirah Sabuk Terkutuk","Gulungan Sihir Zirah","Buku Sihir (Earth Jail)"]},{"id":913,"name":"Nightmare","image":"monster_icons/913.png","formName":"","level":40,"regionNames":[],"groups":[],"rewardNames":["Ramuan Hijau","Adena","Kristal Roh (Triple Arrow)","Ramuan Biru","Gulungan Sihir Zirah","Elixir (WIS)","Pedang Dua Tangan","Gulungan Sihir Senjata"]},{"id":921,"name":"Roh Mimpi","image":"monster_icons/921.png","formName":"","level":40,"regionNames":["Pulau Khayalan"],"groups":["Lapangan (Field)"],"rewardNames":["Gulungan Teleport","Gulungan Transformasi","Gulungan Kembali (Return Scroll)","Adena","Batu Kekuatan Sihir","Gulungan Sihir Zirah","Gulungan Sihir Senjata"]},{"id":285,"name":"Succubus Queen","image":"monster_icons/285.png","formName":"","level":41,"regionNames":["Dungeon Lembah Naga Lantai 5","Dungeon Lembah Naga Lantai 6"],"groups":["Dungeon"],"rewardNames":["Buku Sihir (Ice Lance)","Buku Sihir (Mass Teleport)","Kristal Roh (Nature's Touch)","Ramuan Biru","Buku Sihir (Summon Monster)","Ramuan Kebijaksanaan","Buku Sihir (Cone of Cold)","Tongkat Misterius Ratu Succubus","Cincin Kendali Teleport","Buku Sihir (Mana Drain)"]},{"id":469,"name":"Siluet","image":"monster_icons/469.png","formName":"Undead","level":41,"regionNames":["Menara Gading Lantai 6","Menara Gading Lantai 7","Menara Gading Lantai 8"],"groups":["Dungeon"],"rewardNames":["Ramuan Merah","Buku Sihir (Counter Magic)","Sabuk Jiwa Lusuh","Adena","Ramuan Merah Diberkati","Ramuan Bening Diberkati","Ramuan Biru","Buku Sihir (Cone of Cold)","Sabuk Jiwa","Ramuan Merah Tua (Vermilion) Diberkati","Ramuan Hijau Tingkat Lanjut","Buku Sihir (Darkness)"]},{"id":37,"name":"Sema","image":"monster_icons/37.png","formName":"","level":42,"regionNames":["Dungeon Gludio Lantai 3","Dungeon Gludio Lantai 4"],"groups":["Dungeon"],"rewardNames":["Tongkat Kayu Pinus","Buku Sihir (Weakness)","Berlian Kualitas Terbaik","Buku Sihir (Enchant Dexterity)","Ramuan Biru","Batu Kekuatan Sihir","Gulungan Pembuka Kutukan","Berlian","Topi Sema","Kalung Kekuatan","Jubah Pelindung","Sepatu Bot","Gulungan Sihir Senjata Diberkati","Tongkat Kayu Maple","Kristal Roh (Eye of Storm)","Gulungan Teleport Diberkati","Berlian Kualitas Tinggi","Buku Sihir (Greater Haste)","Gulungan Sihir Zirah Diberkati","Buku Sihir (Haste)"]},{"id":580,"name":"Hantu","image":"monster_icons/580.png","formName":"Undead","level":42,"regionNames":["Menara Gading Lantai 6","Menara Gading Lantai 7","Menara Gading Lantai 8"],"groups":["Dungeon"],"rewardNames":["Sarung Tangan Kristal","Kristal Roh (Area of Silence)","Buku Sihir (Counter Magic)","Buku Sihir (Weakness)","Ramuan Hijau","Ramuan Merah Diberkati","Kalung Pengetahuan Lusuh","Kalung Kekuatan Lusuh","Ramuan Merah","Esensi Cahaya Bulan","Gulungan Teleport","Adena","Jubah Tanpa Nama","Ramuan Bening Diberkati","Ramuan Merah Tua (Vermilion) Diberkati","Ramuan Hijau Tingkat Lanjut"]},{"id":10129,"name":"Necromancer","image":"monster_icons/10129.png","formName":"","level":42,"regionNames":["Dungeon Gludio Lantai 6"],"groups":["Dungeon"],"rewardNames":["Tongkat Kayu Pinus","Buku Sihir (Weakness)","Berlian Kualitas Terbaik","Buku Sihir (Enchant Dexterity)","Ramuan Biru","Gulungan Pembuka Kutukan","Berlian","Kalung Kekuatan","Jubah Pelindung","Sepatu Bot","Gulungan Sihir Senjata Diberkati","Tongkat Kayu Maple","Kristal Roh (Eye of Storm)","Gulungan Teleport Diberkati","Berlian Kualitas Tinggi","Buku Sihir (Greater Haste)","Gulungan Sihir Zirah Diberkati","Buku Sihir (Haste)"]},{"id":34,"name":"Balthazar","image":"monster_icons/34.png","formName":"","level":43,"regionNames":["Dungeon Gludio Lantai 3","Dungeon Gludio Lantai 4"],"groups":["Dungeon"],"rewardNames":["Kristal Roh (Entangle)","Emerald Kualitas Terbaik","Tongkat Kayu Pinus","Cincin Kendali Transformasi","Emerald","Ramuan Biru","Batu Kekuatan Sihir","Gulungan Pembuka Kutukan","Buku Sihir (Cancellation)","Buku Sihir (Earthquake)","Kristal Roh (Bless of Earth)","Emerald Kualitas Tinggi","Jubah Pelindung","Sepatu Bot","Gulungan Sihir Senjata Diberkati","Kalung Pengetahuan","Tongkat Kayu Maple","Topi Balthazar","Gulungan Teleport Diberkati","Gulungan Sihir Zirah Diberkati"]},{"id":581,"name":"Hantu","image":"monster_icons/581.png","formName":"Undead","level":43,"regionNames":["Menara Gading Lantai 6","Menara Gading Lantai 7","Menara Gading Lantai 8"],"groups":["Dungeon"],"rewardNames":["Sarung Tangan Kristal","Kristal Roh (Area of Silence)","Ramuan Merah Diberkati","Kalung Pengetahuan Lusuh","Ramuan Biru","Kalung Kekuatan Lusuh","Ramuan Merah","Esensi Cahaya Bulan","Gulungan Teleport","Adena","Jubah Tanpa Nama","Ramuan Bening Diberkati","Ramuan Kebijaksanaan","Ramuan Merah Tua (Vermilion) Diberkati","Buku Sihir (Darkness)"]},{"id":586,"name":"Larva Golem","image":"monster_icons/586.png","formName":"","level":43,"regionNames":["Sarang Naga Api","Benua Aden"],"groups":["Lapangan (Field)"],"rewardNames":["Lucerne Hammer","Ramuan Keberanian","Buku Sihir (Slow)","Kapak Besar","Adena","Kristal Roh (Triple Arrow)","Buku Sihir (Enchant Mighty)","Pedang Dua Tangan","Sisik Naga Api"]},{"id":901,"name":"Roh Agung Api","image":"monster_icons/901.png","formName":"","level":43,"regionNames":["Pulau Khayalan"],"groups":["Lapangan (Field)"],"rewardNames":["Tanduk Unicorn Suci","Gulungan Kebangkitan (Resurrection)","Ramuan Hijau","Adena","Elixir (STR)","Gulungan Sihir Senjata Diberkati","Ramuan Biru","Gulungan Sihir Zirah","Zirah Rantai (Chain Mail)","Gulungan Sihir Senjata"]},{"id":904,"name":"Roh Agung Air","image":"monster_icons/904.png","formName":"","level":43,"regionNames":["Pulau Khayalan"],"groups":["Lapangan (Field)"],"rewardNames":["Elixir (INT)","Tanduk Unicorn Suci","Gulungan Kebangkitan (Resurrection)","Ramuan Hijau","Adena","Ramuan Biru","Gulungan Sihir Zirah","Zirah Rantai (Chain Mail)","Gulungan Sihir Zirah Diberkati","Gulungan Sihir Senjata"]},{"id":907,"name":"Roh Agung Angin","image":"monster_icons/907.png","formName":"","level":43,"regionNames":["Pulau Khayalan"],"groups":["Lapangan (Field)"],"rewardNames":["Tanduk Unicorn Suci","Gulungan Kebangkitan (Resurrection)","Ramuan Hijau","Adena","Gulungan Sihir Senjata Diberkati","Ramuan Biru","Gulungan Sihir Zirah","Zirah Rantai (Chain Mail)","Elixir (DEX)","Gulungan Sihir Senjata"]},{"id":910,"name":"Roh Agung Tanah","image":"monster_icons/910.png","formName":"","level":43,"regionNames":["Pulau Khayalan"],"groups":["Lapangan (Field)"],"rewardNames":["Elixir (CON)","Tanduk Unicorn Suci","Gulungan Kebangkitan (Resurrection)","Ramuan Hijau","Adena","Ramuan Biru","Gulungan Sihir Zirah","Zirah Rantai (Chain Mail)","Gulungan Sihir Zirah Diberkati","Gulungan Sihir Senjata"]},{"id":914,"name":"Unicorn","image":"monster_icons/914.png","formName":"","level":43,"regionNames":["Pulau Khayalan"],"groups":["Lapangan (Field)"],"rewardNames":["Lucerne Hammer","Tanduk Unicorn Suci","Gulungan Teleport","Gulungan Transformasi","Gulungan Kembali (Return Scroll)","Adena","Elixir (CHA)","Gulungan Sihir Zirah","Gulungan Sihir Senjata"]},{"id":35,"name":"Caspa","image":"monster_icons/35.png","formName":"","level":44,"regionNames":["Dungeon Gludio Lantai 3","Dungeon Gludio Lantai 4"],"groups":["Dungeon"],"rewardNames":["Ruby Kualitas Tinggi","Buku Sihir (Sun Burst)","Tongkat Kayu Pinus","Cincin Kendali Transformasi","Buku Sihir (Fireball)","Ramuan Biru","Batu Kekuatan Sihir","Gulungan Pembuka Kutukan","Ruby","Kristal Roh (Breath of Fire)","Topi Caspa","Kalung Kekuatan","Jubah Pelindung","Sepatu Bot","Gulungan Sihir Senjata Diberkati","Kristal Roh (Earth Bind)","Tongkat Kayu Maple","Gulungan Teleport Diberkati","Gulungan Sihir Zirah Diberkati","Ruby Kualitas Terbaik"]},{"id":36,"name":"Melchior","image":"monster_icons/36.png","formName":"","level":45,"regionNames":["Dungeon Gludio Lantai 3","Dungeon Gludio Lantai 4"],"groups":["Dungeon"],"rewardNames":["Tongkat Kayu Pinus","Safir Kualitas Terbaik","Topi Melchior","Kristal Roh (Nature's Touch)","Safir","Ramuan Biru","Batu Kekuatan Sihir","Gulungan Pembuka Kutukan","Cincin Kendali Teleport","Kristal Roh (Blood to Soul)","Kalung Kekuatan","Safir Kualitas Tinggi","Jubah Pelindung","Sepatu Bot","Gulungan Sihir Senjata Diberkati","Tongkat Kayu Maple","Gulungan Teleport Diberkati","Gulungan Sihir Zirah Diberkati"]},{"id":579,"name":"Death","image":"monster_icons/579.png","formName":"Undead","level":45,"regionNames":["Menara Gading Lantai 6","Menara Gading Lantai 7","Menara Gading Lantai 8"],"groups":["Dungeon"],"rewardNames":["Kristal Roh (Storm Shot)","Halberd","Ramuan Biru","Kalung Kebijaksanaan Lusuh","Gulungan Sihir Senjata","Zirah Sisik (Scale Armor)","Esensi Cahaya Bulan","Gulungan Teleport","Gulungan Kebangkitan (Resurrection)","Kapak Besar","Adena","Gulungan Sihir Zirah","Panah Panjang Bulan","Buku Sihir (Disease)"]},{"id":596,"name":"Asitazio","image":"monster_icons/596.png","formName":"","level":45,"regionNames":["Sarang Naga Api","Benua Aden"],"groups":["Lapangan (Field)"],"rewardNames":["Buku Sihir (Fireball)","Ramuan Hijau","Buku Sihir (Enchant Dexterity)","Buku Sihir (Enchant Mighty)","Sisik Naga Api","Gulungan Sihir Senjata","Ramuan Keberanian","Adena","Ramuan Kebijaksanaan","Gulungan Sihir Zirah","Gulungan Teleport Diberkati","Abu Asitazio","Tongkat Kayu Eboni","Ramuan Hijau Tingkat Lanjut","Buku Sihir (Eruption)","Buku Sihir (Haste)"]},{"id":588,"name":"Ifrit","image":"monster_icons/588.png","formName":"","level":46,"regionNames":["Sarang Naga Api","Benua Aden"],"groups":["Lapangan (Field)"],"rewardNames":["Buku Sihir (Fire Storm)","Buku Sihir (Sun Burst)","Buku Sihir (Fireball)","Kristal Roh (Triple Arrow)","Zirah Rantai (Chain Mail)","Buku Sihir (Cancellation)","Buku Sihir (Enchant Mighty)","Pedang Jepang (Katana)","Pedang Jepang (Katana) Diberkati","Safir Kualitas Tinggi","Adena","Berlian Kualitas Tinggi","Zirah Pelat (Plate Armor)","Ruby Kualitas Terbaik","Ruby Kualitas Tinggi","Emerald Kualitas Terbaik","Berlian Kualitas Terbaik","Safir Kualitas Terbaik","Buku Sihir (Enchant Dexterity)","Ramuan Biru","Gulungan Sihir Senjata","Emerald Kualitas Tinggi","Gulungan Sihir Senjata Diberkati","Gulungan Sihir Zirah","Gulungan Sihir Zirah Diberkati","Kristal Roh (Erase Magic)"]},{"id":589,"name":"Cerberus Roh","image":"monster_icons/589.png","formName":"","level":47,"regionNames":["Sarang Naga Api","Benua Aden"],"groups":["Lapangan (Field)"],"rewardNames":["Buku Sihir (Immune to Harm)","Ramuan Hijau","Buku Skill (Shock Stun)","Gulungan Sihir Senjata","Sisik Naga Api","Gulungan Kebangkitan (Resurrection)","Adena","Gulungan Sihir Senjata Diberkati","Gulungan Sihir Zirah","Ramuan Kebijaksanaan","Ramuan Hijau Tingkat Lanjut","Gulungan Sihir Zirah Diberkati","Kristal Roh (Erase Magic)"]},{"id":250,"name":"Drake","image":"monster_icons/250.png","formName":"","level":48,"regionNames":["Lembah Naga","Benua Aden"],"groups":["Lapangan (Field)"],"rewardNames":["Ramuan Hijau","Kristal Roh (Triple Arrow)","Buku Sihir (Holy Walk)","Ruby","Safir Kualitas Tinggi","Kristal Roh (Eye of Storm)","Berlian Kualitas Tinggi","Ramuan Hijau Tingkat Lanjut","Ruby Kualitas Terbaik","Ruby Kualitas Tinggi","Emerald Kualitas Terbaik","Emerald","Berlian Kualitas Terbaik","Safir Kualitas Terbaik","Gulungan Sihir Senjata Terkutuk","Safir","Batu Kekuatan Sihir","Ramuan Biru","Buku Sihir (Earthquake)","Berlian","Emerald Kualitas Tinggi","Ramuan Keberanian","Gulungan Sihir Zirah Terkutuk","Gulungan Kebangkitan (Resurrection)","Gulungan Sihir Senjata Diberkati","Ramuan Kebijaksanaan","Gulungan Transformasi Diberkati","Gulungan Sihir Zirah Diberkati","Kristal Roh (Erase Magic)"]},{"id":24,"name":"Baphomet","image":"monster_icons/24.png","formName":"","level":50,"regionNames":["Dungeon Pulau Berbicara Lantai 2"],"groups":["Dungeon"],"rewardNames":["Buku Sihir (Counter Magic)","Buku Sihir (Taming Monster)","Sabuk Jiwa Lusuh","Ramuan Hijau","Cincin Kendali Teleport","Zirah Pelat (Plate Armor) Terkutuk","Pedang Jepang (Katana)","Kalung Karisma","Pedang Jepang (Katana) Diberkati","Kunci Emas","Sabuk Tubuh","Safir Kualitas Tinggi","Sarung Tangan","Adena","Sabuk Jiwa","Buku Sihir (Earth Jail)","Berlian Kualitas Tinggi","Zirah Pelat (Plate Armor)","Ramuan Hijau Tingkat Lanjut","Buku Sihir (Eruption)","Jubah Tembus Pandang (Invisible)","Sabuk Tubuh Lusuh","Emerald Kualitas Terbaik","Emerald","Berlian Kualitas Terbaik","Safir Kualitas Terbaik","Buku Sihir (Weakness)","Batu Kekuatan Sihir","Bola Roh","Buku Sihir (Bless Weapon)","Buku Sihir (Earthquake)","Kristal Roh (Breath of Fire)","Gulungan Sihir Senjata","Berlian","Emerald Kualitas Tinggi","Ramuan Keberanian","Gulungan Kebangkitan (Resurrection)","Gulungan Sihir Senjata Diberkati","Buku Sihir (Summon Monster)","Gulungan Sihir Zirah","Ramuan Kebijaksanaan","Pedang Dua Tangan","Pedang Dua Tangan Terkutuk","Gulungan Sihir Zirah Diberkati"]},{"id":216,"name":"Veres","image":"monster_icons/216.png","formName":"","level":50,"regionNames":["Dungeon Kastil Windawood Lantai 2"],"groups":["Dungeon"],"rewardNames":["Buku Sihir (Sun Burst)","Sabuk Jiwa Lusuh","Ramuan Hijau","Cincin Kendali Teleport","Ruby","Kalung Kebijaksanaan","Pedang Jepang (Katana)","Zirah Pelat (Plate Armor) Diberkati","Pedang Jepang (Katana) Diberkati","Sabuk Tubuh","Adena","Buku Sihir (Greater Heal)","Kristal Roh (Eye of Storm)","Sabuk Jiwa","Berlian Kualitas Tinggi","Zirah Pelat (Plate Armor)","Ramuan Hijau Tingkat Lanjut","Ruby Kualitas Terbaik","Sabuk Tubuh Lusuh","Ruby Kualitas Tinggi","Berlian Kualitas Terbaik","Ramuan Biru","Batu Kekuatan Sihir","Bola Roh","Gulungan Sihir Senjata","Berlian","Ramuan Keberanian","Gulungan Sihir Senjata Diberkati","Pedang Dua Tangan Diberkati","Gulungan Sihir Zirah","Ramuan Kebijaksanaan","Pedang Dua Tangan","Buku Sihir (Disease)","Gulungan Sihir Zirah Diberkati"]},{"id":282,"name":"Sesepuh Hitam","image":"monster_icons/282.png","formName":"","level":50,"regionNames":["Lembah Naga","Benua Aden"],"groups":["Lapangan (Field)"],"rewardNames":["Buku Sihir (Taming Monster)","Gulungan Sihir Senjata Terkutuk","Buku Sihir (Call Lightning)","Kristal Roh (Nature's Touch)","Ramuan Biru","Batu Kekuatan Sihir","Bola Roh","Gulungan Pembuka Kutukan","Sandal Sesepuh Hitam","Buku Sihir (Enchant Mighty)","Kristal Roh (Blood to Soul)","Sarung Tangan Diberkati","Sabuk Pikiran","Gulungan Sihir Zirah Terkutuk","Gulungan Pembuka Kutukan Diberkati","Buku Sihir (Cone of Cold)","Jubah Sihir","Tongkat Kayu Maple","Jubah Sesepuh Hitam","Gulungan Teleport Diberkati"]},{"id":885,"name":"Bos Doppelganger","image":"monster_icons/885.png","formName":"","level":50,"regionNames":["Heine","Benua Aden"],"groups":["Lapangan (Field)"],"rewardNames":["Ramuan Hijau","Buku Sihir (Fireball)","Zirah Pelat Perunggu","Buku Sihir (Enchant Mighty)","Gulungan Transformasi","Adena","Tongkat Kayu Maple","Jubah Sihir","Tongkat Kekuatan","Tongkat Penyihir","Ramuan Hijau Tingkat Lanjut","Buku Skill (Reduction Armor)","Buku Sihir (Haste)","Ramuan Biru","Buku Skill (Shock Stun)","Gulungan Sihir Senjata","Ramuan Keberanian","Gulungan Kebangkitan (Resurrection)","Gulungan Sihir Senjata Diberkati","Pedang Dua Tangan Diberkati","Buku Sihir (Summon Monster)","Buku Skill (Solid Carriage)","Ramuan Kebijaksanaan","Gulungan Sihir Zirah","Buku Skill (Bounce Attack)","Gulungan Sihir Zirah Diberkati","Kristal Roh (Erase Magic)"]},{"id":10020,"name":"Spirit Murka","image":"monster_icons/10020.png","formName":"","level":50,"regionNames":["Musim Panas Tanah Berkat Murka"],"groups":["Lapangan (Field)"],"rewardNames":["Adena"]},{"id":16,"name":"Kurtz","image":"monster_icons/16.png","formName":"","level":51,"regionNames":["Pulau Berbicara"],"groups":["Lapangan (Field)"],"rewardNames":["Helm Kurtz","Zirah Pelat Perunggu","Zirah Kurtz","Kaos","Pedang Jepang (Katana)","Sarung Tangan","Gulungan Teleport","Sarung Tangan Kurtz","Adena","Jubah Pelindung","Perisai Besar","Buku Sihir (Berserkus)","Buku Skill (Reduction Armor)","Zirah Pelat Perunggu Diberkati","Pedang Panjang","Sepatu Bot Kurtz","Ramuan Biru","Buku Skill (Shock Stun)","Perisai Pantul (Reflect)","Gulungan Sihir Senjata","Ramuan Keberanian","Perisai Kesatria Perak","Gulungan Kebangkitan (Resurrection)","Sepatu Bot","Pedang Dua Tangan Diberkati","Buku Skill (Solid Carriage)","Gulungan Sihir Zirah","Buku Skill (Bounce Attack)"]},{"id":63,"name":"Death Knight","image":"monster_icons/63.png","formName":"","level":52,"regionNames":["Dungeon Gludio Lantai 5","Dungeon Gludio Lantai 6","Dungeon Gludio Lantai 7"],"groups":["Dungeon"],"rewardNames":["Buku Sihir (Tornado)","Buku Sihir (Sun Burst)","Cincin Kendali Transformasi","Sabuk Jiwa Lusuh","Zirah Death Knight","Buku Sihir (Resurrection)","Ramuan Hijau","Helm Death Knight","Sarung Tangan Death Knight","Pedang Jepang (Katana)","Zirah Pelat (Plate Armor) Diberkati","Pedang Jepang (Katana) Diberkati","Kalung Kekuatan","Sarung Tangan","Adena","Sabuk Jiwa","Berlian Kualitas Tinggi","Zirah Pelat (Plate Armor)","Ramuan Hijau Tingkat Lanjut","Jubah Tembus Pandang (Invisible)","Sepatu Bot Death Knight","Berlian Kualitas Terbaik","Batu Kekuatan Sihir","Gulungan Sihir Senjata","Sabuk Pikiran","Berlian","Buku Sihir (Create Zombie)","Ramuan Keberanian","Belati Sial Terkutuk","Gulungan Kebangkitan (Resurrection)","Gulungan Sihir Senjata Diberkati","Pedang Dua Tangan Diberkati","Buku Skill (Solid Carriage)","Gulungan Sihir Zirah","Ramuan Kebijaksanaan","Pedang Dua Tangan","Pedang Dua Tangan Terkutuk","Buku Sihir (Disease)","Gulungan Sihir Zirah Diberkati","Sabuk Pikiran Lusuh"]},{"id":710,"name":"Ratu Es","image":"monster_icons/710.png","formName":"","level":56,"regionNames":["Gua Kristal Es Lantai 3"],"groups":["Dungeon"],"rewardNames":["Buku Sihir (Fire Storm)","Buku Sihir (Counter Magic)","Sabuk Jiwa Lusuh","Ramuan Hijau","Kristal Roh (Nature's Touch)","Buku Sihir (Silence)","Cincin Kendali Teleport","Zirah Rantai (Chain Mail)","Kalung Kebijaksanaan","Adena","Kalung Pengetahuan","Gulungan Teleport Diberkati","Sabuk Jiwa","Berlian Kualitas Tinggi","Ramuan Hijau Tingkat Lanjut","Kristal Roh (Wind Walk)","Jubah Tembus Pandang (Invisible)","Sarung Tangan Kristal","Batu Kekuatan Sihir","Bola Roh","Ramuan Biru","Kristal Roh (Iron Skin)","Buku Sihir (Invisibility)","Gulungan Sihir Senjata","Sabuk Pikiran","Berlian","Kristal Roh (Nature's Blessing)","Gulungan Kebangkitan (Resurrection)","Buku Sihir (Mass Teleport)","Gulungan Sihir Senjata Diberkati","Buku Sihir (Summon Monster)","Gulungan Sihir Zirah","Ramuan Kebijaksanaan","Gulungan Sihir Zirah Diberkati","Sabuk Pikiran Lusuh","Buku Sihir (Darkness)"]},{"id":454,"name":"Ratu Semut Raksasa","image":"monster_icons/454.png","formName":"","level":57,"regionNames":["Dungeon Sarang Semut Lantai 2"],"groups":["Dungeon"],"rewardNames":["Buku Sihir (Taming Monster)","Ramuan Hijau","Zirah Rantai (Chain Mail)","Ruby","Pedang Jepang (Katana)","Zirah Pelat (Plate Armor) Diberkati","Pedang Jepang (Katana) Diberkati","Sabuk Tubuh","Adena","Buku Sihir (Greater Heal)","Buku Sihir (Earth Jail)","Zirah Pelat (Plate Armor)","Ramuan Hijau Tingkat Lanjut","Buku Sihir (Eruption)","Ruby Kualitas Terbaik","Sabuk Tubuh Lusuh","Ruby Kualitas Tinggi","Kalung Stamina","Emerald Kualitas Terbaik","Emerald","Batu Kekuatan Sihir","Bola Roh","Ramuan Biru","Gulungan Sihir Senjata","Emerald Kualitas Tinggi","Ramuan Keberanian","Buku Sihir (Heal All)","Helm Sihir: Kekuatan","Gulungan Sihir Senjata Diberkati","Gulungan Sihir Zirah","Ramuan Kebijaksanaan","Buku Sihir (Greater Haste)","Gulungan Sihir Zirah Diberkati","Kristal Roh (Erase Magic)","Buku Sihir (Darkness)"]},{"id":590,"name":"Phoenix","image":"monster_icons/590.png","formName":"","level":59,"regionNames":["Sarang Naga Api","Benua Aden"],"groups":["Lapangan (Field)"],"rewardNames":["Buku Sihir (Fire Storm)","Buku Sihir (Sun Burst)","Cincin Kendali Transformasi","Sabuk Jiwa Lusuh","Ramuan Hijau","Sabuk Pikiran Lusuh Diberkati","Zirah Rantai (Chain Mail)","Pedang Jepang (Katana)","Pedang Jepang (Katana) Diberkati","Kalung Kekuatan","Adena","Sabuk Jiwa","Zirah Pelat (Plate Armor)","Ramuan Hijau Tingkat Lanjut","Jubah Tembus Pandang (Invisible)","Ruby Kualitas Terbaik","Buku Sihir (Immune to Harm)","Buku Sihir (Fog of Sleeping)","Buku Sihir (Meteor Strike)","Ramuan Biru","Kristal Roh (Breath of Fire)","Gulungan Sihir Senjata","Sabuk Pikiran","Gulungan Kebangkitan (Resurrection) Diberkati","Ramuan Keberanian","Gulungan Kebangkitan (Resurrection)","Gulungan Sihir Senjata Diberkati","Gulungan Sihir Zirah","Ramuan Kebijaksanaan","Pedang Panjang Ssaulabi","Kalung Kecekatan","Gulungan Sihir Zirah Diberkati"]},{"id":332,"name":"Demon","image":"monster_icons/332.png","formName":"","level":61,"regionNames":["Menara Gading Lantai 8"],"groups":["Dungeon"],"rewardNames":["Buku Sihir (Fire Storm)","Cincin Kendali Transformasi","Sabuk Jiwa Lusuh","Ramuan Hijau","Zirah Rantai (Chain Mail)","Pedang Jepang (Katana)","Zirah Pelat (Plate Armor) Diberkati","Kalung Kekuatan","Belati Sial","Adena","Kristal Roh (Burning Weapon)","Kalung Pengetahuan","Sabuk Jiwa","Berlian Kualitas Tinggi","Zirah Pelat (Plate Armor)","Ramuan Hijau Tingkat Lanjut","Jubah Tembus Pandang (Invisible)","Ruby Kualitas Terbaik","Tongkat Kayu Pinus","Berlian Kualitas Terbaik","Buku Sihir (Immune to Harm)","Ramuan Biru","Gulungan Sihir Senjata","Sabuk Pikiran","Gulungan Kebangkitan (Resurrection) Diberkati","Power Glove","Ramuan Keberanian","Gulungan Kebangkitan (Resurrection)","Gulungan Sihir Senjata Diberkati","Pedang Dua Tangan Diberkati","Gulungan Sihir Zirah","Ramuan Kebijaksanaan","Pedang Panjang Ssaulabi","Panah Panjang Bulan","Gulungan Sihir Zirah Diberkati","Sabuk Pikiran Lusuh"]},{"id":327,"name":"Antharas","image":"monster_icons/327.png","formName":"","level":93,"regionNames":["Dungeon Lembah Naga Lantai 7"],"groups":["Dungeon"],"rewardNames":["Cincin Kendali Transformasi","Jubah Tembus Pandang (Invisible) Diberkati","Sabuk Jiwa Lusuh","Buku Sihir (Enchant Mighty)","Sabuk Tubuh","Sarung Tangan","Adena","Sisik Naga Tanah","Berlian Kualitas Tinggi","Zirah Pelat (Plate Armor)","Ramuan Hijau Tingkat Lanjut","Buku Sihir (Eruption)","Jubah Tembus Pandang (Invisible)","Sabuk Tubuh Lusuh","Kalung Stamina","Emerald Kualitas Terbaik","Tongkat Kayu Pinus","Berlian Kualitas Terbaik","Batu Kekuatan Sihir","Sabuk Pikiran","Emerald Kualitas Tinggi","Buku Sihir (Weapon Break)","Buku Sihir (Heal All)","Buku Sihir (Mass Teleport)","Gulungan Sihir Senjata Diberkati","Buku Sihir (Summon Monster)","Pedang Panjang Ssaulabi","Gulungan Sihir Zirah Diberkati","Buku Sihir (Taming Monster)","Buku Sihir (Slow)","Buku Sihir (Resurrection)","Ramuan Hijau","Cincin Kendali Teleport","Pedang Jepang (Katana)","Kalung Kebijaksanaan","Zirah Sisik Naga Tanah","Pedang Jepang (Katana) Diberkati","Tongkat Kayu Maple","Sabuk Jiwa","Pedang Panjang Ssaulabi Diberkati","Emerald","Gulungan Sihir Senjata Terkutuk","Ramuan Biru","Gulungan Sihir Senjata","Berlian","Ramuan Keberanian","Gulungan Sihir Zirah Terkutuk","Gulungan Sihir Zirah","Ramuan Kebijaksanaan","Sabuk Pikiran Lusuh"]},{"id":499,"name":"Papurion","image":"monster_icons/499.png","formName":"","level":93,"regionNames":["Sarang Papurion"],"groups":["Dungeon"],"rewardNames":["Cincin Kendali Transformasi","Buku Sihir (Blizzard)","Jubah Tembus Pandang (Invisible) Diberkati","Sabuk Jiwa Lusuh","Buku Sihir (Slow)","Buku Sihir (Resurrection)","Ramuan Hijau","Cincin Kendali Teleport","Buku Sihir (Remove Curse)","Pedang Jepang (Katana)","Zirah Pelat (Plate Armor) Diberkati","Kalung Karisma","Sisik Naga Air","Pedang Jepang (Katana) Diberkati","Sabuk Tubuh","Safir Kualitas Tinggi","Sarung Tangan","Adena","Kristal Roh (Resist Element)","Tongkat Kayu Maple","Sabuk Jiwa","Berlian Kualitas Tinggi","Ramuan Hijau Tingkat Lanjut","Pedang Panjang Ssaulabi Diberkati","Jubah Tembus Pandang (Invisible)","Sabuk Tubuh Lusuh","Tongkat Kayu Pinus","Gulungan Sihir Senjata Terkutuk","Berlian Kualitas Terbaik","Safir Kualitas Terbaik","Zirah Sisik Naga Air","Safir","Batu Kekuatan Sihir","Ramuan Biru","Sabuk Pikiran","Gulungan Sihir Senjata","Berlian","Ramuan Keberanian","Gulungan Sihir Zirah Terkutuk","Buku Sihir (Heal All)","Gulungan Sihir Senjata Diberkati","Buku Sihir (Summon Monster)","Gulungan Sihir Zirah","Ramuan Kebijaksanaan","Pedang Panjang Ssaulabi","Kalung Kecekatan","Sabuk Pikiran Lusuh","Gulungan Sihir Zirah Diberkati"]},{"id":621,"name":"Valakas","image":"monster_icons/621.png","formName":"","level":95,"regionNames":[],"groups":[],"rewardNames":["Cincin Kendali Transformasi","Jubah Tembus Pandang (Invisible) Diberkati","Sabuk Jiwa Lusuh","Buku Sihir (Fireball)","Buku Sihir (Enchant Mighty)","Sabuk Tubuh","Kalung Kekuatan","Sarung Tangan","Adena","Berlian Kualitas Tinggi","Zirah Pelat (Plate Armor)","Ramuan Hijau Tingkat Lanjut","Jubah Tembus Pandang (Invisible)","Ruby Kualitas Terbaik","Buku Sihir (Haste)","Sabuk Tubuh Lusuh","Tongkat Kayu Pinus","Berlian Kualitas Terbaik","Batu Kekuatan Sihir","Sisik Naga Api","Sabuk Pikiran","Gulungan Sihir Senjata Diberkati","Buku Sihir (Summon Monster)","Pedang Panjang Ssaulabi","Gulungan Sihir Zirah Diberkati","Buku Sihir (Taming Monster)","Buku Sihir (Slow)","Buku Sihir (Resurrection)","Ramuan Hijau","Cincin Kendali Teleport","Ruby","Pedang Jepang (Katana)","Pedang Jepang (Katana) Diberkati","Kalung Pengetahuan","Zirah Sisik Naga Api","Tongkat Kayu Maple","Sabuk Jiwa","Pedang Panjang Ssaulabi Diberkati","Ruby Kualitas Tinggi","Gulungan Sihir Senjata Terkutuk","Ramuan Biru","Buku Sihir (Invisibility)","Gulungan Sihir Senjata","Berlian","Ramuan Keberanian","Gulungan Sihir Zirah Terkutuk","Gulungan Sihir Zirah","Ramuan Kebijaksanaan","Sabuk Pikiran Lusuh"]}];
+</script>
+<script>
+(function(){
+'use strict';
+
+const GROUPS = ['all','Lapangan (Field)','Dungeon'];
+const REGION_TREE = [{"name":"Lapangan (Field)","child":[{"name":"Pulau Berbicara","child":[{"name":"Pulau Berbicara"}]},{"name":"Benua Aden","child":[{"name":"Benua Aden"},{"name":"Tebing Salju Oren"},{"name":"Medan Tempur Elmore"},{"name":"Benteng Perbatasan"},{"name":"Wilayah Kesatria Perak"},{"name":"Hutan Orc"},{"name":"Gludio"},{"name":"Windawood"},{"name":"Hutan Peri"},{"name":"Kent"},{"name":"Lembah Naga"},{"name":"Sarang Naga Api"},{"name":"Welden"},{"name":"Giran"},{"name":"Heine"},{"name":"Oren"}]},{"name":"Tanah Berkat Tercemar"},{"name":"Pulau Khayalan"},{"name":"Musim Panas Tanah Berkat Murka"}]},{"name":"Dungeon","child":[{"name":"Menara Gading","child":[{"name":"Menara Gading Lantai 4"},{"name":"Menara Gading Lantai 5"},{"name":"Menara Gading Lantai 6"},{"name":"Menara Gading Lantai 7"},{"name":"Menara Gading Lantai 8"}]},{"name":"Dungeon Gludio","child":[{"name":"Dungeon Gludio Lantai 1"},{"name":"Dungeon Gludio Lantai 2"},{"name":"Dungeon Gludio Lantai 3"},{"name":"Dungeon Gludio Lantai 4"},{"name":"Dungeon Gludio Lantai 5"},{"name":"Dungeon Gludio Lantai 6"},{"name":"Dungeon Gludio Lantai 7"}]},{"name":"Dungeon Pulau Berbicara","child":[{"name":"Dungeon Pulau Berbicara Lantai 1"},{"name":"Dungeon Pulau Berbicara Lantai 2"}]},{"name":"Dungeon Hutan Peri","child":[{"name":"Dungeon Hutan Peri Lantai 1"},{"name":"Dungeon Hutan Peri Lantai 2"},{"name":"Dungeon Hutan Peri Lantai 3"}]},{"name":"Dungeon Giran","child":[{"name":"Dungeon Giran Lantai 1"},{"name":"Dungeon Giran Lantai 2"},{"name":"Dungeon Giran Lantai 3"},{"name":"Dungeon Giran Lantai 4"}]},{"name":"Dungeon Gurun","child":[{"name":"Dungeon Gurun Lantai 1"},{"name":"Dungeon Gurun Lantai 2"},{"name":"Dungeon Gurun Lantai 3"},{"name":"Dungeon Gurun Lantai 4"}]},{"name":"Dungeon Lembah Naga","child":[{"name":"Dungeon Lembah Naga Lantai 1"},{"name":"Dungeon Lembah Naga Lantai 2"},{"name":"Dungeon Lembah Naga Lantai 3"},{"name":"Dungeon Lembah Naga Lantai 4"},{"name":"Dungeon Lembah Naga Lantai 5"},{"name":"Dungeon Lembah Naga Lantai 6"},{"name":"Dungeon Lembah Naga Lantai 7"}]},{"name":"Dungeon Sarang Semut","child":[{"name":"Dungeon Sarang Semut Lantai 1"},{"name":"Dungeon Sarang Semut Lantai 2"}]},{"name":"Dungeon Kastil Windawood","child":[{"name":"Dungeon Kastil Windawood Lantai 1"},{"name":"Dungeon Kastil Windawood Lantai 2"}]},{"name":"Kerajaan Eva","child":[{"name":"Saluran Bawah Tanah Lantai 1"},{"name":"Saluran Bawah Tanah Lantai 2"},{"name":"Saluran Bawah Tanah Lantai 3"},{"name":"Kerajaan Eva"},{"name":"Sarang Papurion"}]},{"name":"Gua Kristal Es","child":[{"name":"Gua Kristal Es Lantai 1"},{"name":"Gua Kristal Es Lantai 2"},{"name":"Gua Kristal Es Lantai 3"}]}]}];
+
+const els = {
+  q: document.getElementById('q'),
+  clearBtn: document.getElementById('clearBtn'),
+  ddGroup: document.getElementById('ddGroup'),
+  ddGroupVal: document.getElementById('ddGroupVal'),
+  ddGroupPanel: document.getElementById('ddGroupPanel'),
+  ddRegion: document.getElementById('ddRegion'),
+  ddRegionVal: document.getElementById('ddRegionVal'),
+  ddRegionPanel: document.getElementById('ddRegionPanel'),
+  viewBtn: document.getElementById('viewBtn'),
+  stats: document.getElementById('stats'),
+  count: document.getElementById('count'),
+  favBtn: document.getElementById('favBtn'),
+  grid: document.getElementById('grid'),
+  empty: document.getElementById('empty'),
+  modal: document.getElementById('modal'),
+  lightbox: document.getElementById('lightbox'),
+  lightboxImg: document.getElementById('lightboxImg'),
+  lbClose: document.getElementById('lbClose'),
+  sheetIcon: document.getElementById('sheetIcon'),
+  sheetTitle: document.getElementById('sheetTitle'),
+  sheetTags: document.getElementById('sheetTags'),
+  sheetDesc: document.getElementById('sheetDesc'),
+  statLvl: document.getElementById('statLvl'),
+  statRegionCount: document.getElementById('statRegionCount'),
+  statDropCount: document.getElementById('statDropCount'),
+  regionPills: document.getElementById('regionPills'),
+  dropSection: document.getElementById('dropSection'),
+  dropPills: document.getElementById('dropPills'),
+  closeModal: document.getElementById('closeModal'),
+  favDetail: document.getElementById('favDetail'),
+  copyDetail: document.getElementById('copyDetail'),
+  toast: document.getElementById('toast'),
+};
+
+let savedView = 'grid';
+try{ savedView = localStorage.getItem('lc_monster_view') || 'grid'; }catch(e){}
+
+const state = { items: [], group: 'all', region: 'all', view: savedView, onlyFav: false, query: '', selected: null };
+
+function esc(s){ return (s??'').toString().replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+function safe(v){ return (v && v.toString().trim()) ? v : ''; }
+function haystack(it){ return [it.name, it.formName, 'level '+it.level, ...(it.regionNames||[]), ...(it.rewardNames||[])].join(' ').toLowerCase(); }
+
+function getFavs(){ try{ return JSON.parse(localStorage.getItem('lc_monster_favs')||'[]'); }catch(e){ return []; } }
+function setFavs(arr){ try{ localStorage.setItem('lc_monster_favs', JSON.stringify(arr)); }catch(e){} }
+function isFav(id){ return getFavs().includes(id); }
+function toggleFav(id){ const f = getFavs(); const i = f.indexOf(id); if(i>=0) f.splice(i,1); else f.push(id); setFavs(f); }
+
+function toast(msg){ els.toast.textContent = msg; els.toast.classList.add('show'); clearTimeout(window._toastT); window._toastT = setTimeout(()=>els.toast.classList.remove('show'), 1600); }
+function copyText(t){ if(navigator.clipboard) navigator.clipboard.writeText(t).catch(()=>{}); else { const ta=document.createElement('textarea'); ta.value=t; document.body.appendChild(ta); ta.select(); try{document.execCommand('copy');}catch(e){} ta.remove(); } }
+
+function formatMonster(it){
+  const lines = [`${it.name} [Lv ${it.level}]`];
+  if(it.formName) lines.push(`Tipe: ${it.formName}`);
+  if(it.regionNames && it.regionNames.length){ lines.push('', 'Muncul di:'); it.regionNames.forEach(r=>lines.push(`- ${r}`)); }
+  if(it.rewardNames && it.rewardNames.length){ lines.push('', 'Drop Item:'); it.rewardNames.forEach(r=>lines.push(`- ${r}`)); }
+  return lines.join('\n');
+}
+
+function loadMonsters(){
+  state.items = (Array.isArray(EMBEDDED_MONSTERS) ? EMBEDDED_MONSTERS : [])
+    .map(it=>({...it, _hay:''}))
+    .map(it=>({...it,_hay:haystack(it)}))
+    .sort((a,b)=> a.level - b.level || a.name.localeCompare(b.name));
+}
+
+function closeAllDropdowns(except){
+  [els.ddGroup, els.ddRegion].forEach(d=>{ if(d!==except) d.classList.remove('open'); });
+}
+
+function buildDropdown(dd, panel, valEl, options, labelAll, current, onPick){
+  panel.innerHTML = options.map(o=>`<div class="ddOption${o===current?' active':''}" data-v="${esc(o)}">${o==='all'?esc(labelAll):esc(o)}</div>`).join('');
+  panel.querySelectorAll('.ddOption').forEach(opt=>{
+    opt.onclick = (e)=>{ e.stopPropagation(); onPick(opt.dataset.v); dd.classList.remove('open'); };
+  });
+  valEl.textContent = current==='all' ? labelAll : current;
+  dd.classList.toggle('filled', current!=='all');
+}
+
+function regionsForGroup(){
+  return [...new Set(state.items
+    .filter(it=> state.group==='all' || (it.groups||[]).includes(state.group))
+    .flatMap(it=>it.regionNames||[]))];
+}
+
+function buildRegionTree(availableRegions){
+  // Walk REGION_TREE, keep only leaves present in availableRegions, drop empty categories
+  const avail = new Set(availableRegions);
+  function walk(node){
+    if(!node.child){
+      return avail.has(node.name) ? { name:node.name, leaf:true } : null;
+    }
+    const kids = node.child.map(walk).filter(Boolean);
+    if(!kids.length) return null;
+    return { name:node.name, leaf:false, child:kids };
+  }
+  return REGION_TREE.map(walk).filter(Boolean);
+}
+
+function renderRegionPanel(){
+  const availableRegions = regionsForGroup();
+  const tree = buildRegionTree(availableRegions);
+  const rows = [];
+  function emit(node, depth){
+    if(node.leaf){
+      rows.push(`<div class="ddOption${depth>0?' indent':''}${node.name===state.region?' active':''}" data-v="${esc(node.name)}">${esc(node.name)}</div>`);
+    } else {
+      rows.push(`<div class="ddCategory">${esc(node.name)}</div>`);
+      node.child.forEach(c=>emit(c, depth+1));
+    }
+  }
+  tree.forEach(top=>emit(top, 0));
+  els.ddRegionPanel.innerHTML = `<div class="ddOption${state.region==='all'?' active':''}" data-v="all">Semua</div>` + rows.join('');
+  els.ddRegionPanel.querySelectorAll('.ddOption').forEach(opt=>{
+    opt.onclick = (e)=>{ e.stopPropagation(); state.region = opt.dataset.v; els.ddRegion.classList.remove('open'); renderDropdowns(); render(); };
+  });
+  els.ddRegionVal.textContent = state.region==='all' ? 'Semua' : state.region;
+  els.ddRegion.classList.toggle('filled', state.region!=='all');
+}
+
+function renderDropdowns(){
+  buildDropdown(els.ddGroup, els.ddGroupPanel, els.ddGroupVal, GROUPS, 'Semua', state.group, (v)=>{
+    state.group=v;
+    const regions = regionsForGroup();
+    if(state.region!=='all' && !regions.includes(state.region)) state.region='all';
+    renderDropdowns(); render();
+  });
+  renderRegionPanel();
+}
+
+function initDropdownToggle(){
+  els.ddGroup.querySelector('.ddBtn').onclick = (e)=>{ e.stopPropagation(); const open = els.ddGroup.classList.contains('open'); closeAllDropdowns(); els.ddGroup.classList.toggle('open', !open); };
+  els.ddRegion.querySelector('.ddBtn').onclick = (e)=>{ e.stopPropagation(); const open = els.ddRegion.classList.contains('open'); closeAllDropdowns(); els.ddRegion.classList.toggle('open', !open); };
+  document.addEventListener('click', ()=>closeAllDropdowns());
+}
+
+function filtered(){
+  return state.items.filter(it=>{
+    if(state.group !== 'all' && !(it.groups||[]).includes(state.group)) return false;
+    if(state.region !== 'all' && !(it.regionNames||[]).includes(state.region)) return false;
+    if(state.onlyFav && !isFav(it.id)) return false;
+    if(state.query && !it._hay.includes(state.query)) return false;
+    return true;
+  });
+}
+
+function renderStats(list){
+  const total = state.items.length;
+  const visible = list.length;
+  const regionCount = [...new Set(state.items.flatMap(it=>it.regionNames||[]))].length;
+  const undeadCount = state.items.filter(it=>it.formName==='Undead').length;
+  els.stats.innerHTML = `
+    <div class="statBox"><div class="lbl">Total</div><div class="val">${total}</div></div>
+    <div class="statBox"><div class="lbl">Tampil</div><div class="val">${visible}</div></div>
+    <div class="statBox region"><div class="lbl">Region</div><div class="val">${regionCount}</div></div>
+    <div class="statBox"><div class="lbl">Undead</div><div class="val">${undeadCount}</div></div>`;
+}
+
+function regionSummary(it){ return (it.regionNames && it.regionNames.length) ? it.regionNames.join(', ') : 'Region tidak diketahui'; }
+
+function card(it){
+  const img = safe(it.image);
+  const fav = isFav(it.id);
+  const isUndead = it.formName === 'Undead';
+  const regionCount = (it.regionNames||[]).length;
+  const dropCount = (it.rewardNames||[]).length;
+  return `<article class="card" data-open="${it.id}">
+    <button class="favstar${fav?' active':''}" data-fav="${it.id}" title="Toggle favorit">${fav?'★':'☆'}</button>
+    <div class="cardTop">
+      <div class="icon">${img?`<img src="${esc(img)}" alt="${esc(it.name)}" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'fallbackIcon',textContent:'LC'}))">`:`<div class="fallbackIcon">LC</div>`}</div>
+      <div class="cardInfo">
+        <h3 class="cardName">${esc(it.name)}</h3>
+        <div class="cardTags">
+          <span class="catBadge" style="color:var(--rune); border-color:var(--rune-dim); background:rgba(124,158,255,0.1);">Lv ${it.level}</span>
+          ${isUndead?`<span class="catBadge" style="color:var(--ember); border-color:var(--ember-dim); background:rgba(232,101,79,0.12);">Undead</span>`:''}
+        </div>
+      </div>
+    </div>
+    <p class="cardDesc">${esc(regionSummary(it))}</p>
+    <div class="cardMeta">
+      <div class="metaItem region">📍 <span class="v">${regionCount}</span></div>
+      <div class="metaItem drop">🎁 <span class="v">${dropCount}</span></div>
+    </div>
+  </article>`;
+}
+
+function render(keepScroll){
+  const scrollY = keepScroll ? window.scrollY : null;
+  const list = filtered();
+  renderStats(list);
+  els.count.textContent = `${list.length} monster ditemukan`;
+  els.empty.classList.toggle('show', list.length===0);
+  els.grid.className = 'grid' + (state.view==='list' ? ' list' : '');
+  els.grid.innerHTML = list.map(card).join('');
+  els.grid.querySelectorAll('[data-open]').forEach(elc=>{
+    elc.addEventListener('click', (e)=>{ if(e.target.closest('[data-fav]')) return; openModal(+elc.dataset.open); });
+  });
+  els.grid.querySelectorAll('[data-fav]').forEach(b=>b.onclick=(e)=>{ e.stopPropagation(); toggleFav(+b.dataset.fav); render(true); });
+  if(scrollY !== null) window.scrollTo(0, scrollY);
+}
+
+function updateFavDetailBtn(){
+  if(!state.selected) return;
+  const fav = isFav(state.selected.id);
+  els.favDetail.textContent = fav ? '★ Favorit' : '☆ Favorit';
+  els.favDetail.classList.toggle('active', fav);
+}
+
+function openLightbox(src, alt){
+  if(!src) return;
+  els.lightboxImg.src = src;
+  els.lightboxImg.alt = alt || '';
+  els.lightbox.classList.add('show');
+}
+function closeLightbox(){
+  els.lightbox.classList.remove('show');
+  els.lightboxImg.src = '';
+}
+
+function openModal(id){
+  const it = state.items.find(x=>x.id===id);
+  if(!it) return;
+  state.selected = it;
+  const img = safe(it.image);
+  const isUndead = it.formName === 'Undead';
+  els.sheetIcon.innerHTML = img ? `<img src="${esc(img)}" alt="${esc(it.name)}" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'fallbackIcon',textContent:'LC'}))">` : `<div class="fallbackIcon">LC</div>`;
+  els.sheetIcon.classList.toggle('clickable', !!img);
+  els.sheetIcon.title = img ? 'Lihat gambar besar' : '';
+  els.sheetIcon.onclick = img ? ()=>openLightbox(img, it.name) : null;
+  els.sheetTitle.textContent = it.name;
+  els.sheetTags.innerHTML = `<span class="catBadge" style="color:var(--rune); border-color:var(--rune-dim); background:rgba(124,158,255,0.1);">Lv ${it.level}</span>` + (isUndead?`<span class="catBadge" style="color:var(--ember); border-color:var(--ember-dim); background:rgba(232,101,79,0.12);">Undead</span>`:'');
+  const regionCount = (it.regionNames||[]).length;
+  const dropCount = (it.rewardNames||[]).length;
+  els.sheetDesc.textContent = `Monster level ${it.level}${isUndead?' bertipe Undead':''}, ditemukan di ${regionCount || 0} wilayah${dropCount?`, memiliki ${dropCount} jenis drop item.`:'.'}`;
+  els.statLvl.textContent = it.level;
+  els.statRegionCount.textContent = regionCount;
+  els.statDropCount.textContent = dropCount;
+  els.regionPills.innerHTML = regionCount ? it.regionNames.map(r=>`<span class="classPill">${esc(r)}</span>`).join('') : `<span class="classPill">Tidak diketahui</span>`;
+  if(dropCount){
+    els.dropSection.style.display = '';
+    els.dropPills.innerHTML = it.rewardNames.map(r=>`<span class="classPill drop">${esc(r)}</span>`).join('');
+  } else {
+    els.dropSection.style.display = 'none';
+  }
+  updateFavDetailBtn();
+  els.modal.classList.add('show');
+  els.modal.setAttribute('aria-hidden','false');
+}
+
+function closeModal(){
+  els.modal.classList.remove('show');
+  els.modal.setAttribute('aria-hidden','true');
+}
+
+function initUI(){
+  renderDropdowns();
+  initDropdownToggle();
+  els.viewBtn.textContent = state.view === 'list' ? '☰' : '▦';
+  els.viewBtn.classList.toggle('active', state.view==='list');
+  els.q.addEventListener('input', ()=>{
+    state.query = els.q.value.trim().toLowerCase();
+    els.clearBtn.classList.toggle('show', state.query.length>0);
+    render();
+  });
+  els.clearBtn.onclick = ()=>{ els.q.value=''; state.query=''; els.clearBtn.classList.remove('show'); render(); els.q.focus(); };
+  els.viewBtn.onclick = ()=>{
+    state.view = state.view === 'grid' ? 'list' : 'grid';
+    try{ localStorage.setItem('lc_monster_view', state.view); }catch(e){}
+    els.viewBtn.textContent = state.view === 'list' ? '☰' : '▦';
+    els.viewBtn.classList.toggle('active', state.view==='list');
+    render();
+  };
+  els.favBtn.onclick = ()=>{ state.onlyFav = !state.onlyFav; els.favBtn.classList.toggle('active', state.onlyFav); els.favBtn.textContent = state.onlyFav ? '★ Favorit' : '☆ Favorit'; render(); };
+  els.closeModal.onclick = closeModal;
+  els.modal.addEventListener('click', (e)=>{ if(e.target === els.modal) closeModal(); });
+  els.lbClose.onclick = closeLightbox;
+  els.lightbox.addEventListener('click', (e)=>{ if(e.target === els.lightbox || e.target === els.lightboxImg) closeLightbox(); });
+  els.favDetail.onclick = ()=>{ if(!state.selected) return; toggleFav(state.selected.id); updateFavDetailBtn(); render(true); };
+  els.copyDetail.onclick = ()=>{ if(!state.selected) return; copyText(formatMonster(state.selected)); toast('Tersalin'); };
+  document.addEventListener('keydown', (e)=>{ if(e.key==='Escape'){ if(els.lightbox.classList.contains('show')) closeLightbox(); else closeModal(); } });
+}
+
+loadMonsters();
+initUI();
+render();
+
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js', { updateViaCache: 'none' }).then(reg => {
+      reg.update().catch(() => {});
+
+      if (reg.waiting) {
+        reg.waiting.postMessage({ type: 'SKIP_WAITING' });
+      }
+
+      reg.addEventListener('updatefound', () => {
+        const worker = reg.installing;
+        if (!worker) return;
+        worker.addEventListener('statechange', () => {
+          if (worker.state === 'installed' && navigator.serviceWorker.controller) {
+            worker.postMessage({ type: 'SKIP_WAITING' });
+          }
+        });
+      });
+    }).catch(() => {});
+  });
+
+  let refreshing = false;
+  navigator.serviceWorker.addEventListener('controllerchange', () => {
+    if (refreshing) return;
+    refreshing = true;
+    location.reload();
+  });
+}
+
+})();
+</script>
+</body>
+</html>

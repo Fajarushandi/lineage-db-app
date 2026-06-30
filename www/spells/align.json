@@ -1,0 +1,14 @@
+[
+  {
+    "id": "1",
+    "name": "Lawful"
+  },
+  {
+    "id": "0",
+    "name": "Netral"
+  },
+  {
+    "id": "-1",
+    "name": "Chaotic"
+  }
+]

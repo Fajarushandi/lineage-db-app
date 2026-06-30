@@ -1,0 +1,5268 @@
+[
+  {
+    "id": 1,
+    "name": "Atam",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/8.png",
+    "options": [
+      "Akurasi Jarak Dekat +2"
+    ],
+    "description": "",
+    "categoryName": "Senjata Tumpul",
+    "parent": "Senjata"
+  },
+  {
+    "id": 2,
+    "name": "Pedang Jepang (Katana)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/58.png",
+    "options": [
+      "Akurasi Jarak Dekat +1"
+    ],
+    "description": "",
+    "categoryName": "Pedang Satu Tangan",
+    "parent": "Senjata"
+  },
+  {
+    "id": 3,
+    "name": "Pedang Panjang",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/2.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Pedang Satu Tangan",
+    "parent": "Senjata"
+  },
+  {
+    "id": 4,
+    "name": "Kapak",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/1.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Senjata Tumpul",
+    "parent": "Senjata"
+  },
+  {
+    "id": 5,
+    "name": "Lampu Minyak",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/3.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 6,
+    "name": "Pedang Dua Tangan",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/4.png",
+    "options": [
+      "Dua Tangan"
+    ],
+    "description": "",
+    "categoryName": "Pedang Dua Tangan",
+    "parent": "Senjata"
+  },
+  {
+    "id": 7,
+    "name": "Adena",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/5.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 8,
+    "name": "Gada Besi (Mace)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/67.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Senjata Tumpul",
+    "parent": "Senjata"
+  },
+  {
+    "id": 9,
+    "name": "Daging Mata Monster",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/124.png",
+    "options": [],
+    "description": "Daging lembut di dalam cangkang tebal mata monster. Biasanya digunakan sebagai bahan sihir, dan jika dimakan dapat membuat kelima indra menjadi lebih tajam.",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 10,
+    "name": "Daging",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/124.png",
+    "options": [],
+    "description": "Jika dimakan akan membuat kenyang. Jika lapar, HP tidak akan pulih.",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 11,
+    "name": "Panah",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/20.png",
+    "options": [
+      "Dua Tangan"
+    ],
+    "description": "",
+    "categoryName": "Panah",
+    "parent": "Senjata"
+  },
+  {
+    "id": 12,
+    "name": "Tombak",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/101.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Tombak",
+    "parent": "Senjata"
+  },
+  {
+    "id": 13,
+    "name": "Kapak Tempur",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/9.png",
+    "options": [
+      "Dua Tangan"
+    ],
+    "description": "",
+    "categoryName": "Senjata Tumpul",
+    "parent": "Senjata"
+  },
+  {
+    "id": 14,
+    "name": "Ramuan Merah",
+    "name2": "Pemulih HP",
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/80.png",
+    "options": [
+      "Jumlah Pulih 6 ~ 27"
+    ],
+    "description": "Jika diminum, HP akan sedikit pulih.",
+    "categoryName": "Ramuan",
+    "parent": "Ramuan"
+  },
+  {
+    "id": 15,
+    "name": "Ramuan Merah Tua (Vermilion)",
+    "name2": "Pemulih HP Kualitas Tinggi",
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/78.png",
+    "options": [
+      "Jumlah Pulih 26 ~ 68"
+    ],
+    "description": "Jika diminum, HP akan pulih lebih banyak.",
+    "categoryName": "Ramuan",
+    "parent": "Ramuan"
+  },
+  {
+    "id": 16,
+    "name": "Ramuan Keruh",
+    "name2": "Ramuan Buta",
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/82.png",
+    "options": [],
+    "description": "Jika diminum, mata akan buta untuk sementara waktu. Namun ini juga melindungi peminumnya dari berbagai bahaya yang muncul akibat menatap sesuatu.",
+    "categoryName": "Ramuan",
+    "parent": "Ramuan"
+  },
+  {
+    "id": 17,
+    "name": "Ramuan Hijau",
+    "name2": "Ramuan Peningkat Kecepatan",
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/77.png",
+    "options": [
+      "Durasi +300 detik"
+    ],
+    "description": "Jika diminum, tubuh akan bergerak lebih cepat untuk sementara waktu.",
+    "categoryName": "Ramuan",
+    "parent": "Ramuan"
+  },
+  {
+    "id": 19,
+    "name": "Tongkat Kayu Pinus",
+    "name2": "Tongkat Pemanggil Monster",
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/117.png",
+    "options": [],
+    "description": "Jika digunakan, akan memunculkan monster secara acak. Beberapa monster tidak akan muncul meskipun tongkat ini digunakan.",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 20,
+    "name": "Tongkat Kayu Maple",
+    "name2": "Tongkat Transformasi",
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/116.png",
+    "options": [
+      "Durasi +7200 detik"
+    ],
+    "description": "Jika digunakan, akan berubah menjadi monster secara acak. Jika digunakan bersama 'Cincin Kendali Transformasi', karakter dapat diubah menjadi monster yang diinginkan.",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 21,
+    "name": "Tongkat Kayu Eboni",
+    "name2": "Tongkat Pemanggil Petir",
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/118.png",
+    "options": [],
+    "description": "Jika digunakan, dapat memanggil petir untuk menyerang musuh.",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 22,
+    "name": "Gulungan Konfirmasi",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/475.png",
+    "options": [],
+    "description": "Setelah digunakan, tekan sebuah item untuk mengetahui kemampuan item tersebut.",
+    "categoryName": "Gulungan",
+    "parent": "Gulungan"
+  },
+  {
+    "id": 23,
+    "name": "Gulungan Teleport",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/473.png",
+    "options": [],
+    "description": "Jika digunakan, akan teleport ke lokasi acak. Jika digunakan bersama 'Cincin Kendali Teleport', dapat teleport ke tempat yang diinginkan. Untuk gulungan yang telah diberkati, teleport ke lokasi yang sudah tersimpan tetap bisa dilakukan tanpa 'Cincin Kendali Teleport'.",
+    "categoryName": "Gulungan",
+    "parent": "Gulungan"
+  },
+  {
+    "id": 24,
+    "name": "Gulungan Pembuka Kutukan",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/470.png",
+    "options": [],
+    "description": "Jika digunakan, akan menghilangkan kutukan pada item yang dipakai.",
+    "categoryName": "Gulungan",
+    "parent": "Gulungan"
+  },
+  {
+    "id": 25,
+    "name": "Gulungan Sihir Senjata",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/468.png",
+    "options": [],
+    "description": "Memberikan sihir pada senjata agar menjadi lebih kuat. Namun jika terkutuk, dapat melemahkan kekuatan serang.",
+    "categoryName": "Gulungan",
+    "parent": "Gulungan"
+  },
+  {
+    "id": 26,
+    "name": "Gulungan Sihir Zirah",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/467.png",
+    "options": [],
+    "description": "Memberikan sihir pada zirah agar memperoleh pertahanan yang lebih tinggi. Namun jika terkutuk, dapat melemahkan pertahanan.",
+    "categoryName": "Gulungan",
+    "parent": "Gulungan"
+  },
+  {
+    "id": 28,
+    "name": "Gulungan Kebangkitan (Resurrection)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/471.png",
+    "options": [],
+    "description": "Membangkitkan kembali orang, peliharaan, atau monster yang telah mati.",
+    "categoryName": "Gulungan",
+    "parent": "Gulungan"
+  },
+  {
+    "id": 29,
+    "name": "Anak Panah",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/7.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Panah",
+    "parent": "Senjata"
+  },
+  {
+    "id": 31,
+    "name": "Bardiche",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/11.png",
+    "options": [
+      "Dua Tangan"
+    ],
+    "description": "",
+    "categoryName": "Tombak",
+    "parent": "Senjata"
+  },
+  {
+    "id": 32,
+    "name": "Bill Guisarme",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/13.png",
+    "options": [
+      "Dua Tangan"
+    ],
+    "description": "",
+    "categoryName": "Tombak",
+    "parent": "Senjata"
+  },
+  {
+    "id": 33,
+    "name": "Panah Bangsa Peri",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/18.png",
+    "options": [
+      "Dua Tangan",
+      "Damage Jarak Jauh +1"
+    ],
+    "description": "",
+    "categoryName": "Panah",
+    "parent": "Senjata"
+  },
+  {
+    "id": 34,
+    "name": "Panah Bangsa Orc",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/19.png",
+    "options": [
+      "Dua Tangan",
+      "Damage Jarak Jauh -1"
+    ],
+    "description": "",
+    "categoryName": "Panah",
+    "parent": "Senjata"
+  },
+  {
+    "id": 35,
+    "name": "Pedang Lebar (Broadsword)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/21.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Pedang Satu Tangan",
+    "parent": "Senjata"
+  },
+  {
+    "id": 36,
+    "name": "Lilin",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/24.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 37,
+    "name": "Wortel",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/25.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 38,
+    "name": "Pemukul (Club)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/31.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Senjata Tumpul",
+    "parent": "Senjata"
+  },
+  {
+    "id": 39,
+    "name": "Belati Bangsa Peri",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/33.png",
+    "options": [
+      "Akurasi Jarak Dekat +2"
+    ],
+    "description": "",
+    "categoryName": "Pedang Satu Tangan",
+    "parent": "Senjata"
+  },
+  {
+    "id": 40,
+    "name": "Belati Bangsa Orc",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/34.png",
+    "options": [
+      "Akurasi Jarak Dekat +2"
+    ],
+    "description": "",
+    "categoryName": "Pedang Satu Tangan",
+    "parent": "Senjata"
+  },
+  {
+    "id": 41,
+    "name": "Belati",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/35.png",
+    "options": [
+      "Akurasi Jarak Dekat +2"
+    ],
+    "description": "",
+    "categoryName": "Pedang Satu Tangan",
+    "parent": "Senjata"
+  },
+  {
+    "id": 42,
+    "name": "Bec de Corbin",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/38.png",
+    "options": [
+      "Dua Tangan",
+      "Efek Penembusan (Penetrasi)"
+    ],
+    "description": "",
+    "categoryName": "Tombak",
+    "parent": "Senjata"
+  },
+  {
+    "id": 43,
+    "name": "Telur",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/40.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 44,
+    "name": "Pochard",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/41.png",
+    "options": [
+      "Dua Tangan"
+    ],
+    "description": "",
+    "categoryName": "Tombak",
+    "parent": "Senjata"
+  },
+  {
+    "id": 45,
+    "name": "Cambuk Tinju (Flail)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/42.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Senjata Tumpul",
+    "parent": "Senjata"
+  },
+  {
+    "id": 46,
+    "name": "Tombak Lebar",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/45.png",
+    "options": [
+      "Dua Tangan"
+    ],
+    "description": "",
+    "categoryName": "Tombak",
+    "parent": "Senjata"
+  },
+  {
+    "id": 47,
+    "name": "Guisarme",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/48.png",
+    "options": [
+      "Dua Tangan"
+    ],
+    "description": "",
+    "categoryName": "Tombak",
+    "parent": "Senjata"
+  },
+  {
+    "id": 48,
+    "name": "Halberd",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/50.png",
+    "options": [
+      "Dua Tangan"
+    ],
+    "description": "",
+    "categoryName": "Tombak",
+    "parent": "Senjata"
+  },
+  {
+    "id": 52,
+    "name": "Kunci Emas",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/59.png",
+    "options": [],
+    "description": "Kunci untuk membuka tempat tersegel di lantai 2 dungeon Pulau Berbicara.",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 53,
+    "name": "Kunci Abu-Abu Perak",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/59.png",
+    "options": [],
+    "description": "Kunci untuk membuka tempat tersegel di lantai 2 dungeon Pulau Berbicara.",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 54,
+    "name": "Tombak Kavaleri (Lance)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/60.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Tombak",
+    "parent": "Senjata"
+  },
+  {
+    "id": 55,
+    "name": "Lemon",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/63.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 56,
+    "name": "Lucerne Hammer",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/66.png",
+    "options": [
+      "Dua Tangan"
+    ],
+    "description": "",
+    "categoryName": "Tombak",
+    "parent": "Senjata"
+  },
+  {
+    "id": 57,
+    "name": "Warhammer",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/119.png",
+    "options": [
+      "Dua Tangan"
+    ],
+    "description": "",
+    "categoryName": "Senjata Tumpul",
+    "parent": "Senjata"
+  },
+  {
+    "id": 58,
+    "name": "Morning Star",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/68.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Senjata Tumpul",
+    "parent": "Senjata"
+  },
+  {
+    "id": 59,
+    "name": "Jeruk",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/71.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 60,
+    "name": "Pancake",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/125.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 61,
+    "name": "Partisan (Tombak)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/72.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Tombak",
+    "parent": "Senjata"
+  },
+  {
+    "id": 64,
+    "name": "Cincin Kendali Teleport",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/87.png",
+    "options": [],
+    "description": "Jika digunakan bersama Gulungan Teleport, dapat teleport ke lokasi yang pernah dikunjungi dan 'diingat' sebelumnya.",
+    "categoryName": "Cincin",
+    "parent": "Aksesori"
+  },
+  {
+    "id": 65,
+    "name": "Cincin Kendali Transformasi",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/87.png",
+    "options": [],
+    "description": "Saat dipakai, dapat mencegah orang lain mengubah diri sendiri menjadi monster acak.",
+    "categoryName": "Cincin",
+    "parent": "Aksesori"
+  },
+  {
+    "id": 67,
+    "name": "Guandao (Pedang Bulan Sabit)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/90.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Pedang Satu Tangan",
+    "parent": "Senjata"
+  },
+  {
+    "id": 68,
+    "name": "Anak Panah Perak",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/96.png",
+    "options": [],
+    "description": "Anak panah yang lebih kuat dari anak panah biasa. Dapat memberikan damage lebih besar pada beberapa monster.",
+    "categoryName": "Panah",
+    "parent": "Senjata"
+  },
+  {
+    "id": 69,
+    "name": "Kapak Bangsa Kurcaci",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/172.png",
+    "options": [
+      "Dua Tangan"
+    ],
+    "description": "",
+    "categoryName": "Senjata Tumpul",
+    "parent": "Senjata"
+  },
+  {
+    "id": 70,
+    "name": "Tombak Bangsa Peri",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/99.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Tombak",
+    "parent": "Senjata"
+  },
+  {
+    "id": 71,
+    "name": "Tombak Bangsa Orc",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/100.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Tombak",
+    "parent": "Senjata"
+  },
+  {
+    "id": 72,
+    "name": "Pedang Bangsa Kurcaci",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/103.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Pedang Satu Tangan",
+    "parent": "Senjata"
+  },
+  {
+    "id": 73,
+    "name": "Pedang Bangsa Peri",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/325.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Pedang Satu Tangan",
+    "parent": "Senjata"
+  },
+  {
+    "id": 74,
+    "name": "Pedang Bangsa Orc",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/105.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Pedang Satu Tangan",
+    "parent": "Senjata"
+  },
+  {
+    "id": 75,
+    "name": "Pedang Pendek",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/106.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Pedang Satu Tangan",
+    "parent": "Senjata"
+  },
+  {
+    "id": 77,
+    "name": "Trisula (Trident)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/111.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Tombak",
+    "parent": "Senjata"
+  },
+  {
+    "id": 78,
+    "name": "Pedang Panjang Ssaulabi",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/112.png",
+    "options": [
+      "Akurasi Jarak Dekat +2"
+    ],
+    "description": "",
+    "categoryName": "Pedang Satu Tangan",
+    "parent": "Senjata"
+  },
+  {
+    "id": 81,
+    "name": "Panah Panjang (Longbow)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/123.png",
+    "options": [
+      "Dua Tangan",
+      "Damage Jarak Jauh +3"
+    ],
+    "description": "",
+    "categoryName": "Panah",
+    "parent": "Senjata"
+  },
+  {
+    "id": 82,
+    "name": "Apel",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/995.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 83,
+    "name": "Pisang",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/127.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 86,
+    "name": "Elven Wafer",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/130.png",
+    "options": [
+      "Durasi +480 detik"
+    ],
+    "description": "Jika dimakan, seluruh tubuh dipenuhi tenaga sehingga semua pergerakan menjadi lebih cepat untuk sementara waktu. Makanan ini hanya berefek pada Peri (Elf).",
+    "categoryName": "Ramuan",
+    "parent": "Ramuan"
+  },
+  {
+    "id": 87,
+    "name": "Helm Kulit Bangsa Peri",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/53.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Helm",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 88,
+    "name": "Helm Bangsa Orc",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/54.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Helm",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 89,
+    "name": "Helm Besi Bangsa Kurcaci",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/52.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Helm",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 90,
+    "name": "Helm",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/55.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Helm",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 91,
+    "name": "Zirah Pelat (Plate Armor)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/73.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Zirah",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 92,
+    "name": "Zirah Kristal",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/32.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Zirah",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 93,
+    "name": "Zirah Pelat Perunggu",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/22.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Zirah",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 94,
+    "name": "Zirah Sisik (Scale Armor)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/102.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Zirah",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 95,
+    "name": "Zirah Sabuk",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/10.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Zirah",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 96,
+    "name": "Zirah Rantai (Chain Mail)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/26.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Zirah",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 97,
+    "name": "Zirah Rantai Bangsa Orc",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/443.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Zirah",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 98,
+    "name": "Zirah Sisik",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/89.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Zirah",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 99,
+    "name": "Zirah Kulit Berpaku",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/109.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Zirah",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 100,
+    "name": "Zirah Rantai (Ring)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/86.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Zirah",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 101,
+    "name": "Zirah Rantai Bangsa Orc",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/442.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Zirah",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 102,
+    "name": "Zirah Kulit",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/51.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Zirah",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 103,
+    "name": "Jaket Kulit",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/62.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Zirah",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 104,
+    "name": "Kaos",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/110.png",
+    "options": [],
+    "description": "Kaos berbahan felt. Dapat dipakai di dalam zirah.",
+    "categoryName": "Kaos",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 105,
+    "name": "Jubah Bangsa Peri",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/28.png",
+    "options": [
+      "Jika Dipakai Peri: Bonus Pulih HP +1"
+    ],
+    "description": "Jubah buatan Peri. Jika dipakai oleh Peri, pemulihan HP menjadi lebih cepat.",
+    "categoryName": "Jubah",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 106,
+    "name": "Jubah Bangsa Orc",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/29.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Jubah",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 107,
+    "name": "Jubah Bangsa Kurcaci",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/27.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Jubah",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 109,
+    "name": "Jubah Pelindung",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/30.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Jubah",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 110,
+    "name": "Jubah Tembus Pandang (Invisible)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/272.png",
+    "options": [],
+    "description": "Orang yang memakainya tidak akan terlihat oleh orang lain atau monster. Efek ini hanya berlaku selama tidak melakukan aksi aktif seperti menyerang.",
+    "categoryName": "Jubah",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 111,
+    "name": "Jubah Sihir",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/265.png",
+    "options": [
+      "MR +10"
+    ],
+    "description": "Jubah yang meningkatkan resistensi terhadap sihir. Semakin tinggi level enchant, semakin besar resistensi sihir yang diberikan.",
+    "categoryName": "Jubah",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 113,
+    "name": "Perisai Kecil",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/97.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Perisai",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 114,
+    "name": "Perisai Bangsa Peri",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/92.png",
+    "options": [
+      "Jika Dipakai Peri: Bonus MR +5"
+    ],
+    "description": "Perisai buatan Peri. Juga memiliki sedikit pertahanan terhadap sihir.",
+    "categoryName": "Perisai",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 115,
+    "name": "Perisai Urukhai",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/114.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Perisai",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 117,
+    "name": "Perisai Besar",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/61.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Perisai",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 118,
+    "name": "Perisai Bundar Bangsa Kurcaci",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/95.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Perisai",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 119,
+    "name": "Perisai Pantul (Reflect)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/137.png",
+    "options": [
+      "Efek Pantulan (Reflect)"
+    ],
+    "description": "Perisai dengan permukaan seperti cermin. Memiliki pertahanan yang cukup besar terhadap sihir berbentuk sinar/laser.",
+    "categoryName": "Perisai",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 120,
+    "name": "Sepatu Bot Pendek",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/65.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Sepatu Bot",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 121,
+    "name": "Cakar Shelob",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/139.png",
+    "options": [],
+    "description": "Cakar Shelob tanpa cela sedikit pun. Tanda bukti perburuan yang hanya bisa didapat oleh mereka yang menghadapinya dengan keahlian pedang dan ketenangan hati. Jika dibawa ke Gunther di Pulau Berbicara, dapat melewati ujiannya.",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 123,
+    "name": "Pedang Kesatria Merah",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/441.png",
+    "options": [
+      "STR +1"
+    ],
+    "description": "Pedang panjang spesial yang diberi sihir untuk meningkatkan kekuatan.",
+    "categoryName": "Pedang Satu Tangan",
+    "parent": "Senjata"
+  },
+  {
+    "id": 124,
+    "name": "Tiket Kapal ke Wilayah Gludio",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/138.png",
+    "options": [],
+    "description": "Tiket yang diperlukan untuk naik kapal di pelabuhan Pulau Berbicara.",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 125,
+    "name": "Tiket Kapal ke Pulau Berbicara",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/138.png",
+    "options": [],
+    "description": "Tiket yang diperlukan untuk naik kapal di pelabuhan Desa Gludin.",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 126,
+    "name": "Ramuan Giok (Jade)",
+    "name2": "Penawar Racun",
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/76.png",
+    "options": [],
+    "description": "Ramuan yang dapat menyembuhkan berbagai jenis racun.",
+    "categoryName": "Ramuan",
+    "parent": "Ramuan"
+  },
+  {
+    "id": 127,
+    "name": "Lentera",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/140.png",
+    "options": [],
+    "description": "Jika lentera digunakan, dapat melihat sekitar meski di tempat gelap.",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 128,
+    "name": "Sepatu Bot",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/435.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Sepatu Bot",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 129,
+    "name": "Sarung Tangan",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/141.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Sarung Tangan",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 130,
+    "name": "Ramuan Bening",
+    "name2": "Pemulih HP Kuat",
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/81.png",
+    "options": [
+      "Jumlah Pulih 44 ~ 107"
+    ],
+    "description": "Jika diminum, HP akan pulih cukup banyak.",
+    "categoryName": "Ramuan",
+    "parent": "Ramuan"
+  },
+  {
+    "id": 131,
+    "name": "Minyak Lentera",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/142.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 138,
+    "name": "Kapak Besar",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/171.png",
+    "options": [
+      "Dua Tangan"
+    ],
+    "description": "",
+    "categoryName": "Senjata Tumpul",
+    "parent": "Senjata"
+  },
+  {
+    "id": 140,
+    "name": "Pelindung Wajah Kesatria",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/166.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Helm",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 141,
+    "name": "Gladius",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/151.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Pedang Satu Tangan",
+    "parent": "Senjata"
+  },
+  {
+    "id": 142,
+    "name": "Belati Sial",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/144.png",
+    "options": [
+      "Akurasi Jarak Dekat +2"
+    ],
+    "description": "Belati tanpa kekuatan khusus, namun dengan kemungkinan sangat kecil dapat memicu kutukan yang membawa lawan pada kematian.",
+    "categoryName": "Pedang Satu Tangan",
+    "parent": "Senjata"
+  },
+  {
+    "id": 144,
+    "name": "Kapak Sang Pengamuk",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/439.png",
+    "options": [
+      "Dua Tangan",
+      "Efek Haste"
+    ],
+    "description": "",
+    "categoryName": "Senjata Tumpul",
+    "parent": "Senjata"
+  },
+  {
+    "id": 145,
+    "name": "Perisai Eva",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/1203.png",
+    "options": [
+      "Efek Haste",
+      "HP Maksimum +20"
+    ],
+    "description": "",
+    "categoryName": "Perisai",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 155,
+    "name": "Perisai Persegi",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/177.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Perisai",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 157,
+    "name": "Totem Atuba",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/258.png",
+    "options": [],
+    "description": "Totem milik Orc Atuba. Jika dibawa ke Laira di Desa Petani Ladang, dapat ditukar dengan Adena.",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 158,
+    "name": "Totem Neruga",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/259.png",
+    "options": [],
+    "description": "Totem milik Orc Neruga. Jika dibawa ke Laira di Desa Petani Ladang, dapat ditukar dengan Adena.",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 159,
+    "name": "Totem Duda-Mara",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/260.png",
+    "options": [],
+    "description": "Totem milik Orc Duda-Mara. Jika dibawa ke Laira di Desa Petani Ladang, dapat ditukar dengan Adena.",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 160,
+    "name": "Totem Gandhi",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/261.png",
+    "options": [],
+    "description": "Totem milik Orc Gandhi. Jika dibawa ke Laira di Desa Petani Ladang, dapat ditukar dengan Adena.",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 161,
+    "name": "Totem Roba",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/262.png",
+    "options": [],
+    "description": "Totem milik Orc Roba. Jika dibawa ke Laira di Desa Petani Ladang, dapat ditukar dengan Adena.",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 162,
+    "name": "Gulungan Kembali (Return Scroll)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/474.png",
+    "options": [],
+    "description": "Jika digunakan, akan teleport ke desa terdekat.",
+    "categoryName": "Gulungan",
+    "parent": "Gulungan"
+  },
+  {
+    "id": 164,
+    "name": "Buku Sihir (Heal)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/248.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 166,
+    "name": "Batu Kekuatan Sihir",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/235.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 167,
+    "name": "Zirah Rantai (Chain Mail)",
+    "name2": "Zirah Rantai Pertahanan Sihir",
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/1201.png",
+    "options": [
+      "MR +4"
+    ],
+    "description": "Zirah rantai yang diberi sihir untuk meningkatkan Magic Resistance (MR). Semakin tinggi level enchant, semakin besar resistensi sihir yang diberikan.",
+    "categoryName": "Zirah",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 168,
+    "name": "Berlian",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/236.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 169,
+    "name": "Berlian Kualitas Tinggi",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/237.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 170,
+    "name": "Berlian Kualitas Terbaik",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/238.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 171,
+    "name": "Emerald",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/239.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 172,
+    "name": "Emerald Kualitas Tinggi",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/240.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 173,
+    "name": "Emerald Kualitas Terbaik",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/241.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 174,
+    "name": "Ruby",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/242.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 175,
+    "name": "Ruby Kualitas Tinggi",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/243.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 176,
+    "name": "Ruby Kualitas Terbaik",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/244.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 177,
+    "name": "Safir",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/245.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 178,
+    "name": "Safir Kualitas Tinggi",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/246.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 179,
+    "name": "Safir Kualitas Terbaik",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/247.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 180,
+    "name": "Buku Sihir (Light)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/248.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 181,
+    "name": "Buku Sihir (Shield)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/248.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 182,
+    "name": "Buku Sihir (Energy Bolt)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/248.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 183,
+    "name": "Buku Sihir (Teleport)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/248.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 184,
+    "name": "Buku Sihir (Cure Poison)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/248.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 185,
+    "name": "Buku Sihir (Chill Touch)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/253.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 186,
+    "name": "Buku Sihir (Curse: Poison)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/253.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 187,
+    "name": "Buku Sihir (Enchant Weapon)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/248.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 188,
+    "name": "Buku Sihir (Detection)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/248.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 189,
+    "name": "Buku Sihir (Lightning)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/249.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 190,
+    "name": "Buku Sihir (Turn Undead)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/249.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 191,
+    "name": "Buku Sihir (Extra Heal)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/249.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 192,
+    "name": "Buku Sihir (Curse: Blind)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/254.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 193,
+    "name": "Buku Sihir (Blessed Armor)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/249.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 194,
+    "name": "Buku Sihir (Fireball)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/249.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 195,
+    "name": "Buku Sihir (Enchant Dexterity)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/249.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 196,
+    "name": "Buku Sihir (Weapon Break)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/254.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 197,
+    "name": "Buku Sihir (Vampiric Touch)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/254.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 198,
+    "name": "Buku Sihir (Slow)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/249.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 199,
+    "name": "Buku Sihir (Curse: Paralyze)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/255.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 200,
+    "name": "Buku Sihir (Call Lightning)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/250.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 201,
+    "name": "Buku Sihir (Greater Heal)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/250.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 202,
+    "name": "Buku Sihir (Taming Monster)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/250.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 203,
+    "name": "Buku Sihir (Remove Curse)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/250.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 204,
+    "name": "Buku Sihir (Create Zombie)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/255.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 205,
+    "name": "Buku Sihir (Enchant Mighty)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/250.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 206,
+    "name": "Buku Sihir (Haste)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/250.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 207,
+    "name": "Buku Sihir (Cancellation)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/250.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 208,
+    "name": "Buku Sihir (Eruption)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/250.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 209,
+    "name": "Buku Sihir (Heal All)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/251.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 210,
+    "name": "Buku Sihir (Ice Lance)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/251.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 211,
+    "name": "Buku Sihir (Summon Monster)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/256.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 212,
+    "name": "Buku Sihir (Holy Walk)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/251.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 213,
+    "name": "Buku Sihir (Tornado)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/251.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 214,
+    "name": "Buku Sihir (Full Heal)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/251.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 216,
+    "name": "Buku Sihir (Blizzard)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/256.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 217,
+    "name": "Buku Sihir (Invisibility)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/251.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 218,
+    "name": "Buku Sihir (Resurrection)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/251.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 219,
+    "name": "Buku Sihir (Lightning Storm)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/252.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 220,
+    "name": "Buku Sihir (Fog of Sleeping)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/257.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 222,
+    "name": "Buku Sihir (Immune to Harm)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/252.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 223,
+    "name": "Buku Sihir (Mass Teleport)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/252.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 225,
+    "name": "Buku Sihir (Meteor Strike)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/252.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 229,
+    "name": "Helm",
+    "name2": "Helm Pertahanan Sihir",
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/1204.png",
+    "options": [
+      "MR +4"
+    ],
+    "description": "Helm yang diberi sihir untuk meningkatkan Magic Resistance (MR). Semakin tinggi level enchant, semakin besar resistensi sihir yang diberikan.",
+    "categoryName": "Helm",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 230,
+    "name": "Tongkat Kayu Ek (Oak)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/291.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Tongkat",
+    "parent": "Senjata"
+  },
+  {
+    "id": 231,
+    "name": "Tongkat Penyihir",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/297.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Tongkat",
+    "parent": "Senjata"
+  },
+  {
+    "id": 232,
+    "name": "Tongkat Kekuatan Sihir",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/292.png",
+    "options": [
+      "SP +1"
+    ],
+    "description": "Memberikan bonus sihir +1.",
+    "categoryName": "Tongkat",
+    "parent": "Senjata"
+  },
+  {
+    "id": 233,
+    "name": "Tongkat Kekuatan",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/293.png",
+    "options": [
+      "STR +3",
+      "Damage Jarak Dekat +3",
+      "SP -2"
+    ],
+    "description": "Senjata dengan sihir unik: bonus sihir berkurang, namun kekuatan (STR) meningkat secara signifikan.",
+    "categoryName": "Tongkat",
+    "parent": "Senjata"
+  },
+  {
+    "id": 234,
+    "name": "Jubah Tanpa Nama",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/287.png",
+    "options": [
+      "MR +4"
+    ],
+    "description": "Sedikit meningkatkan Magic Resistance (MR).",
+    "categoryName": "Zirah",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 235,
+    "name": "Pedang Damaskus",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/298.png",
+    "options": [],
+    "description": "Pedang yang ditempa secara khusus sehingga daya tahannya sangat diperkuat.",
+    "categoryName": "Pedang Satu Tangan",
+    "parent": "Senjata"
+  },
+  {
+    "id": 243,
+    "name": "Kertas Surat",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/464.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 244,
+    "name": "Panah Kecil",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/20.png",
+    "options": [
+      "Dua Tangan",
+      "Damage Jarak Jauh -1"
+    ],
+    "description": "",
+    "categoryName": "Panah",
+    "parent": "Senjata"
+  },
+  {
+    "id": 245,
+    "name": "Bulu Surai Pan",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/314.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 246,
+    "name": "Bongkahan Mithril Mentah",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/320.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 247,
+    "name": "Batu Roh",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/235.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 248,
+    "name": "Batang Ent",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/309.png",
+    "options": [],
+    "description": "Batang Ent, salah satu penjaga Hutan Peri. Memiliki kandungan penyembuh, jika dimakan efektif melawan segala jenis racun.",
+    "categoryName": "Ramuan",
+    "parent": "Ramuan"
+  },
+  {
+    "id": 249,
+    "name": "Sari Spora Jamur",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/82.png",
+    "options": [],
+    "description": "Sari yang diperas dari spora Fungus. Digunakan sebagai bahan untuk beberapa sihir atau racun.",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 250,
+    "name": "Darah Ogre",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/324.png",
+    "options": [],
+    "description": "Darah Ogre. Dikenal sebagai sumber kekuatan luar biasa milik Ogre.",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 251,
+    "name": "Benang",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/326.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 252,
+    "name": "Mithril",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/318.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 253,
+    "name": "Debu Peri (Fairy Dust)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/312.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 254,
+    "name": "Jaring Arachne",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/308.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 255,
+    "name": "Kulit Ent",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/311.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 256,
+    "name": "Orikhalkum",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/319.png",
+    "options": [],
+    "description": "Logam mulia yang dibuat oleh Fairy Queen. Jika digunakan pada senjata atau zirah yang rusak, dapat mengurangi tingkat kerusakan dengan kemungkinan tertentu.",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 257,
+    "name": "Benang Mithril",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/307.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 258,
+    "name": "Anak Panah Mithril",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/96.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Panah",
+    "parent": "Senjata"
+  },
+  {
+    "id": 259,
+    "name": "Kulit Tanggal Arachne",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/306.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 260,
+    "name": "Sarung Jari Panahan",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/327.png",
+    "options": [
+      "Akurasi Jarak Jauh +2"
+    ],
+    "description": "",
+    "categoryName": "Sarung Tangan",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 261,
+    "name": "Sayap Peri",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/313.png",
+    "options": [],
+    "description": "Sayap Fairy yang telah mengeras. Jika digunakan, akan teleport ke desa terdekat.",
+    "categoryName": "Gulungan",
+    "parent": "Gulungan"
+  },
+  {
+    "id": 262,
+    "name": "Seruling Sihir",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/43.png",
+    "options": [],
+    "description": "Jika seruling ini dimainkan di dekat Pan, Pan akan mendekat.",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 263,
+    "name": "Perisai Kayu",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/97.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Perisai",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 264,
+    "name": "Lempengan Mithril",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/329.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 265,
+    "name": "Lempengan Orikhalkum",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/330.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 266,
+    "name": "Zirah Kayu",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/109.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Zirah",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 267,
+    "name": "Baju Zirah Dada Bangsa Peri",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/302.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Zirah",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 268,
+    "name": "Tanduk Pan",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/317.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Tombak",
+    "parent": "Senjata"
+  },
+  {
+    "id": 269,
+    "name": "Crossbow",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/305.png",
+    "options": [
+      "Akurasi Jarak Jauh +3",
+      "Dua Tangan",
+      "Damage Jarak Jauh +2"
+    ],
+    "description": "",
+    "categoryName": "Panah",
+    "parent": "Senjata"
+  },
+  {
+    "id": 270,
+    "name": "Mata Belati",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/322.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Pedang Satu Tangan",
+    "parent": "Senjata"
+  },
+  {
+    "id": 271,
+    "name": "Mata Pedang Panjang",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/321.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Pedang Satu Tangan",
+    "parent": "Senjata"
+  },
+  {
+    "id": 272,
+    "name": "Mata Pedang Orikhalkum",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/321.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Pedang Satu Tangan",
+    "parent": "Senjata"
+  },
+  {
+    "id": 273,
+    "name": "Zirah Pelat Bangsa Peri",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/275.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Zirah",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 274,
+    "name": "Rapier",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/104.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Pedang Satu Tangan",
+    "parent": "Senjata"
+  },
+  {
+    "id": 275,
+    "name": "Berkat Elm",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/267.png",
+    "options": [
+      "DEX +1"
+    ],
+    "description": "Helm yang dinamai dari nama pahlawan kuno Bangsa Peri. Memberikan bonus Kecekatan (DEX) +1.",
+    "categoryName": "Helm",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 276,
+    "name": "Tanduk Berlapis Mithril",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/315.png",
+    "options": [],
+    "description": "Tombak yang dibuat dengan melapisi Tanduk Pan dengan Mithril.",
+    "categoryName": "Tombak",
+    "parent": "Senjata"
+  },
+  {
+    "id": 277,
+    "name": "Tanduk Berlapis Orikhalkum",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/316.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Tombak",
+    "parent": "Senjata"
+  },
+  {
+    "id": 278,
+    "name": "Mail Breaker",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/276.png",
+    "options": [
+      "Akurasi Jarak Dekat +10"
+    ],
+    "description": "",
+    "categoryName": "Pedang Satu Tangan",
+    "parent": "Senjata"
+  },
+  {
+    "id": 279,
+    "name": "Buah Ent",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/126.png",
+    "options": [
+      "Jumlah Pulih 44 ~ 107"
+    ],
+    "description": "Buah Ent, salah satu penjaga Hutan Peri. Jika dimakan, HP akan pulih dalam jumlah besar.",
+    "categoryName": "Ramuan",
+    "parent": "Ramuan"
+  },
+  {
+    "id": 280,
+    "name": "Power Glove",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/328.png",
+    "options": [
+      "STR +2"
+    ],
+    "description": "Sarung tangan yang menggunakan Darah Ogre sebagai bahan. Jika dipakai, kekuatan (STR) akan meningkat.",
+    "categoryName": "Sarung Tangan",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 281,
+    "name": "Zirah Rantai Bangsa Peri",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/281.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Zirah",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 283,
+    "name": "Pakaian Batang Pohon",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/51.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Zirah",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 289,
+    "name": "Perisai Kesatria Perak",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/332.png",
+    "options": [
+      "MR +4"
+    ],
+    "description": "Perisai yang diberi sihir untuk meningkatkan Magic Resistance (MR).",
+    "categoryName": "Perisai",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 291,
+    "name": "Helm Sihir: Penyembuhan",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/167.png",
+    "options": [],
+    "description": "Helm yang memungkinkan Kesatria atau Penguasa menggunakan sihir penyembuhan. Jika sihir digunakan dengan helm ini, konsumsi mana menjadi setengah dari biasanya.",
+    "categoryName": "Helm",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 292,
+    "name": "Helm Sihir: Kecepatan",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/168.png",
+    "options": [],
+    "description": "Helm yang memungkinkan Kesatria atau Penguasa menggunakan sihir kecepatan tubuh. Jika sihir digunakan dengan helm ini, konsumsi mana menjadi setengah dari biasanya.",
+    "categoryName": "Helm",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 293,
+    "name": "Helm Sihir: Kekuatan",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/170.png",
+    "options": [],
+    "description": "Helm yang memungkinkan Kesatria atau Penguasa menggunakan sihir kekuatan dan kekuasaan. Jika sihir digunakan dengan helm ini, konsumsi mana menjadi setengah dari biasanya.",
+    "categoryName": "Helm",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 296,
+    "name": "Ramuan Keberanian",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/79.png",
+    "options": [
+      "Durasi +300 detik"
+    ],
+    "description": "Jika diminum, keberanian akan muncul dari dalam hati sehingga bergerak lebih cepat untuk sementara waktu.",
+    "categoryName": "Ramuan",
+    "parent": "Ramuan"
+  },
+  {
+    "id": 297,
+    "name": "Ramuan Kebijaksanaan",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/1529.png",
+    "options": [
+      "Durasi +300 detik",
+      "SP +2"
+    ],
+    "description": "Jika diminum, hati menjadi tenang dan konsentrasi meningkat sehingga sihir yang digunakan memberi efek lebih besar. Ramuan ini hanya berefek pada Penyihir (Wizard).",
+    "categoryName": "Ramuan",
+    "parent": "Ramuan"
+  },
+  {
+    "id": 299,
+    "name": "Gulungan Transformasi",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/472.png",
+    "options": [
+      "Durasi +1200 detik"
+    ],
+    "description": "Gulungan yang memungkinkan berubah menjadi monster yang diinginkan. Namun durasi transformasi hanya berlangsung 20-30 menit.",
+    "categoryName": "Gulungan",
+    "parent": "Gulungan"
+  },
+  {
+    "id": 306,
+    "name": "Kalung Kekuatan",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/304.png",
+    "options": [
+      "STR +1"
+    ],
+    "description": "Kalung yang meningkatkan Kekuatan (Strength) sebesar 1.",
+    "categoryName": "Kalung",
+    "parent": "Aksesori"
+  },
+  {
+    "id": 307,
+    "name": "Kalung Kecekatan",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/304.png",
+    "options": [
+      "DEX +1"
+    ],
+    "description": "Kalung yang meningkatkan Kecekatan (Dexterity) sebesar 1.",
+    "categoryName": "Kalung",
+    "parent": "Aksesori"
+  },
+  {
+    "id": 308,
+    "name": "Kalung Stamina",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/304.png",
+    "options": [
+      "CON +1"
+    ],
+    "description": "Kalung yang meningkatkan Stamina (Constitution) sebesar 1.",
+    "categoryName": "Kalung",
+    "parent": "Aksesori"
+  },
+  {
+    "id": 309,
+    "name": "Kalung Pengetahuan",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/304.png",
+    "options": [
+      "INT +1"
+    ],
+    "description": "Kalung yang meningkatkan Pengetahuan (Intelligence) sebesar 1.",
+    "categoryName": "Kalung",
+    "parent": "Aksesori"
+  },
+  {
+    "id": 310,
+    "name": "Kalung Kebijaksanaan",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/304.png",
+    "options": [
+      "WIS +1"
+    ],
+    "description": "Kalung yang meningkatkan Kebijaksanaan (Wisdom) sebesar 1.",
+    "categoryName": "Kalung",
+    "parent": "Aksesori"
+  },
+  {
+    "id": 311,
+    "name": "Kalung Karisma",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/304.png",
+    "options": [
+      "CHA +1"
+    ],
+    "description": "Kalung yang meningkatkan Karisma (Charisma) sebesar 1.",
+    "categoryName": "Kalung",
+    "parent": "Aksesori"
+  },
+  {
+    "id": 314,
+    "name": "Kalung Petarung Orc",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/436.png",
+    "options": [
+      "HP Maksimum +20"
+    ],
+    "description": "Kalung yang meningkatkan HP Maksimum sebesar 20.",
+    "categoryName": "Kalung",
+    "parent": "Aksesori"
+  },
+  {
+    "id": 317,
+    "name": "Topi Kulit",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/451.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Helm",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 318,
+    "name": "Topi Kulit Berpaku",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/445.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Helm",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 319,
+    "name": "Helm Kulit",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/456.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Helm",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 320,
+    "name": "Helm Tengkorak",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/453.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Helm",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 321,
+    "name": "Sandal Kulit",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/452.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Sepatu Bot",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 322,
+    "name": "Sandal Kulit Berpaku",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/447.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Sepatu Bot",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 323,
+    "name": "Sepatu Bot Kulit",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/461.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Sepatu Bot",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 324,
+    "name": "Perisai Kulit",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/449.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Perisai",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 325,
+    "name": "Perisai Kulit Berpaku",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/450.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Perisai",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 326,
+    "name": "Perisai Tulang",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/457.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Perisai",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 327,
+    "name": "Rompi Kulit",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/459.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Zirah",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 328,
+    "name": "Rompi Kulit Bersabuk",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/460.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Zirah",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 329,
+    "name": "Rompi Kulit Berpaku",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/458.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Zirah",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 330,
+    "name": "Rompi Kulit Zirah Berat",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/462.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Zirah",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 331,
+    "name": "Zirah Tulang",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/448.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Zirah",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 332,
+    "name": "Kulit Hewan",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/446.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 333,
+    "name": "Batangan Besi",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/454.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 334,
+    "name": "Sabuk",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/264.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 335,
+    "name": "Kulit Kualitas Tinggi",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/455.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 336,
+    "name": "Pecahan Tulang",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/444.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 342,
+    "name": "Tongkat Mana",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/293.png",
+    "options": [
+      "Akurasi Jarak Dekat -3",
+      "Penyerapan Mana"
+    ],
+    "description": "Tongkat yang menyerap sedikit MP setiap kali memukul target.",
+    "categoryName": "Tongkat",
+    "parent": "Senjata"
+  },
+  {
+    "id": 343,
+    "name": "Peluit Peliharaan",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/477.png",
+    "options": [],
+    "description": "Jika peluit ditiup, peliharaan yang sudah dijinakkan akan berkumpul di sekitar pemiliknya.",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 348,
+    "name": "Batu Asah",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/478.png",
+    "options": [],
+    "description": "Item yang dapat memulihkan tingkat kerusakan senjata atau zirah.",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 357,
+    "name": "Kertas Surat Clan (Blood Pledge)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/464.png",
+    "options": [],
+    "description": "Kertas surat sihir yang dapat mengirim pesan yang sama secara bersamaan ke seluruh anggota clan (Blood Pledge).",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 358,
+    "name": "Pedang Panjang Perak",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/163.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Pedang Satu Tangan",
+    "parent": "Senjata"
+  },
+  {
+    "id": 359,
+    "name": "Pedang Perak",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/156.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Pedang Satu Tangan",
+    "parent": "Senjata"
+  },
+  {
+    "id": 360,
+    "name": "Kapak Perak",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/173.png",
+    "options": [
+      "Dua Tangan"
+    ],
+    "description": "",
+    "categoryName": "Senjata Tumpul",
+    "parent": "Senjata"
+  },
+  {
+    "id": 361,
+    "name": "Kalung Peliharaan",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/487.png",
+    "options": [],
+    "description": "Kalung yang menandakan kepemilikan peliharaan yang sudah dijinakkan. Jika ditukar satu sama lain, peliharaan juga bisa berpindah tangan.",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 362,
+    "name": "Permen",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/488.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 365,
+    "name": "Sarung Tangan Baja",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/506.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Sarung Tangan",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 366,
+    "name": "Pelindung Wajah Baja",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/507.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Helm",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 367,
+    "name": "Perisai Baja",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/508.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Perisai",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 368,
+    "name": "Sepatu Bot Baja",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/509.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Sepatu Bot",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 369,
+    "name": "Zirah Pelat Baja",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/510.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Zirah",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 376,
+    "name": "Kain Biru",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/517.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 378,
+    "name": "Kain Merah",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/519.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 379,
+    "name": "Kain Putih",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/520.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 385,
+    "name": "Topi Penyihir",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/526.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Helm",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 386,
+    "name": "Jubah Penyihir",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/527.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Zirah",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 388,
+    "name": "Panah Pemburu",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/279.png",
+    "options": [
+      "Akurasi Jarak Jauh +5",
+      "Dua Tangan",
+      "Damage Jarak Jauh +1"
+    ],
+    "description": "",
+    "categoryName": "Panah",
+    "parent": "Senjata"
+  },
+  {
+    "id": 403,
+    "name": "Zirah Sisik Naga Air",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/539.png",
+    "options": [
+      "Resistensi Elemen Air +20"
+    ],
+    "description": "Zirah yang dibuat dari sisik Naga Air. Memiliki resistensi terhadap elemen ombak/air.",
+    "categoryName": "Zirah",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 404,
+    "name": "Zirah Sisik Naga Tanah",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/540.png",
+    "options": [
+      "Resistensi Elemen Tanah +20"
+    ],
+    "description": "Zirah yang dibuat dari sisik Naga Tanah. Memiliki resistensi terhadap elemen tanah.",
+    "categoryName": "Zirah",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 405,
+    "name": "Zirah Sisik Naga Api",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/541.png",
+    "options": [
+      "Resistensi Elemen Api +20"
+    ],
+    "description": "Zirah yang dibuat dari sisik Naga Api. Memiliki resistensi terhadap elemen api.",
+    "categoryName": "Zirah",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 406,
+    "name": "Zirah Sisik Naga Angin",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/542.png",
+    "options": [
+      "Resistensi Elemen Angin +20"
+    ],
+    "description": "Zirah yang dibuat dari sisik Naga Angin. Memiliki resistensi terhadap elemen angin.",
+    "categoryName": "Zirah",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 407,
+    "name": "Sisik Naga Air",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/547.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 408,
+    "name": "Sisik Naga Tanah",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/548.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 409,
+    "name": "Sisik Naga Api",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/549.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 410,
+    "name": "Sisik Naga Angin",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/550.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 415,
+    "name": "Gulungan Kosong (Level 1)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/859.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Gulungan",
+    "parent": "Gulungan"
+  },
+  {
+    "id": 417,
+    "name": "Berkat Eva",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/557.png",
+    "options": [
+      "Durasi +1800 detik"
+    ],
+    "description": "Diberkati oleh Eva sehingga dapat bernapas di dalam air.",
+    "categoryName": "Ramuan",
+    "parent": "Ramuan"
+  },
+  {
+    "id": 418,
+    "name": "Sisik Putri Duyung",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/556.png",
+    "options": [
+      "Durasi +600 detik"
+    ],
+    "description": "Dapat bernapas di dalam air.",
+    "categoryName": "Ramuan",
+    "parent": "Ramuan"
+  },
+  {
+    "id": 429,
+    "name": "Abu Asitazio",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/591.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 492,
+    "name": "Ramuan Biru",
+    "name2": "Ramuan Pemulih Mana",
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/75.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Ramuan",
+    "parent": "Ramuan"
+  },
+  {
+    "id": 495,
+    "name": "Ramuan Hijau Tingkat Lanjut",
+    "name2": "Ramuan Peningkat Kecepatan Tingkat Lanjut",
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/621.png",
+    "options": [
+      "Durasi +1800 detik"
+    ],
+    "description": "",
+    "categoryName": "Ramuan",
+    "parent": "Ramuan"
+  },
+  {
+    "id": 496,
+    "name": "Cincin Anti-Sihir",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/625.png",
+    "options": [
+      "MR +5"
+    ],
+    "description": "",
+    "categoryName": "Cincin",
+    "parent": "Aksesori"
+  },
+  {
+    "id": 498,
+    "name": "Cincin Roh Api",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/628.png",
+    "options": [
+      "Resistensi Elemen Api +10"
+    ],
+    "description": "",
+    "categoryName": "Cincin",
+    "parent": "Aksesori"
+  },
+  {
+    "id": 499,
+    "name": "Cincin Roh Pohon",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/629.png",
+    "options": [
+      "Resistensi Elemen Air +10"
+    ],
+    "description": "",
+    "categoryName": "Cincin",
+    "parent": "Aksesori"
+  },
+  {
+    "id": 500,
+    "name": "Cincin Roh Bumi",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/627.png",
+    "options": [
+      "Resistensi Elemen Tanah +10"
+    ],
+    "description": "",
+    "categoryName": "Cincin",
+    "parent": "Aksesori"
+  },
+  {
+    "id": 501,
+    "name": "Cincin Roh Angin",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/630.png",
+    "options": [
+      "Resistensi Elemen Angin +10"
+    ],
+    "description": "",
+    "categoryName": "Cincin",
+    "parent": "Aksesori"
+  },
+  {
+    "id": 502,
+    "name": "Sabuk Tubuh Lusuh",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/631.png",
+    "options": [
+      "HP Maksimum +30"
+    ],
+    "description": "",
+    "categoryName": "Sabuk",
+    "parent": "Aksesori"
+  },
+  {
+    "id": 503,
+    "name": "Sabuk Pikiran Lusuh",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/632.png",
+    "options": [
+      "MP Maksimum +30"
+    ],
+    "description": "",
+    "categoryName": "Sabuk",
+    "parent": "Aksesori"
+  },
+  {
+    "id": 504,
+    "name": "Sabuk Jiwa Lusuh",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/633.png",
+    "options": [
+      "MP Maksimum +15",
+      "HP Maksimum +15"
+    ],
+    "description": "",
+    "categoryName": "Sabuk",
+    "parent": "Aksesori"
+  },
+  {
+    "id": 505,
+    "name": "Sabuk Tubuh",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/634.png",
+    "options": [
+      "HP Maksimum +50"
+    ],
+    "description": "",
+    "categoryName": "Sabuk",
+    "parent": "Aksesori"
+  },
+  {
+    "id": 506,
+    "name": "Sabuk Pikiran",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/635.png",
+    "options": [
+      "MP Maksimum +50"
+    ],
+    "description": "",
+    "categoryName": "Sabuk",
+    "parent": "Aksesori"
+  },
+  {
+    "id": 507,
+    "name": "Sabuk Jiwa",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/636.png",
+    "options": [
+      "MP Maksimum +25",
+      "HP Maksimum +25"
+    ],
+    "description": "",
+    "categoryName": "Sabuk",
+    "parent": "Aksesori"
+  },
+  {
+    "id": 508,
+    "name": "Kalung Kekuatan Lusuh",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/637.png",
+    "options": [
+      "DEX -2",
+      "STR +1"
+    ],
+    "description": "",
+    "categoryName": "Kalung",
+    "parent": "Aksesori"
+  },
+  {
+    "id": 509,
+    "name": "Kalung Kecekatan Lusuh",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/638.png",
+    "options": [
+      "DEX +1",
+      "CON -2"
+    ],
+    "description": "",
+    "categoryName": "Kalung",
+    "parent": "Aksesori"
+  },
+  {
+    "id": 510,
+    "name": "Kalung Stamina Lusuh",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/639.png",
+    "options": [
+      "STR -2",
+      "CON +1"
+    ],
+    "description": "",
+    "categoryName": "Kalung",
+    "parent": "Aksesori"
+  },
+  {
+    "id": 511,
+    "name": "Kalung Pengetahuan Lusuh",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/640.png",
+    "options": [
+      "INT +1",
+      "WIS -2"
+    ],
+    "description": "",
+    "categoryName": "Kalung",
+    "parent": "Aksesori"
+  },
+  {
+    "id": 512,
+    "name": "Kalung Kebijaksanaan Lusuh",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/641.png",
+    "options": [
+      "CHA -2",
+      "WIS +1"
+    ],
+    "description": "",
+    "categoryName": "Kalung",
+    "parent": "Aksesori"
+  },
+  {
+    "id": 513,
+    "name": "Kalung Karisma Lusuh",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/642.png",
+    "options": [
+      "CHA +1",
+      "INT -2"
+    ],
+    "description": "",
+    "categoryName": "Kalung",
+    "parent": "Aksesori"
+  },
+  {
+    "id": 515,
+    "name": "Buku Sihir (Ice Dagger)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/248.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 516,
+    "name": "Buku Sihir (Wind Cutter)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/248.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 517,
+    "name": "Buku Sihir (Fire Arrow)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/248.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 518,
+    "name": "Buku Sihir (Stalagmite)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/248.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 519,
+    "name": "Buku Sihir (Frozen Cloud)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/249.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 520,
+    "name": "Buku Sihir (Earth Jail)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/249.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 521,
+    "name": "Buku Sihir (Cone of Cold)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/250.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 522,
+    "name": "Buku Sihir (Sun Burst)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/250.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 523,
+    "name": "Buku Sihir (Greater Haste)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/251.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 524,
+    "name": "Buku Sihir (Earthquake)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/251.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 525,
+    "name": "Buku Sihir (Fire Storm)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/252.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 547,
+    "name": "Sarung Tangan Kristal",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/707.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Sarung Tangan",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 551,
+    "name": "Sepatu Bot Air",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/704.png",
+    "options": [
+      "Bisa Bernapas di Bawah Air",
+      "Pulih MP +1"
+    ],
+    "description": "",
+    "categoryName": "Sepatu Bot",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 556,
+    "name": "Sarung Tangan Death Knight",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/708.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Sarung Tangan",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 557,
+    "name": "Zirah Death Knight",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/695.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Zirah",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 558,
+    "name": "Sepatu Bot Death Knight",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/701.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Sepatu Bot",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 559,
+    "name": "Helm Death Knight",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/713.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Helm",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 565,
+    "name": "Sabuk Troll",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/699.png",
+    "options": [
+      "Tambahan Berat +500"
+    ],
+    "description": "",
+    "categoryName": "Sabuk",
+    "parent": "Aksesori"
+  },
+  {
+    "id": 566,
+    "name": "Sabuk Ogre",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/697.png",
+    "options": [
+      "Tambahan Berat +1000"
+    ],
+    "description": "",
+    "categoryName": "Sabuk",
+    "parent": "Aksesori"
+  },
+  {
+    "id": 569,
+    "name": "Bola Roh",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/706.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 570,
+    "name": "Kristal Roh (Resist Magic)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/673.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 571,
+    "name": "Kristal Roh (Body to Mind)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/673.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 572,
+    "name": "Kristal Roh (Teleport to Mother)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/673.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 573,
+    "name": "Kristal Roh (Clear Mind)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/674.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 574,
+    "name": "Kristal Roh (Resist Element)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/674.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 575,
+    "name": "Kristal Roh (Return to Nature)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/677.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 576,
+    "name": "Kristal Roh (Blood to Soul)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/677.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 577,
+    "name": "Kristal Roh (Protection from Element)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/677.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 578,
+    "name": "Kristal Roh (Fire Weapon)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/675.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 579,
+    "name": "Kristal Roh (Wind Shot)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/679.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 580,
+    "name": "Kristal Roh (Wind Walk)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/679.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 581,
+    "name": "Kristal Roh (Earth Skin)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/676.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 582,
+    "name": "Kristal Roh (Entangle)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/676.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 583,
+    "name": "Kristal Roh (Erase Magic)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/682.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 584,
+    "name": "Kristal Roh (Summon Lesser Elemental)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/682.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 585,
+    "name": "Kristal Roh (Breath of Fire)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/680.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 586,
+    "name": "Kristal Roh (Eye of Storm)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/684.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 587,
+    "name": "Kristal Roh (Earth Bind)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/681.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 588,
+    "name": "Kristal Roh (Nature's Touch)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/683.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 589,
+    "name": "Kristal Roh (Bless of Earth)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/681.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 590,
+    "name": "Kristal Roh (Area of Silence)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/687.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 591,
+    "name": "Kristal Roh (Summon Greater Elemental)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/687.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 592,
+    "name": "Kristal Roh (Burning Weapon)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/685.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 593,
+    "name": "Kristal Roh (Nature's Blessing)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/688.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 595,
+    "name": "Kristal Roh (Storm Shot)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/689.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 597,
+    "name": "Kristal Roh (Iron Skin)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/686.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 598,
+    "name": "Buku Sihir (Holy Weapon)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/248.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 599,
+    "name": "Buku Sihir (Decrease Weight)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/248.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 600,
+    "name": "Buku Sihir (Weak Elemental)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/249.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 601,
+    "name": "Buku Sihir (Counter Magic)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/249.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 602,
+    "name": "Buku Sihir (Meditation)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/249.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 603,
+    "name": "Buku Sihir (Mana Drain)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/250.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 604,
+    "name": "Buku Sihir (Darkness)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/255.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 605,
+    "name": "Buku Sihir (Weakness)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/255.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 606,
+    "name": "Buku Sihir (Bless Weapon)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/250.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 607,
+    "name": "Buku Sihir (Berserkus)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/251.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 608,
+    "name": "Buku Sihir (Disease)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/256.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 610,
+    "name": "Buku Sihir (Silence)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/251.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 620,
+    "name": "Gulungan Kosong (Level 2)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/860.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Gulungan",
+    "parent": "Gulungan"
+  },
+  {
+    "id": 621,
+    "name": "Gulungan Kosong (Level 3)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/858.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Gulungan",
+    "parent": "Gulungan"
+  },
+  {
+    "id": 631,
+    "name": "Helm Kecekatan",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/913.png",
+    "options": [
+      "DEX +1"
+    ],
+    "description": "",
+    "categoryName": "Helm",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 632,
+    "name": "Helm Stamina",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/908.png",
+    "options": [
+      "CON +1"
+    ],
+    "description": "",
+    "categoryName": "Helm",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 633,
+    "name": "Dokumen Perdagangan Lusuh",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/919.png",
+    "options": [],
+    "description": "Buku catatan yang digunakan oleh pandai besi Anon saat bertransaksi dengan para Kesatria Hitam di masa lalu, ketika ia masih bekerja sama dengan kekuatan anti-raja. Anon, pandai besi di Desa Kesatria Perak, mencari dokumen ini untuk mengetahui teknik pembuatan senjata kekuatan anti-raja.",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 636,
+    "name": "Dokumen Pencarian",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/914.png",
+    "options": [],
+    "description": "Dokumen yang ditinggalkan oleh pasukan pencari Kesatria Hitam saat meninjau area sekitar Kastil Kent. Zero di Desa Kastil Kent menunggu dokumen ini.",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 639,
+    "name": "Surat Janji Kesatria Hitam",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/927.png",
+    "options": [],
+    "description": "Bukti sumpah kesetiaan absolut pada organisasi anti-raja. Karena memuat rencana kelompok anti-raja, Ricky di Desa Kesatria Perak mencari surat janji ini.",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 640,
+    "name": "Buku Sihir Orc Duda Mara",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/923.png",
+    "options": [],
+    "description": "Buku sihir berisi sejarah panjang sihir yang digunakan bangsa Orc. Oss di Desa Petani Ladang mencari buku ini untuk meneliti sihir Orc.",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 641,
+    "name": "Buku Sihir Orc Neruga",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/925.png",
+    "options": [],
+    "description": "Buku sihir berisi sejarah panjang sihir yang digunakan bangsa Orc. Oss di Desa Petani Ladang mencari buku ini untuk meneliti sihir Orc.",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 642,
+    "name": "Buku Sihir Orc Gandhi",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/924.png",
+    "options": [],
+    "description": "Buku sihir berisi sejarah panjang sihir yang digunakan bangsa Orc. Oss di Desa Petani Ladang mencari buku ini untuk meneliti sihir Orc.",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 643,
+    "name": "Buku Sihir Orc Atuba",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/922.png",
+    "options": [],
+    "description": "Buku sihir berisi sejarah panjang sihir yang digunakan bangsa Orc. Oss di Desa Petani Ladang mencari buku ini untuk meneliti sihir Orc.",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 644,
+    "name": "Buku Sihir Terkutuk",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/909.png",
+    "options": [],
+    "description": "Buku sihir dalam keadaan tidak sempurna karena kekurangan kekuatan sihir. Jem di Pulau Berbicara dapat menyalurkan kekuatan sihir untuk menyempurnakannya.",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 645,
+    "name": "Buku Kekuatan Sihir",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/906.png",
+    "options": [
+      "INT +1"
+    ],
+    "description": "",
+    "categoryName": "Perisai",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 646,
+    "name": "Jubah Merah",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/907.png",
+    "options": [
+      "CHA +1"
+    ],
+    "description": "",
+    "categoryName": "Jubah",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 647,
+    "name": "Tengkorak Kepala",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/921.png",
+    "options": [],
+    "description": "Tengkorak kepala yang terlepas dari tubuh kerangka, berbunyi gemerincing. Masih tersisa kutukan lemah sehingga dapat terdengar suara halusinasi aneh jika didekati. Jika dibawa ke Jem di Pulau Berbicara, dapat digunakan untuk menyalurkan kekuatan sihir ke Buku Sihir Terkutuk.",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 648,
+    "name": "Cakar Ghoul",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/918.png",
+    "options": [],
+    "description": "Cakar yang dilapisi racun pelumpuh tubuh. Jem di Pulau Berbicara menunggu bahan ini untuk meneliti rahasia sihir jiwa.",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 649,
+    "name": "Gigi Ghoul",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/926.png",
+    "options": [],
+    "description": "Gigi dengan potongan bangkai busuk yang menyebabkan kelumpuhan pada yang tergigit. Jem di Pulau Berbicara menunggu bahan ini untuk meneliti rahasia sihir jiwa.",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 650,
+    "name": "Cangkang Turtle Dragon",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/920.png",
+    "options": [],
+    "description": "Simbol pertahanan yang telah bertahan puluhan tahun, terbuat dari cangkang raksasa Turtle Dragon. Karena sulit diproses, hanya Anon, pandai besi di Desa Kesatria Perak, yang dapat menggunakannya untuk membuat perlengkapan.",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 651,
+    "name": "Tudung Kesatria",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/915.png",
+    "options": [],
+    "description": "Tudung yang dipakai Ricky di masa menjadi Kesatria. Anon, pandai besi di Desa Kesatria Perak, dapat membuat tudung ini menjadi lebih kuat.",
+    "categoryName": "Helm",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 652,
+    "name": "Tudung Kesatria Merah",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/916.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Helm",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 666,
+    "name": "Perisai Kesatria Merah",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/954.png",
+    "options": [
+      "Efek Pantulan (Reflect)"
+    ],
+    "description": "Perisai bermata merah. Memiliki pertahanan yang cukup besar terhadap sihir berbentuk sinar/laser.",
+    "categoryName": "Perisai",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 675,
+    "name": "Buku Sihir (True Target)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/252.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 676,
+    "name": "Buku Sihir (Glowing Aura)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/252.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 677,
+    "name": "Rahasia Kehidupan",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/912.png",
+    "options": [],
+    "description": "Gulungan berisi rahasia kehidupan yang tersembunyi di dalam Stone Golem. Gunther di Pulau Berbicara menunggu gulungan ini.",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 686,
+    "name": "Sisik Lamia",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/953.png",
+    "options": [],
+    "description": "Sisik biru yang terlepas dari tubuh pemimpin Lamia. Jika dibawa ke Gerard di Desa Kesatria Perak, dapat melewati ujiannya.",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 687,
+    "name": "Ramuan Reinkarnasi",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/947.png",
+    "options": [],
+    "description": "Ramuan spesial yang hanya diberikan satu buah untuk Kesatria Merah. Memiliki kekuatan yang bahkan mampu melepas kutukan dewa kejahatan Grankain. Kesatria Merah sejati harus bersedia merelakan ramuan ini untuk orang lain yang lebih membutuhkannya.",
+    "categoryName": "Ramuan",
+    "parent": "Ramuan"
+  },
+  {
+    "id": 688,
+    "name": "Surat Terima Kasih",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/917.png",
+    "options": [],
+    "description": "Surat yang ditinggalkan oleh Jim, yang berubah menjadi kerangka akibat kutukan, sebagai ungkapan terima kasih. Jika dibawa ke Gerard di Desa Kesatria Perak, akan diakui sebagai bukti pengorbanan dan dedikasi.",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 689,
+    "name": "Pusaka Penduduk Desa",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/952.png",
+    "options": [],
+    "description": "Pusaka yang ditemukan di dalam perut Ratu Semut Raksasa varian. Aria di Desa Woodbeck menunggu kabar tentang para penduduk yang hilang dan ayahnya di sarang semut.",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 690,
+    "name": "Tulang Mayat Hidup (Undead)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/934.png",
+    "options": [],
+    "description": "Tulang yang ditinggalkan oleh pengkhianat Undead yang melarikan diri setelah mencuri tulang Death Knight yang sedang dibangkitkan. Gereng di Pulau Berbicara mencari ini untuk menyelesaikan penelitiannya.",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 693,
+    "name": "Buku Roh Terkutuk",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/940.png",
+    "options": [],
+    "description": "Buku roh yang dicuri oleh penyihir Dark Elf, Darkmar, dari Hutan Peri. Ibu Hutan dan Peri di Hutan Peri mengharapkan buku roh ini dapat ditemukan kembali.",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 694,
+    "name": "Kunci Mayat Hidup",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/59.png",
+    "options": [],
+    "description": "Kunci yang diperlukan untuk membuka pintu tersegel sihir di dalam Dungeon Undead. Dungeon Undead dapat dimasuki dengan berbicara pada Dilong di lantai 1 dungeon Pulau Berbicara. Jika quest dari Gereng sudah selesai, kunci ini tidak lagi diperlukan.",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 695,
+    "name": "Kunci Zombie",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/945.png",
+    "options": [],
+    "description": "Kunci yang diperlukan untuk membuka pintu tersegel sihir di dalam Dungeon Undead. Jika quest dari Gereng sudah selesai, kunci ini tidak lagi diperlukan.",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 696,
+    "name": "Kunci Tengkorak",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/944.png",
+    "options": [],
+    "description": "Kunci yang diperlukan untuk membuka pintu tersegel sihir di dalam Dungeon Undead. Jika quest dari Gereng sudah selesai, kunci ini tidak lagi diperlukan.",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 705,
+    "name": "Kaos Bangsa Peri",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/956.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Kaos",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 706,
+    "name": "Keagungan Penguasa",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/941.png",
+    "options": [
+      "DEX +1",
+      "STR +1",
+      "CHA +1",
+      "INT +1",
+      "CON +1",
+      "WIS +1"
+    ],
+    "description": "",
+    "categoryName": "Jubah",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 707,
+    "name": "Kunci Ruangan Rahasia",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/59.png",
+    "options": [],
+    "description": "Kunci kuno yang dapat digunakan di dekat penyihir Orim, jauh di dalam Dungeon Gludio. Dikatakan bahwa seorang terkutuk bersembunyi di ruangan rahasia tersebut.",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 709,
+    "name": "Bola Kristal Misterius",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/938.png",
+    "options": [],
+    "description": "Bola kristal berisi kekuatan sihir terkonsentrasi yang diperoleh dari Orim di Dungeon Gludio. Jika dibawa ke Gereng di Pulau Berbicara, dapat digunakan untuk menyempurnakan Tongkat Misterius.",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 710,
+    "name": "Tongkat Misterius",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/946.png",
+    "options": [],
+    "description": "Tongkat yang kehilangan Bola Kristal Misterius, sumber kekuatan sihirnya. Untuk mendapatkan bola kristal tersebut, perlu menemui penyihir Orim yang berdagang jauh di dalam dungeon.",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 711,
+    "name": "Tongkat Kristal",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/939.png",
+    "options": [
+      "Pulih MP +10"
+    ],
+    "description": "Tongkat yang memulihkan MP dengan cukup cepat.",
+    "categoryName": "Tongkat",
+    "parent": "Senjata"
+  },
+  {
+    "id": 712,
+    "name": "Kunci Ruangan Lamia",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/59.png",
+    "options": [],
+    "description": "Kunci untuk membuka ruangan pemimpin Lamia yang dikunci oleh Gerard untuk ujiannya. Jika ujian Gerard sudah selesai, kunci ini tidak lagi diperlukan.",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 713,
+    "name": "Buku Sihir (Call Clan)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/252.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 756,
+    "name": "Cincin Sang Penjaga",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/905.png",
+    "options": [
+      "MP Maksimum +20",
+      "HP Maksimum +30"
+    ],
+    "description": "",
+    "categoryName": "Cincin",
+    "parent": "Aksesori"
+  },
+  {
+    "id": 768,
+    "name": "Sarung Tangan Pelindung",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/1011.png",
+    "options": [
+      "MP Maksimum +10",
+      "HP Maksimum +20"
+    ],
+    "description": "Sarung tangan yang terasa memancarkan kekuatan besar",
+    "categoryName": "Sarung Tangan",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 769,
+    "name": "Jubah Mana",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/1007.png",
+    "options": [
+      "Pulih MP +5"
+    ],
+    "description": "Jubah yang memulihkan MP dengan cukup cepat.",
+    "categoryName": "Jubah",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 770,
+    "name": "Sabuk Keberanian",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/1009.png",
+    "options": [
+      "HP Maksimum +30"
+    ],
+    "description": "Aksesori pinggang yang terasa memancarkan kekuatan dan tenaga besar",
+    "categoryName": "Sabuk",
+    "parent": "Aksesori"
+  },
+  {
+    "id": 806,
+    "name": "Gulungan Kembali Clan (Blood Pledge)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/474.png",
+    "options": [],
+    "description": "Jika digunakan oleh anggota clan (Blood Pledge) yang memiliki kastil atau markas, akan teleport ke lokasi tersebut.",
+    "categoryName": "Gulungan",
+    "parent": "Gulungan"
+  },
+  {
+    "id": 895,
+    "name": "Elixir (STR)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/1143.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 896,
+    "name": "Elixir (DEX)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/1141.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 897,
+    "name": "Elixir (CON)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/1140.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 898,
+    "name": "Elixir (INT)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/1142.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 899,
+    "name": "Elixir (WIS)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/1144.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 900,
+    "name": "Elixir (CHA)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/1139.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 935,
+    "name": "Sisik Berkilau",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/1171.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 936,
+    "name": "Sabuk Tubuh Berkilau",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/1168.png",
+    "options": [
+      "Pulih HP +1",
+      "HP Maksimum +50"
+    ],
+    "description": "",
+    "categoryName": "Sabuk",
+    "parent": "Aksesori"
+  },
+  {
+    "id": 937,
+    "name": "Sabuk Pikiran Berkilau",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/1169.png",
+    "options": [
+      "Pulih MP +1",
+      "MP Maksimum +50"
+    ],
+    "description": "",
+    "categoryName": "Sabuk",
+    "parent": "Aksesori"
+  },
+  {
+    "id": 938,
+    "name": "Sabuk Jiwa Berkilau",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/1170.png",
+    "options": [
+      "Pulih HP +1",
+      "MP Maksimum +20",
+      "Pulih MP +1",
+      "HP Maksimum +20"
+    ],
+    "description": "",
+    "categoryName": "Sabuk",
+    "parent": "Aksesori"
+  },
+  {
+    "id": 978,
+    "name": "Jubah Sesepuh Hitam",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/1229.png",
+    "options": [
+      "MP Maksimum +50",
+      "Pulih MP +5"
+    ],
+    "description": "",
+    "categoryName": "Zirah",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 979,
+    "name": "Sandal Sesepuh Hitam",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/1230.png",
+    "options": [
+      "MP Maksimum +25",
+      "Pulih MP +5"
+    ],
+    "description": "",
+    "categoryName": "Sepatu Bot",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 980,
+    "name": "Topi Balthazar",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/1231.png",
+    "options": [
+      "Pulih MP +5"
+    ],
+    "description": "",
+    "categoryName": "Helm",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 981,
+    "name": "Topi Caspa",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/1232.png",
+    "options": [
+      "MP Maksimum +25"
+    ],
+    "description": "",
+    "categoryName": "Helm",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 982,
+    "name": "Topi Melchior",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/1233.png",
+    "options": [
+      "INT +1"
+    ],
+    "description": "",
+    "categoryName": "Helm",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 983,
+    "name": "Topi Sema",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/1234.png",
+    "options": [
+      "MP Maksimum +15",
+      "Pulih MP +2"
+    ],
+    "description": "",
+    "categoryName": "Helm",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 1007,
+    "name": "Sarung Tangan Kurtz",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/1244.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Sarung Tangan",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 1008,
+    "name": "Zirah Kurtz",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/1246.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Zirah",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 1009,
+    "name": "Sepatu Bot Kurtz",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/1247.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Sepatu Bot",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 1010,
+    "name": "Helm Kurtz",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/1245.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Helm",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 1221,
+    "name": "Buku Sihir (Brave Aura)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/252.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 1294,
+    "name": "Buku Skill (Shock Stun)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/252.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 1295,
+    "name": "Buku Sihir (Rune Clan)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/252.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 1296,
+    "name": "Kristal Roh (Triple Arrow)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/677.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 1408,
+    "name": "Darah Iblis",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/20029.png",
+    "options": [
+      "Durasi +600 detik"
+    ],
+    "description": "Jika diminum, energi iblis akan merasuk jauh ke dalam hati, membangkitkan kemarahan yang membuat bergerak lebih cepat untuk sementara waktu.",
+    "categoryName": "Ramuan",
+    "parent": "Ramuan"
+  },
+  {
+    "id": 1861,
+    "name": "Buku Skill (Reduction Armor)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/252.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 1862,
+    "name": "Buku Skill (Bounce Attack)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/252.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 1863,
+    "name": "Buku Skill (Solid Carriage)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/252.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Buku Sihir",
+    "parent": "Buku Sihir"
+  },
+  {
+    "id": 2069,
+    "name": "Esensi Cahaya Bulan",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/2179.png",
+    "options": [],
+    "description": "Esensi yang terkonsentrasi, menyerap cahaya bulan dari Menara Gading.",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 2070,
+    "name": "Tanduk Unicorn Suci",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/2181.png",
+    "options": [],
+    "description": "Jejak Unicorn Suci yang gugur saat tanduk barunya tumbuh.",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 2072,
+    "name": "Panah Panjang Bulan",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/2168.png",
+    "options": [
+      "Akurasi Jarak Jauh +3",
+      "Aktivasi: Moonlight Eruption",
+      "Dua Tangan",
+      "Damage Jarak Jauh +4"
+    ],
+    "description": "",
+    "categoryName": "Panah",
+    "parent": "Senjata"
+  },
+  {
+    "id": 2671,
+    "name": "Bulu Pixie",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/2518.png",
+    "options": [],
+    "description": "Item spesial yang diberikan kepada pahlawan penerima keuntungan khusus.",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 3350,
+    "name": "Kitab Suci Penebusan",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/3138.png",
+    "options": [],
+    "description": "Kitab suci berisi kalimat penebusan. Dapat dibacakan melalui pendeta perdamaian.",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 3934,
+    "name": "Sabuk Elemen Api",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/3806.png",
+    "options": [
+      "Tambahan Berat +500",
+      "Resistensi Elemen Api +10"
+    ],
+    "description": "",
+    "categoryName": "Sabuk",
+    "parent": "Aksesori"
+  },
+  {
+    "id": 3935,
+    "name": "Sabuk Elemen Air",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/3802.png",
+    "options": [
+      "Tambahan Berat +500",
+      "Resistensi Elemen Air +10"
+    ],
+    "description": "",
+    "categoryName": "Sabuk",
+    "parent": "Aksesori"
+  },
+  {
+    "id": 3936,
+    "name": "Sabuk Elemen Tanah",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/3800.png",
+    "options": [
+      "Tambahan Berat +500",
+      "Resistensi Elemen Tanah +10"
+    ],
+    "description": "",
+    "categoryName": "Sabuk",
+    "parent": "Aksesori"
+  },
+  {
+    "id": 3937,
+    "name": "Sabuk Elemen Angin",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/3804.png",
+    "options": [
+      "Tambahan Berat +500",
+      "Resistensi Elemen Angin +10"
+    ],
+    "description": "",
+    "categoryName": "Sabuk",
+    "parent": "Aksesori"
+  },
+  {
+    "id": 4052,
+    "name": "Gulungan Pembuka Segel",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/6059.png",
+    "options": [],
+    "description": "Dapat membuka segel pada item yang tersegel. Harus digunakan sebelum waktu penggunaan berakhir.",
+    "categoryName": "Gulungan",
+    "parent": "Gulungan"
+  },
+  {
+    "id": 12069,
+    "name": "Lilin Kenangan",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/2923.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 12070,
+    "name": "Lilin Kenangan",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/2923.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 12074,
+    "name": "Kotak Kitab Suci Penebusan",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/20044.png",
+    "options": [],
+    "description": "Jika digunakan, akan mendapatkan 10 lembar Kitab Suci Penebusan.",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 12104,
+    "name": "Kotak Gulungan Pembuka Segel",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/3942.png",
+    "options": [],
+    "description": "Jika digunakan, akan mendapatkan 10 lembar Gulungan Pembuka Segel. Harus digunakan sebelum waktu penggunaan berakhir.",
+    "categoryName": "Gulungan",
+    "parent": "Gulungan"
+  },
+  {
+    "id": 12105,
+    "name": "Burung Pengantar Pesan Kertas",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/20088.png",
+    "options": [],
+    "description": "Jika digunakan untuk menuliskan nama orang yang curang, akan dikirimkan kepada penyelidik kebenaran.",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 12106,
+    "name": "Kotak Burung Pengantar Pesan Kertas",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/20092.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 12110,
+    "name": "Kalung Curian",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/637.png",
+    "options": [],
+    "description": "Barang berharga yang dicuri oleh pencopet, dicari dengan cemas oleh Iola di Desa Giran.",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 12111,
+    "name": "Cincin Curian",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/626.png",
+    "options": [],
+    "description": "Barang berharga yang dicuri oleh pencopet, dicari dengan cemas oleh Iola di Desa Giran.",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 12112,
+    "name": "Darah Cyclops",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/20029.png",
+    "options": [],
+    "description": "Bukti telah mengalahkan Cyclops. Jika dibawa ke Julie, pengrajin kulit di Desa Kesatria Perak, dapat digunakan untuk membuat perlengkapan spesial.",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 12113,
+    "name": "Kristal Roh Tercemar (Air)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/683.png",
+    "options": [],
+    "description": "Bukti telah mengalahkan Roh Air yang tercemar. Salah satu barang untuk membuktikan kemampuan kepada Ibu Hutan dan Peri di Hutan Peri.",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 12114,
+    "name": "Kristal Roh Tercemar (Api)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/680.png",
+    "options": [],
+    "description": "Bukti telah mengalahkan Roh Api yang tercemar. Salah satu barang untuk membuktikan kemampuan kepada Ibu Hutan dan Peri di Hutan Peri.",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 12115,
+    "name": "Kristal Roh Tercemar (Tanah)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/681.png",
+    "options": [],
+    "description": "Bukti telah mengalahkan Roh Tanah yang tercemar. Salah satu barang untuk membuktikan kemampuan kepada Ibu Hutan dan Peri di Hutan Peri.",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 12116,
+    "name": "Kristal Roh Tercemar (Angin)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/684.png",
+    "options": [],
+    "description": "Bukti telah mengalahkan Roh Angin yang tercemar. Salah satu barang untuk membuktikan kemampuan kepada Ibu Hutan dan Peri di Hutan Peri.",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 12117,
+    "name": "Sisik Basilisk",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/953.png",
+    "options": [],
+    "description": "Bukti telah mengalahkan Basilisk. Salah satu barang untuk membuktikan kemampuan kepada Ibu Hutan dan Peri di Hutan Peri.",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 12118,
+    "name": "Ikat Kepala Pemurnian",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/184.png",
+    "options": [],
+    "description": "Perlengkapan spesial yang dipinjamkan oleh Ibu Hutan dan Peri di Hutan Peri. Jika dipakai, dapat melihat Roh Angin yang tercemar.",
+    "categoryName": "Helm",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 12119,
+    "name": "Ramuan Misterius Pulih Mana",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/75.png",
+    "options": [],
+    "description": "Ramuan spesial yang dijual oleh Orim. Jem di Pulau Berbicara menunggu bahan ini untuk meneliti metode pemulihan mana yang efisien.",
+    "categoryName": "Ramuan",
+    "parent": "Ramuan"
+  },
+  {
+    "id": 12120,
+    "name": "Ramuan Kebijaksanaan Misterius",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/1529.png",
+    "options": [],
+    "description": "Ramuan spesial yang dimiliki beberapa sesepuh. Jem di Pulau Berbicara menunggu bahan ini untuk meneliti metode pemulihan mana yang efisien.",
+    "categoryName": "Ramuan",
+    "parent": "Ramuan"
+  },
+  {
+    "id": 12121,
+    "name": "Tongkat Misterius Ratu Succubus",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/946.png",
+    "options": [],
+    "description": "Tongkat spesial yang dimiliki beberapa Succubus Queen. Jem di Pulau Berbicara menunggu bahan ini untuk meneliti metode pemulihan mana yang efisien.",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 12122,
+    "name": "Gulungan Bicara (Penguasa)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/20018.png",
+    "options": [],
+    "description": "Gulungan dengan kekuatan misterius yang dapat teleport ke lokasi yang ditentukan.",
+    "categoryName": "Gulungan",
+    "parent": "Gulungan"
+  },
+  {
+    "id": 12123,
+    "name": "Gulungan Bicara (Kesatria)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/20018.png",
+    "options": [],
+    "description": "Gulungan dengan kekuatan misterius yang dapat teleport ke lokasi yang ditentukan.",
+    "categoryName": "Gulungan",
+    "parent": "Gulungan"
+  },
+  {
+    "id": 12124,
+    "name": "Gulungan Bicara (Peri)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/20018.png",
+    "options": [],
+    "description": "Gulungan dengan kekuatan misterius yang dapat teleport ke lokasi yang ditentukan.",
+    "categoryName": "Gulungan",
+    "parent": "Gulungan"
+  },
+  {
+    "id": 12125,
+    "name": "Gulungan Bicara (Penyihir)",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/20018.png",
+    "options": [],
+    "description": "Gulungan dengan kekuatan misterius yang dapat teleport ke lokasi yang ditentukan.",
+    "categoryName": "Gulungan",
+    "parent": "Gulungan"
+  },
+  {
+    "id": 12130,
+    "name": "Kenangan Pulau Berbicara",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/20100.png",
+    "options": [],
+    "description": "Hadiah dari Metis yang disiapkan untuk para pahlawan yang telah mengunjungi kembali Pulau Berbicara. Jika dimiliki, beban bawaan akan terasa sedikit lebih ringan.",
+    "categoryName": "Lainnya",
+    "parent": "Lainnya"
+  },
+  {
+    "id": 12149,
+    "name": "Cincin Penjagaan",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/20025.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Cincin",
+    "parent": "Aksesori"
+  },
+  {
+    "id": 12170,
+    "name": "Kalung Penjagaan",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/20138.png",
+    "options": [],
+    "description": "",
+    "categoryName": "Kalung",
+    "parent": "Aksesori"
+  },
+  {
+    "id": 12209,
+    "name": "Sabuk Penjagaan",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/20170.png",
+    "options": [
+      "Tambahan Berat +400"
+    ],
+    "description": "",
+    "categoryName": "Sabuk",
+    "parent": "Aksesori"
+  },
+  {
+    "id": 12242,
+    "name": "Kalung Sesepuh",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/20212.png",
+    "options": [
+      "MP Maksimum +30",
+      "Pulih MP +1"
+    ],
+    "description": "",
+    "categoryName": "Kalung",
+    "parent": "Aksesori"
+  },
+  {
+    "id": 12243,
+    "name": "Cincin Sesepuh",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/20214.png",
+    "options": [
+      "MP Maksimum +10",
+      "Pulih MP +1"
+    ],
+    "description": "",
+    "categoryName": "Cincin",
+    "parent": "Aksesori"
+  },
+  {
+    "id": 12286,
+    "name": "Kalung Anti-Sihir",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/20257.png",
+    "options": [
+      "MR +5"
+    ],
+    "description": "",
+    "categoryName": "Kalung",
+    "parent": "Aksesori"
+  },
+  {
+    "id": 12287,
+    "name": "Sabuk Anti-Sihir",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/20258.png",
+    "options": [
+      "Tambahan Berat +400"
+    ],
+    "description": "",
+    "categoryName": "Sabuk",
+    "parent": "Aksesori"
+  },
+  {
+    "id": 12349,
+    "name": "Sepatu Bot Kesetiaan",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/20327.png",
+    "options": [
+      "CHA +1"
+    ],
+    "description": "",
+    "categoryName": "Sepatu Bot",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 12350,
+    "name": "Sepatu Bot Keberanian",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/20328.png",
+    "options": [
+      "Akurasi Jarak Dekat +1"
+    ],
+    "description": "",
+    "categoryName": "Sepatu Bot",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 12351,
+    "name": "Sepatu Bot Sepia",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/20329.png",
+    "options": [
+      "Akurasi Jarak Jauh +1"
+    ],
+    "description": "",
+    "categoryName": "Sepatu Bot",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 12352,
+    "name": "Sepatu Bot Mana",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/20330.png",
+    "options": [
+      "Pulih MP +2"
+    ],
+    "description": "",
+    "categoryName": "Sepatu Bot",
+    "parent": "Pelindung Tubuh"
+  },
+  {
+    "id": 12405,
+    "name": "Cincin Mana",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/20348.png",
+    "options": [
+      "Pulih MP +1"
+    ],
+    "description": "",
+    "categoryName": "Cincin",
+    "parent": "Aksesori"
+  },
+  {
+    "id": 12860,
+    "name": "Cincin Pengetahuan",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/5343.png",
+    "options": [
+      "INT +1"
+    ],
+    "description": "",
+    "categoryName": "Cincin",
+    "parent": "Aksesori"
+  },
+  {
+    "id": 15384,
+    "name": "Cincin Kekuatan",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/6488.png",
+    "options": [
+      "STR +1"
+    ],
+    "description": "",
+    "categoryName": "Cincin",
+    "parent": "Aksesori"
+  },
+  {
+    "id": 15385,
+    "name": "Cincin Kecekatan",
+    "name2": null,
+    "image": "https://assets.playnccdn.com/static-lineageclassic-gamedata/resources/ItemIcon/6486.png",
+    "options": [
+      "DEX +1"
+    ],
+    "description": "",
+    "categoryName": "Cincin",
+    "parent": "Aksesori"
+  }
+]

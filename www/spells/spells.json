@@ -1,0 +1,1824 @@
+[
+  {
+    "id": 0,
+    "name": "Heal",
+    "image": "spell_icons/383.png",
+    "favorite": false,
+    "description": "Memulihkan sedikit HP target (memberi sedikit damage ke Undead)",
+    "duration": "Instan",
+    "classNames": [
+      "Prince",
+      "Knight",
+      "Elf",
+      "Wizard"
+    ],
+    "consumables": {
+      "mp": 4,
+      "hp": 0,
+      "itemCount": 0
+    },
+    "category": "Pemulihan"
+  },
+  {
+    "id": 1,
+    "name": "Light",
+    "image": "spell_icons/384.png",
+    "favorite": false,
+    "description": "Menciptakan sumber cahaya untuk menerangi sekitar",
+    "duration": "7200 detik",
+    "classNames": [
+      "Prince",
+      "Knight",
+      "Elf",
+      "Wizard"
+    ],
+    "consumables": {
+      "mp": 4,
+      "hp": 0,
+      "itemCount": 0
+    },
+    "category": "Utilitas"
+  },
+  {
+    "id": 2,
+    "name": "Shield",
+    "image": "spell_icons/385.png",
+    "favorite": false,
+    "description": "Meningkatkan pertahanan (AC-2)",
+    "duration": "1200 detik",
+    "classNames": [
+      "Prince",
+      "Knight",
+      "Elf",
+      "Wizard"
+    ],
+    "consumables": {
+      "mp": 2,
+      "hp": 0,
+      "itemCount": 0
+    },
+    "category": "Buff"
+  },
+  {
+    "id": 3,
+    "name": "Energy Bolt",
+    "image": "spell_icons/386.png",
+    "favorite": false,
+    "description": "Memberikan damage kecil dengan energi sihir",
+    "duration": "Instan",
+    "classNames": [
+      "Prince",
+      "Knight",
+      "Elf",
+      "Wizard"
+    ],
+    "consumables": {
+      "mp": 3,
+      "hp": 0,
+      "itemCount": 0
+    },
+    "category": "Serangan"
+  },
+  {
+    "id": 4,
+    "name": "Teleport",
+    "image": "spell_icons/387.png",
+    "favorite": false,
+    "description": "Berpindah ke lokasi acak, atau ke lokasi tersimpan jika menggunakan Cincin Kendali Teleport",
+    "duration": "Instan",
+    "classNames": [
+      "Prince",
+      "Knight",
+      "Elf",
+      "Wizard"
+    ],
+    "consumables": {
+      "mp": 5,
+      "hp": 0,
+      "itemCount": 0
+    },
+    "category": "Utilitas"
+  },
+  {
+    "id": 5,
+    "name": "Ice Dagger",
+    "image": "spell_icons/657.png",
+    "favorite": false,
+    "description": "Memberikan damage kecil dengan belati es",
+    "duration": "Instan",
+    "classNames": [
+      "Prince",
+      "Knight",
+      "Elf",
+      "Wizard"
+    ],
+    "consumables": {
+      "mp": 3,
+      "hp": 0,
+      "itemCount": 0
+    },
+    "category": "Serangan"
+  },
+  {
+    "id": 6,
+    "name": "Wind Cutter",
+    "image": "spell_icons/663.png",
+    "favorite": false,
+    "description": "Memberikan damage kecil dengan gergaji angin",
+    "duration": "Instan",
+    "classNames": [
+      "Prince",
+      "Knight",
+      "Elf",
+      "Wizard"
+    ],
+    "consumables": {
+      "mp": 3,
+      "hp": 0,
+      "itemCount": 0
+    },
+    "category": "Serangan"
+  },
+  {
+    "id": 7,
+    "name": "Holy Weapon",
+    "image": "spell_icons/775.png",
+    "favorite": false,
+    "description": "Memberkati senjata dengan sihir suci (Damage Tambahan +1, Akurasi Jarak Dekat +1, damage tambahan ke Undead)",
+    "duration": "1200 detik",
+    "classNames": [
+      "Prince",
+      "Knight",
+      "Elf",
+      "Wizard"
+    ],
+    "consumables": {
+      "mp": 10,
+      "hp": 0,
+      "itemCount": 0
+    },
+    "category": "Buff"
+  },
+  {
+    "id": 8,
+    "name": "Cure Poison",
+    "image": "spell_icons/388.png",
+    "favorite": false,
+    "description": "Menyembuhkan status teracun",
+    "duration": "Instan",
+    "classNames": [
+      "Prince",
+      "Elf",
+      "Wizard"
+    ],
+    "consumables": {
+      "mp": 8,
+      "hp": 0,
+      "itemCount": 0
+    },
+    "category": "Pemulihan"
+  },
+  {
+    "id": 9,
+    "name": "Chill Touch",
+    "image": "spell_icons/389.png",
+    "favorite": false,
+    "description": "Menyerap sedikit HP target",
+    "duration": "Instan",
+    "classNames": [
+      "Prince",
+      "Elf",
+      "Wizard"
+    ],
+    "consumables": {
+      "mp": 9,
+      "hp": 0,
+      "itemCount": 0
+    },
+    "category": "Serangan"
+  },
+  {
+    "id": 10,
+    "name": "Curse: Poison",
+    "image": "spell_icons/390.png",
+    "favorite": false,
+    "description": "Meracuni target (racun yang menguras HP secara bertahap)",
+    "duration": "30 detik",
+    "classNames": [
+      "Prince",
+      "Elf",
+      "Wizard"
+    ],
+    "consumables": {
+      "mp": 10,
+      "hp": 0,
+      "itemCount": 0
+    },
+    "category": "Debuff"
+  },
+  {
+    "id": 11,
+    "name": "Enchant Weapon",
+    "image": "spell_icons/391.png",
+    "favorite": false,
+    "description": "Memberikan sihir pada senjata (Damage Tambahan +2)",
+    "duration": "1800 detik",
+    "classNames": [
+      "Prince",
+      "Elf",
+      "Wizard"
+    ],
+    "consumables": {
+      "mp": 20,
+      "hp": 0,
+      "itemCount": 0
+    },
+    "category": "Buff"
+  },
+  {
+    "id": 12,
+    "name": "Detection",
+    "image": "spell_icons/392.png",
+    "favorite": false,
+    "description": "Menemukan target yang tersembunyi",
+    "duration": "Instan",
+    "classNames": [
+      "Prince",
+      "Elf",
+      "Wizard"
+    ],
+    "consumables": {
+      "mp": 8,
+      "hp": 0,
+      "itemCount": 0
+    },
+    "category": "Utilitas"
+  },
+  {
+    "id": 13,
+    "name": "Decrease Weight",
+    "image": "spell_icons/755.png",
+    "favorite": false,
+    "description": "Mengurangi berat item yang dibawa",
+    "duration": "1800 detik",
+    "classNames": [
+      "Prince",
+      "Elf",
+      "Wizard"
+    ],
+    "consumables": {
+      "mp": 10,
+      "hp": 0,
+      "itemCount": 0
+    },
+    "category": "Utilitas"
+  },
+  {
+    "id": 14,
+    "name": "Fire Arrow",
+    "image": "spell_icons/651.png",
+    "favorite": false,
+    "description": "Memberikan damage kecil dengan anak panah api",
+    "duration": "Instan",
+    "classNames": [
+      "Prince",
+      "Elf",
+      "Wizard"
+    ],
+    "consumables": {
+      "mp": 3,
+      "hp": 0,
+      "itemCount": 0
+    },
+    "category": "Serangan"
+  },
+  {
+    "id": 15,
+    "name": "Stalagmite",
+    "image": "spell_icons/659.png",
+    "favorite": false,
+    "description": "Memberikan damage kecil dengan duri batu",
+    "duration": "Instan",
+    "classNames": [
+      "Prince",
+      "Elf",
+      "Wizard"
+    ],
+    "consumables": {
+      "mp": 3,
+      "hp": 0,
+      "itemCount": 0
+    },
+    "category": "Serangan"
+  },
+  {
+    "id": 16,
+    "name": "Lightning",
+    "image": "spell_icons/393.png",
+    "favorite": false,
+    "description": "Memberikan damage pada musuh di depan dengan petir",
+    "duration": "Instan",
+    "classNames": [
+      "Elf",
+      "Wizard"
+    ],
+    "consumables": {
+      "mp": 13,
+      "hp": 0,
+      "itemCount": 0
+    },
+    "category": "Serangan"
+  },
+  {
+    "id": 17,
+    "name": "Turn Undead",
+    "image": "spell_icons/394.png",
+    "favorite": false,
+    "description": "Membebaskan monster Undead (ada kemungkinan menjadi status Berserk)",
+    "duration": "Instan",
+    "classNames": [
+      "Elf",
+      "Wizard"
+    ],
+    "consumables": {
+      "mp": 15,
+      "hp": 0,
+      "itemCount": 0
+    },
+    "category": "Status"
+  },
+  {
+    "id": 18,
+    "name": "Extra Heal",
+    "image": "spell_icons/395.png",
+    "favorite": false,
+    "description": "Memulihkan HP target dalam jumlah sedang (memberi damage tertentu ke Undead)",
+    "duration": "Instan",
+    "classNames": [
+      "Elf",
+      "Wizard"
+    ],
+    "consumables": {
+      "mp": 11,
+      "hp": 0,
+      "itemCount": 0
+    },
+    "category": "Pemulihan"
+  },
+  {
+    "id": 19,
+    "name": "Curse: Blind",
+    "image": "spell_icons/396.png",
+    "favorite": false,
+    "description": "Mengutuk target hingga buta (status Darkness)",
+    "duration": "10 detik",
+    "classNames": [
+      "Elf",
+      "Wizard"
+    ],
+    "consumables": {
+      "mp": 20,
+      "hp": 0,
+      "itemCount": 0
+    },
+    "category": "Debuff"
+  },
+  {
+    "id": 20,
+    "name": "Blessed Armor",
+    "image": "spell_icons/397.png",
+    "favorite": false,
+    "description": "Memberikan sihir pada zirah (AC-3)",
+    "duration": "1800 detik",
+    "classNames": [
+      "Elf",
+      "Wizard"
+    ],
+    "consumables": {
+      "mp": 20,
+      "hp": 0,
+      "itemCount": 0
+    },
+    "category": "Buff"
+  },
+  {
+    "id": 21,
+    "name": "Frozen Cloud",
+    "image": "spell_icons/655.png",
+    "favorite": false,
+    "description": "Memberikan damage area dengan awan dingin",
+    "duration": "Instan",
+    "classNames": [
+      "Elf",
+      "Wizard"
+    ],
+    "consumables": {
+      "mp": 9,
+      "hp": 0,
+      "itemCount": 0
+    },
+    "category": "Serangan"
+  },
+  {
+    "id": 22,
+    "name": "Weak Elemental",
+    "image": "spell_icons/848.png",
+    "favorite": false,
+    "description": "Mengetahui elemen kelemahan lawan (Tanah, Api, Angin, Air)",
+    "duration": "Instan",
+    "classNames": [
+      "Elf",
+      "Wizard"
+    ],
+    "consumables": {
+      "mp": 8,
+      "hp": 0,
+      "itemCount": 0
+    },
+    "category": "Utilitas"
+  },
+  {
+    "id": 24,
+    "name": "Fireball",
+    "image": "spell_icons/398.png",
+    "favorite": false,
+    "description": "Memberikan damage area dengan bola api",
+    "duration": "Instan",
+    "classNames": [
+      "Elf",
+      "Wizard"
+    ],
+    "consumables": {
+      "mp": 16,
+      "hp": 0,
+      "itemCount": 0
+    },
+    "category": "Serangan"
+  },
+  {
+    "id": 25,
+    "name": "Enchant Dexterity",
+    "image": "spell_icons/399.png",
+    "favorite": false,
+    "description": "Meningkatkan kecekatan (DEX +5)",
+    "duration": "1200 detik",
+    "classNames": [
+      "Elf",
+      "Wizard"
+    ],
+    "consumables": {
+      "mp": 45,
+      "hp": 0,
+      "itemCount": 0
+    },
+    "category": "Buff"
+  },
+  {
+    "id": 26,
+    "name": "Weapon Break",
+    "image": "spell_icons/400.png",
+    "favorite": false,
+    "description": "Merusak senjata yang dipegang target",
+    "duration": "Instan",
+    "classNames": [
+      "Elf",
+      "Wizard"
+    ],
+    "consumables": {
+      "mp": 25,
+      "hp": 0,
+      "itemCount": 1
+    },
+    "category": "Debuff"
+  },
+  {
+    "id": 27,
+    "name": "Vampiric Touch",
+    "image": "spell_icons/401.png",
+    "favorite": false,
+    "description": "Menyerap HP target",
+    "duration": "Instan",
+    "classNames": [
+      "Elf",
+      "Wizard"
+    ],
+    "consumables": {
+      "mp": 13,
+      "hp": 0,
+      "itemCount": 0
+    },
+    "category": "Serangan"
+  },
+  {
+    "id": 28,
+    "name": "Slow",
+    "image": "spell_icons/402.png",
+    "favorite": false,
+    "description": "Mengurangi kecepatan gerak dan serang",
+    "duration": "30 detik",
+    "classNames": [
+      "Elf",
+      "Wizard"
+    ],
+    "consumables": {
+      "mp": 20,
+      "hp": 0,
+      "itemCount": 1
+    },
+    "category": "Debuff"
+  },
+  {
+    "id": 29,
+    "name": "Earth Jail",
+    "image": "spell_icons/647.png",
+    "favorite": false,
+    "description": "Memberikan damage area dengan tanaman berduri",
+    "duration": "Instan",
+    "classNames": [
+      "Elf",
+      "Wizard"
+    ],
+    "consumables": {
+      "mp": 11,
+      "hp": 0,
+      "itemCount": 0
+    },
+    "category": "Serangan"
+  },
+  {
+    "id": 30,
+    "name": "Counter Magic",
+    "image": "spell_icons/746.png",
+    "favorite": false,
+    "description": "Membatalkan 1 kali sihir damage yang masuk (kecuali beberapa jenis)",
+    "duration": "16 detik",
+    "classNames": [
+      "Elf",
+      "Wizard"
+    ],
+    "consumables": {
+      "mp": 20,
+      "hp": 0,
+      "itemCount": 1
+    },
+    "category": "Buff"
+  },
+  {
+    "id": 31,
+    "name": "Meditation",
+    "image": "spell_icons/793.png",
+    "favorite": false,
+    "description": "Memusatkan konsentrasi melalui meditasi",
+    "duration": "600 detik",
+    "classNames": [
+      "Elf",
+      "Wizard"
+    ],
+    "consumables": {
+      "mp": 10,
+      "hp": 40,
+      "itemCount": 0
+    },
+    "category": "Buff"
+  },
+  {
+    "id": 32,
+    "name": "Curse: Paralyze",
+    "image": "spell_icons/403.png",
+    "favorite": false,
+    "description": "Mengutuk target hingga lumpuh (status Paralyze)",
+    "duration": "4 detik",
+    "classNames": [
+      "Elf",
+      "Wizard"
+    ],
+    "consumables": {
+      "mp": 35,
+      "hp": 0,
+      "itemCount": 2
+    },
+    "category": "Debuff"
+  },
+  {
+    "id": 33,
+    "name": "Call Lightning",
+    "image": "spell_icons/404.png",
+    "favorite": false,
+    "description": "Memberikan damage besar dengan memanggil petir",
+    "duration": "Instan",
+    "classNames": [
+      "Elf",
+      "Wizard"
+    ],
+    "consumables": {
+      "mp": 25,
+      "hp": 0,
+      "itemCount": 0
+    },
+    "category": "Serangan"
+  },
+  {
+    "id": 34,
+    "name": "Greater Heal",
+    "image": "spell_icons/405.png",
+    "favorite": false,
+    "description": "Memulihkan HP target (memberi damage tertentu ke Undead)",
+    "duration": "Instan",
+    "classNames": [
+      "Elf",
+      "Wizard"
+    ],
+    "consumables": {
+      "mp": 20,
+      "hp": 0,
+      "itemCount": 0
+    },
+    "category": "Pemulihan"
+  },
+  {
+    "id": 35,
+    "name": "Taming Monster",
+    "image": "spell_icons/406.png",
+    "favorite": false,
+    "description": "Menghipnotis monster untuk dijadikan pelayan",
+    "duration": "3600 detik",
+    "classNames": [
+      "Elf",
+      "Wizard"
+    ],
+    "consumables": {
+      "mp": 30,
+      "hp": 0,
+      "itemCount": 2
+    },
+    "category": "Panggilan"
+  },
+  {
+    "id": 36,
+    "name": "Remove Curse",
+    "image": "spell_icons/407.png",
+    "favorite": false,
+    "description": "Menghilangkan kutukan yang menempel pada target",
+    "duration": "Instan",
+    "classNames": [
+      "Elf",
+      "Wizard"
+    ],
+    "consumables": {
+      "mp": 10,
+      "hp": 0,
+      "itemCount": 0
+    },
+    "category": "Pemulihan"
+  },
+  {
+    "id": 37,
+    "name": "Cone of Cold",
+    "image": "spell_icons/643.png",
+    "favorite": false,
+    "description": "Memberikan damage besar dengan kerucut es",
+    "duration": "Instan",
+    "classNames": [
+      "Elf",
+      "Wizard"
+    ],
+    "consumables": {
+      "mp": 21,
+      "hp": 0,
+      "itemCount": 0
+    },
+    "category": "Serangan"
+  },
+  {
+    "id": 38,
+    "name": "Mana Drain",
+    "image": "spell_icons/791.png",
+    "favorite": false,
+    "description": "Menyerap MP target",
+    "duration": "Instan",
+    "classNames": [
+      "Elf",
+      "Wizard"
+    ],
+    "consumables": {
+      "mp": 0,
+      "hp": 50,
+      "itemCount": 0
+    },
+    "category": "Serangan"
+  },
+  {
+    "id": 39,
+    "name": "Darkness",
+    "image": "spell_icons/749.png",
+    "favorite": false,
+    "description": "Mengutuk target hingga buta dengan sihir (status Darkness)",
+    "duration": "20 detik",
+    "classNames": [
+      "Elf",
+      "Wizard"
+    ],
+    "consumables": {
+      "mp": 25,
+      "hp": 0,
+      "itemCount": 1
+    },
+    "category": "Debuff"
+  },
+  {
+    "id": 40,
+    "name": "Create Zombie",
+    "image": "spell_icons/408.png",
+    "favorite": false,
+    "description": "Mengubah mayat menjadi zombie sebagai pelayan",
+    "duration": "3600 detik",
+    "classNames": [
+      "Elf",
+      "Wizard"
+    ],
+    "consumables": {
+      "mp": 35,
+      "hp": 0,
+      "itemCount": 2
+    },
+    "category": "Panggilan"
+  },
+  {
+    "id": 41,
+    "name": "Enchant Mighty",
+    "image": "spell_icons/409.png",
+    "favorite": false,
+    "description": "Meningkatkan kekuatan (STR +5)",
+    "duration": "1200 detik",
+    "classNames": [
+      "Elf",
+      "Wizard"
+    ],
+    "consumables": {
+      "mp": 50,
+      "hp": 0,
+      "itemCount": 0
+    },
+    "category": "Buff"
+  },
+  {
+    "id": 42,
+    "name": "Haste",
+    "image": "spell_icons/410.png",
+    "favorite": false,
+    "description": "Meningkatkan kecepatan gerak dan serang target",
+    "duration": "1200 detik",
+    "classNames": [
+      "Elf",
+      "Wizard"
+    ],
+    "consumables": {
+      "mp": 40,
+      "hp": 0,
+      "itemCount": 0
+    },
+    "category": "Buff"
+  },
+  {
+    "id": 43,
+    "name": "Cancellation",
+    "image": "spell_icons/411.png",
+    "favorite": false,
+    "description": "Menghapus sihir status (kecuali beberapa jenis)",
+    "duration": "Instan",
+    "classNames": [
+      "Elf",
+      "Wizard"
+    ],
+    "consumables": {
+      "mp": 40,
+      "hp": 0,
+      "itemCount": 2
+    },
+    "category": "Utilitas"
+  },
+  {
+    "id": 44,
+    "name": "Eruption",
+    "image": "spell_icons/412.png",
+    "favorite": false,
+    "description": "Memberikan damage besar dengan gempa garis lurus",
+    "duration": "Instan",
+    "classNames": [
+      "Elf",
+      "Wizard"
+    ],
+    "consumables": {
+      "mp": 25,
+      "hp": 0,
+      "itemCount": 0
+    },
+    "category": "Serangan"
+  },
+  {
+    "id": 45,
+    "name": "Sun Burst",
+    "image": "spell_icons/661.png",
+    "favorite": false,
+    "description": "Memberikan damage besar dengan ledakan terpusat",
+    "duration": "Instan",
+    "classNames": [
+      "Elf",
+      "Wizard"
+    ],
+    "consumables": {
+      "mp": 30,
+      "hp": 0,
+      "itemCount": 0
+    },
+    "category": "Serangan"
+  },
+  {
+    "id": 46,
+    "name": "Weakness",
+    "image": "spell_icons/850.png",
+    "favorite": false,
+    "description": "Mengutuk target hingga melemah (Damage Jarak Dekat -4, Akurasi Jarak Dekat -2)",
+    "duration": "30 detik",
+    "classNames": [
+      "Elf",
+      "Wizard"
+    ],
+    "consumables": {
+      "mp": 25,
+      "hp": 0,
+      "itemCount": 1
+    },
+    "category": "Debuff"
+  },
+  {
+    "id": 47,
+    "name": "Bless Weapon",
+    "image": "spell_icons/726.png",
+    "favorite": false,
+    "description": "Memberikan sihir pada senjata (Damage Tambahan +2, Akurasi Jarak Dekat +2)",
+    "duration": "1200 detik",
+    "classNames": [
+      "Elf",
+      "Wizard"
+    ],
+    "consumables": {
+      "mp": 20,
+      "hp": 0,
+      "itemCount": 0
+    },
+    "category": "Buff"
+  },
+  {
+    "id": 48,
+    "name": "Heal All",
+    "image": "spell_icons/413.png",
+    "favorite": false,
+    "description": "Memulihkan HP seluruh anggota party secara bersamaan, kecuali caster",
+    "duration": "Instan",
+    "classNames": [
+      "Wizard"
+    ],
+    "consumables": {
+      "mp": 35,
+      "hp": 0,
+      "itemCount": 0
+    },
+    "category": "Pemulihan"
+  },
+  {
+    "id": 49,
+    "name": "Ice Lance",
+    "image": "spell_icons/414.png",
+    "favorite": false,
+    "description": "Memberikan damage sihir elemen air pada target (ada kemungkinan membuat membeku)",
+    "duration": "Instan",
+    "classNames": [
+      "Wizard"
+    ],
+    "consumables": {
+      "mp": 30,
+      "hp": 0,
+      "itemCount": 0
+    },
+    "category": "Serangan"
+  },
+  {
+    "id": 50,
+    "name": "Summon Monster",
+    "image": "spell_icons/415.png",
+    "favorite": false,
+    "description": "Memanggil beberapa monster berdasarkan Karisma (jenis monster yang bisa dipanggil tergantung level)",
+    "duration": "3600 detik",
+    "classNames": [
+      "Wizard"
+    ],
+    "consumables": {
+      "mp": 50,
+      "hp": 0,
+      "itemCount": 3
+    },
+    "category": "Panggilan"
+  },
+  {
+    "id": 51,
+    "name": "Holy Walk",
+    "image": "spell_icons/1578.png",
+    "favorite": false,
+    "description": "Meningkatkan kecepatan gerak",
+    "duration": "64 detik",
+    "classNames": [
+      "Wizard"
+    ],
+    "consumables": {
+      "mp": 20,
+      "hp": 0,
+      "itemCount": 0
+    },
+    "category": "Buff"
+  },
+  {
+    "id": 52,
+    "name": "Tornado",
+    "image": "spell_icons/417.png",
+    "favorite": false,
+    "description": "Memberikan damage area dengan angin puyuh",
+    "duration": "Instan",
+    "classNames": [
+      "Wizard"
+    ],
+    "consumables": {
+      "mp": 45,
+      "hp": 0,
+      "itemCount": 0
+    },
+    "category": "Serangan"
+  },
+  {
+    "id": 53,
+    "name": "Greater Haste",
+    "image": "spell_icons/622.png",
+    "favorite": false,
+    "description": "Meningkatkan kecepatan gerak dan serang",
+    "duration": "2400 detik",
+    "classNames": [
+      "Wizard"
+    ],
+    "consumables": {
+      "mp": 60,
+      "hp": 0,
+      "itemCount": 0
+    },
+    "category": "Buff"
+  },
+  {
+    "id": 54,
+    "name": "Berserkus",
+    "image": "spell_icons/1570.png",
+    "favorite": false,
+    "description": "Membuat target menjadi Berserk (Damage Jarak Dekat +5, AC +10, HP tidak pulih alami)",
+    "duration": "1200 detik",
+    "classNames": [
+      "Wizard"
+    ],
+    "consumables": {
+      "mp": 40,
+      "hp": 0,
+      "itemCount": 0
+    },
+    "category": "Buff"
+  },
+  {
+    "id": 55,
+    "name": "Disease",
+    "image": "spell_icons/758.png",
+    "favorite": false,
+    "description": "Mengutuk target hingga lemah (Akurasi Jarak Dekat -4, AC +8)",
+    "duration": "30 detik",
+    "classNames": [
+      "Wizard"
+    ],
+    "consumables": {
+      "mp": 30,
+      "hp": 0,
+      "itemCount": 2
+    },
+    "category": "Debuff"
+  },
+  {
+    "id": 56,
+    "name": "Full Heal",
+    "image": "spell_icons/418.png",
+    "favorite": false,
+    "description": "Memulihkan HP target dalam jumlah besar (memberi damage tertentu ke Undead)",
+    "duration": "Instan",
+    "classNames": [
+      "Wizard"
+    ],
+    "consumables": {
+      "mp": 30,
+      "hp": 0,
+      "itemCount": 0
+    },
+    "category": "Pemulihan"
+  },
+  {
+    "id": 58,
+    "name": "Blizzard",
+    "image": "spell_icons/420.png",
+    "favorite": false,
+    "description": "Memberikan damage area dengan angin beku",
+    "duration": "Instan",
+    "classNames": [
+      "Wizard"
+    ],
+    "consumables": {
+      "mp": 60,
+      "hp": 0,
+      "itemCount": 0
+    },
+    "category": "Serangan"
+  },
+  {
+    "id": 59,
+    "name": "Invisibility",
+    "image": "spell_icons/421.png",
+    "favorite": false,
+    "description": "Status tak terlihat (gerakan terbatas)",
+    "duration": "Selama MP masih ada",
+    "classNames": [
+      "Wizard"
+    ],
+    "consumables": {
+      "mp": 45,
+      "hp": 25,
+      "itemCount": 1
+    },
+    "category": "Buff"
+  },
+  {
+    "id": 60,
+    "name": "Resurrection",
+    "image": "spell_icons/422.png",
+    "favorite": false,
+    "description": "Membangkitkan mayat",
+    "duration": "Instan",
+    "classNames": [
+      "Wizard"
+    ],
+    "consumables": {
+      "mp": 50,
+      "hp": 0,
+      "itemCount": 0
+    },
+    "category": "Pemulihan"
+  },
+  {
+    "id": 61,
+    "name": "Earthquake",
+    "image": "spell_icons/649.png",
+    "favorite": false,
+    "description": "Memberikan damage area dengan gempa menyebar",
+    "duration": "Instan",
+    "classNames": [
+      "Wizard"
+    ],
+    "consumables": {
+      "mp": 40,
+      "hp": 0,
+      "itemCount": 0
+    },
+    "category": "Serangan"
+  },
+  {
+    "id": 63,
+    "name": "Silence",
+    "image": "spell_icons/822.png",
+    "favorite": false,
+    "description": "Membuat area sekitar menjadi zona sunyi (tidak bisa pakai sihir & chat)",
+    "duration": "16 detik",
+    "classNames": [
+      "Wizard"
+    ],
+    "consumables": {
+      "mp": 30,
+      "hp": 0,
+      "itemCount": 2
+    },
+    "category": "Debuff"
+  },
+  {
+    "id": 64,
+    "name": "Lightning Storm",
+    "image": "spell_icons/1579.png",
+    "favorite": false,
+    "description": "Memberikan damage area dengan memanggil sekumpulan petir",
+    "duration": "Instan",
+    "classNames": [
+      "Wizard"
+    ],
+    "consumables": {
+      "mp": 48,
+      "hp": 0,
+      "itemCount": 0
+    },
+    "category": "Serangan"
+  },
+  {
+    "id": 65,
+    "name": "Fog of Sleeping",
+    "image": "spell_icons/424.png",
+    "favorite": false,
+    "description": "Memanggil kabut tidur (status Sleep)",
+    "duration": "1~8 detik",
+    "classNames": [
+      "Wizard"
+    ],
+    "consumables": {
+      "mp": 40,
+      "hp": 0,
+      "itemCount": 1
+    },
+    "category": "Status"
+  },
+  {
+    "id": 67,
+    "name": "Immune to Harm",
+    "image": "spell_icons/426.png",
+    "favorite": false,
+    "description": "Menciptakan pelindung sihir (mengurangi damage yang diterima caster sebesar 30%)",
+    "duration": "32 detik",
+    "classNames": [
+      "Wizard"
+    ],
+    "consumables": {
+      "mp": 30,
+      "hp": 0,
+      "itemCount": 2
+    },
+    "category": "Buff"
+  },
+  {
+    "id": 68,
+    "name": "Mass Teleport",
+    "image": "spell_icons/427.png",
+    "favorite": false,
+    "description": "Berpindah bersama anggota clan di sekitar (ke lokasi tersimpan jika menggunakan Cincin Kendali Teleport)",
+    "duration": "Instan",
+    "classNames": [
+      "Wizard"
+    ],
+    "consumables": {
+      "mp": 60,
+      "hp": 0,
+      "itemCount": 0
+    },
+    "category": "Utilitas"
+  },
+  {
+    "id": 69,
+    "name": "Fire Storm",
+    "image": "spell_icons/653.png",
+    "favorite": false,
+    "description": "Memberikan damage area dengan badai api",
+    "duration": "Instan",
+    "classNames": [
+      "Wizard"
+    ],
+    "consumables": {
+      "mp": 48,
+      "hp": 0,
+      "itemCount": 0
+    },
+    "category": "Serangan"
+  },
+  {
+    "id": 73,
+    "name": "Meteor Strike",
+    "image": "spell_icons/429.png",
+    "favorite": false,
+    "description": "Memberikan damage area dengan memanggil meteor api",
+    "duration": "Instan",
+    "classNames": [
+      "Wizard"
+    ],
+    "consumables": {
+      "mp": 60,
+      "hp": 0,
+      "itemCount": 0
+    },
+    "category": "Serangan"
+  },
+  {
+    "id": 86,
+    "name": "Shock Stun",
+    "image": "spell_icons/1624.png",
+    "favorite": false,
+    "description": "Membuat target menjadi status Stun",
+    "duration": "4 detik atau kurang",
+    "classNames": [
+      "Knight"
+    ],
+    "consumables": {
+      "mp": 12,
+      "hp": 0,
+      "itemCount": 0
+    },
+    "category": "Status"
+  },
+  {
+    "id": 87,
+    "name": "Reduction Armor",
+    "image": "spell_icons/1887.png",
+    "favorite": false,
+    "description": "Menyerap damage dengan kekuatan mental (Pengurangan Damage +1, bertambah +1 setiap 5 level setelah level 50)",
+    "duration": "1200 detik",
+    "classNames": [
+      "Knight"
+    ],
+    "consumables": {
+      "mp": 10,
+      "hp": 0,
+      "itemCount": 0
+    },
+    "category": "Buff"
+  },
+  {
+    "id": 88,
+    "name": "Bounce Attack",
+    "image": "spell_icons/1881.png",
+    "favorite": false,
+    "description": "Memberi kekuatan pada kedua tangan (Akurasi Jarak Dekat +5)",
+    "duration": "1200 detik",
+    "classNames": [
+      "Knight"
+    ],
+    "consumables": {
+      "mp": 10,
+      "hp": 0,
+      "itemCount": 0
+    },
+    "category": "Buff"
+  },
+  {
+    "id": 89,
+    "name": "Solid Carriage",
+    "image": "spell_icons/20160.png",
+    "favorite": false,
+    "description": "Memusatkan konsentrasi pada pertahanan (ER +15)",
+    "duration": "180 detik",
+    "classNames": [
+      "Knight"
+    ],
+    "consumables": {
+      "mp": 5,
+      "hp": 30,
+      "itemCount": 0
+    },
+    "category": "Buff"
+  },
+  {
+    "id": 112,
+    "name": "True Target",
+    "image": "spell_icons/894.png",
+    "favorite": false,
+    "description": "Menciptakan tanda yang mengikuti target",
+    "duration": "16 detik",
+    "classNames": [
+      "Prince"
+    ],
+    "consumables": {
+      "mp": 1,
+      "hp": 0,
+      "itemCount": 0
+    },
+    "category": "Debuff"
+  },
+  {
+    "id": 113,
+    "name": "Glowing Aura",
+    "image": "spell_icons/878.png",
+    "favorite": false,
+    "description": "Damage Jarak Dekat +1, Akurasi Jarak Dekat +1",
+    "duration": "1200 detik",
+    "classNames": [
+      "Prince"
+    ],
+    "consumables": {
+      "mp": 30,
+      "hp": 0,
+      "itemCount": 0
+    },
+    "category": "Buff"
+  },
+  {
+    "id": 115,
+    "name": "Call Clan",
+    "image": "spell_icons/883.png",
+    "favorite": false,
+    "description": "Memanggil satu anggota clan ke lokasi caster",
+    "duration": "Instan",
+    "classNames": [
+      "Prince"
+    ],
+    "consumables": {
+      "mp": 25,
+      "hp": 0,
+      "itemCount": 0
+    },
+    "category": "Utilitas"
+  },
+  {
+    "id": 116,
+    "name": "Brave Aura",
+    "image": "spell_icons/885.png",
+    "favorite": false,
+    "description": "Damage Jarak Dekat +3, Akurasi Jarak Dekat +3",
+    "duration": "1200 detik",
+    "classNames": [
+      "Prince"
+    ],
+    "consumables": {
+      "mp": 40,
+      "hp": 0,
+      "itemCount": 0
+    },
+    "category": "Buff"
+  },
+  {
+    "id": 117,
+    "name": "Run Clan",
+    "image": "spell_icons/1751.png",
+    "favorite": false,
+    "description": "Teleport ke anggota clan yang ditentukan",
+    "duration": "Instan",
+    "classNames": [
+      "Prince"
+    ],
+    "consumables": {
+      "mp": 30,
+      "hp": 0,
+      "itemCount": 0
+    },
+    "category": "Utilitas"
+  },
+  {
+    "id": 128,
+    "name": "Resist Magic",
+    "image": "spell_icons/811.png",
+    "favorite": false,
+    "description": "Meningkatkan pertahanan sihir (MR +10%)",
+    "duration": "1200 detik",
+    "classNames": [
+      "Elf"
+    ],
+    "consumables": {
+      "mp": 10,
+      "hp": 0,
+      "itemCount": 0
+    },
+    "category": "Buff"
+  },
+  {
+    "id": 129,
+    "name": "Body to Mind",
+    "image": "spell_icons/731.png",
+    "favorite": false,
+    "description": "Mengorbankan HP untuk memulihkan mental (Memulihkan 2 MP)",
+    "duration": "Instan",
+    "classNames": [
+      "Elf"
+    ],
+    "consumables": {
+      "mp": 0,
+      "hp": 8,
+      "itemCount": 0
+    },
+    "category": "Pemulihan"
+  },
+  {
+    "id": 130,
+    "name": "Teleport to Mother",
+    "image": "spell_icons/846.png",
+    "favorite": false,
+    "description": "Berpindah ke Pohon Dunia",
+    "duration": "Instan",
+    "classNames": [
+      "Elf"
+    ],
+    "consumables": {
+      "mp": 10,
+      "hp": 0,
+      "itemCount": 0
+    },
+    "category": "Utilitas"
+  },
+  {
+    "id": 131,
+    "name": "Triple Arrow",
+    "image": "spell_icons/1755.png",
+    "favorite": false,
+    "description": "Menembakkan 3 anak panah secara cepat berturut-turut",
+    "duration": "Instan",
+    "classNames": [
+      "Elf"
+    ],
+    "consumables": {
+      "mp": 15,
+      "hp": 0,
+      "itemCount": 0
+    },
+    "category": "Serangan"
+  },
+  {
+    "id": 136,
+    "name": "Clear Mind",
+    "image": "spell_icons/743.png",
+    "favorite": false,
+    "description": "WIS +3",
+    "duration": "1200 detik",
+    "classNames": [
+      "Elf"
+    ],
+    "consumables": {
+      "mp": 10,
+      "hp": 0,
+      "itemCount": 1
+    },
+    "category": "Buff"
+  },
+  {
+    "id": 137,
+    "name": "Resist Element",
+    "image": "spell_icons/802.png",
+    "favorite": false,
+    "description": "Meningkatkan resistensi elemen (Resistensi Semua Elemen +10)",
+    "duration": "1200 detik",
+    "classNames": [
+      "Elf"
+    ],
+    "consumables": {
+      "mp": 5,
+      "hp": 0,
+      "itemCount": 1
+    },
+    "category": "Buff"
+  },
+  {
+    "id": 144,
+    "name": "Return to Nature",
+    "image": "spell_icons/820.png",
+    "favorite": false,
+    "description": "Menghilangkan pelayan yang dipanggil",
+    "duration": "Instan",
+    "classNames": [
+      "Elf"
+    ],
+    "consumables": {
+      "mp": 30,
+      "hp": 0,
+      "itemCount": 2
+    },
+    "category": "Utilitas"
+  },
+  {
+    "id": 145,
+    "name": "Blood to Soul",
+    "image": "spell_icons/729.png",
+    "favorite": false,
+    "description": "Mengorbankan HP untuk memulihkan mental (Memulihkan 15 MP)",
+    "duration": "Instan",
+    "classNames": [
+      "Elf"
+    ],
+    "consumables": {
+      "mp": 0,
+      "hp": 50,
+      "itemCount": 0
+    },
+    "category": "Pemulihan"
+  },
+  {
+    "id": 146,
+    "name": "Protection from Element",
+    "image": "spell_icons/871.png",
+    "favorite": false,
+    "description": "Meningkatkan resistensi elemen sesuai elemen caster (Resistensi Elemen +50)",
+    "duration": "1200 detik",
+    "classNames": [
+      "Elf"
+    ],
+    "consumables": {
+      "mp": 10,
+      "hp": 0,
+      "itemCount": 1
+    },
+    "category": "Buff"
+  },
+  {
+    "id": 147,
+    "name": "Fire Weapon",
+    "image": "spell_icons/772.png",
+    "favorite": false,
+    "description": "Meminjam kekuatan elemen api (Damage Jarak Dekat +3)",
+    "duration": "1200 detik",
+    "classNames": [
+      "Elf"
+    ],
+    "consumables": {
+      "mp": 20,
+      "hp": 0,
+      "itemCount": 0
+    },
+    "category": "Buff"
+  },
+  {
+    "id": 148,
+    "name": "Wind Shot",
+    "image": "spell_icons/853.png",
+    "favorite": false,
+    "description": "Meminjam kekuatan elemen angin (Akurasi Jarak Jauh +5)",
+    "duration": "1200 detik",
+    "classNames": [
+      "Elf"
+    ],
+    "consumables": {
+      "mp": 15,
+      "hp": 0,
+      "itemCount": 0
+    },
+    "category": "Buff"
+  },
+  {
+    "id": 149,
+    "name": "Wind Walk",
+    "image": "spell_icons/856.png",
+    "favorite": false,
+    "description": "Meningkatkan kecepatan gerak",
+    "duration": "1200 detik",
+    "classNames": [
+      "Elf"
+    ],
+    "consumables": {
+      "mp": 20,
+      "hp": 0,
+      "itemCount": 0
+    },
+    "category": "Buff"
+  },
+  {
+    "id": 150,
+    "name": "Earth Skin",
+    "image": "spell_icons/761.png",
+    "favorite": false,
+    "description": "Meminjam pertahanan elemen tanah (AC -4)",
+    "duration": "1200 detik",
+    "classNames": [
+      "Elf"
+    ],
+    "consumables": {
+      "mp": 15,
+      "hp": 0,
+      "itemCount": 0
+    },
+    "category": "Buff"
+  },
+  {
+    "id": 151,
+    "name": "Entangle",
+    "image": "spell_icons/764.png",
+    "favorite": false,
+    "description": "Mengikat kaki target dengan akar pohon (mengurangi kecepatan gerak)",
+    "duration": "30 detik",
+    "classNames": [
+      "Elf"
+    ],
+    "consumables": {
+      "mp": 20,
+      "hp": 0,
+      "itemCount": 1
+    },
+    "category": "Debuff"
+  },
+  {
+    "id": 152,
+    "name": "Erase Magic",
+    "image": "spell_icons/767.png",
+    "favorite": false,
+    "description": "Mengurangi MR target sekitar setengah, berlaku 1 kali",
+    "duration": "16 detik",
+    "classNames": [
+      "Elf"
+    ],
+    "consumables": {
+      "mp": 30,
+      "hp": 0,
+      "itemCount": 2
+    },
+    "category": "Debuff"
+  },
+  {
+    "id": 153,
+    "name": "Summon Lesser Elemental",
+    "image": "spell_icons/867.png",
+    "favorite": false,
+    "description": "Memanggil roh elemen sesuai elemen caster",
+    "duration": "3600 detik",
+    "classNames": [
+      "Elf"
+    ],
+    "consumables": {
+      "mp": 20,
+      "hp": 0,
+      "itemCount": 2
+    },
+    "category": "Panggilan"
+  },
+  {
+    "id": 154,
+    "name": "Breath of Fire",
+    "image": "spell_icons/733.png",
+    "favorite": false,
+    "description": "Meminjam kekuatan elemen api (Damage Jarak Dekat +3)",
+    "duration": "1200 detik",
+    "classNames": [
+      "Elf"
+    ],
+    "consumables": {
+      "mp": 30,
+      "hp": 0,
+      "itemCount": 0
+    },
+    "category": "Buff"
+  },
+  {
+    "id": 155,
+    "name": "Eye of Storm",
+    "image": "spell_icons/769.png",
+    "favorite": false,
+    "description": "Meminjam kekuatan elemen angin (Damage Jarak Jauh +2, Akurasi Jarak Jauh +2)",
+    "duration": "1200 detik",
+    "classNames": [
+      "Elf"
+    ],
+    "consumables": {
+      "mp": 40,
+      "hp": 0,
+      "itemCount": 0
+    },
+    "category": "Buff"
+  },
+  {
+    "id": 156,
+    "name": "Earth Bind",
+    "image": "spell_icons/891.png",
+    "favorite": false,
+    "description": "Membuat target menjadi status Hold (tidak bisa menerima damage maupun beraksi selama Hold)",
+    "duration": "8 detik atau kurang",
+    "classNames": [
+      "Elf"
+    ],
+    "consumables": {
+      "mp": 50,
+      "hp": 0,
+      "itemCount": 4
+    },
+    "category": "Status"
+  },
+  {
+    "id": 157,
+    "name": "Nature's Touch",
+    "image": "spell_icons/799.png",
+    "favorite": false,
+    "description": "Meminjam kekuatan pulih elemen air (memulihkan HP dalam jumlah besar)",
+    "duration": "Instan",
+    "classNames": [
+      "Elf"
+    ],
+    "consumables": {
+      "mp": 50,
+      "hp": 0,
+      "itemCount": 0
+    },
+    "category": "Pemulihan"
+  },
+  {
+    "id": 158,
+    "name": "Bless of Earth",
+    "image": "spell_icons/723.png",
+    "favorite": false,
+    "description": "Meminjam pertahanan elemen tanah (AC -5)",
+    "duration": "1200 detik",
+    "classNames": [
+      "Elf"
+    ],
+    "consumables": {
+      "mp": 35,
+      "hp": 0,
+      "itemCount": 0
+    },
+    "category": "Buff"
+  },
+  {
+    "id": 160,
+    "name": "Area of Silence",
+    "image": "spell_icons/720.png",
+    "favorite": false,
+    "description": "Dengan kemungkinan tertentu, membuat semua PC dan NPC di area tidak bisa pakai sihir & chat",
+    "duration": "1~8 detik",
+    "classNames": [
+      "Elf"
+    ],
+    "consumables": {
+      "mp": 40,
+      "hp": 0,
+      "itemCount": 2
+    },
+    "category": "Debuff"
+  },
+  {
+    "id": 161,
+    "name": "Summon Greater Elemental",
+    "image": "spell_icons/869.png",
+    "favorite": false,
+    "description": "Memanggil roh elemen tingkat tinggi dari jenis elemen yang dipilih",
+    "duration": "3600 detik",
+    "classNames": [
+      "Elf"
+    ],
+    "consumables": {
+      "mp": 20,
+      "hp": 0,
+      "itemCount": 4
+    },
+    "category": "Panggilan"
+  },
+  {
+    "id": 162,
+    "name": "Burning Weapon",
+    "image": "spell_icons/736.png",
+    "favorite": false,
+    "description": "Meminjam kekuatan elemen api (Damage Jarak Dekat +5, Akurasi Jarak Dekat +3)",
+    "duration": "1200 detik",
+    "classNames": [
+      "Elf"
+    ],
+    "consumables": {
+      "mp": 30,
+      "hp": 0,
+      "itemCount": 0
+    },
+    "category": "Buff"
+  },
+  {
+    "id": 163,
+    "name": "Nature's Blessing",
+    "image": "spell_icons/796.png",
+    "favorite": false,
+    "description": "Meminjam kekuatan pulih elemen air (memulihkan HP seluruh anggota party dalam jumlah tertentu)",
+    "duration": "Instan",
+    "classNames": [
+      "Elf"
+    ],
+    "consumables": {
+      "mp": 30,
+      "hp": 0,
+      "itemCount": 0
+    },
+    "category": "Pemulihan"
+  },
+  {
+    "id": 165,
+    "name": "Storm Shot",
+    "image": "spell_icons/825.png",
+    "favorite": false,
+    "description": "Meminjam kekuatan elemen angin (Damage Jarak Jauh +4, Akurasi Jarak Jauh +2)",
+    "duration": "1200 detik",
+    "classNames": [
+      "Elf"
+    ],
+    "consumables": {
+      "mp": 30,
+      "hp": 0,
+      "itemCount": 0
+    },
+    "category": "Buff"
+  },
+  {
+    "id": 167,
+    "name": "Iron Skin",
+    "image": "spell_icons/781.png",
+    "favorite": false,
+    "description": "Meminjam pertahanan elemen tanah (AC -7)",
+    "duration": "1200 detik",
+    "classNames": [
+      "Elf"
+    ],
+    "consumables": {
+      "mp": 30,
+      "hp": 0,
+      "itemCount": 0
+    },
+    "category": "Buff"
+  }
+]
