@@ -8,28 +8,37 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - name: Checkout
+      uses: actions/checkout@v4
 
-    - uses: actions/setup-node@v4
+    - name: Setup Node
+      uses: actions/setup-node@v4
       with:
         node-version: 18
 
-    - run: npm install
+    - name: Install dependencies
+      run: npm install
 
-    - run: npm install @capacitor/core @capacitor/cli
+    - name: Install Capacitor
+      run: npm install @capacitor/core @capacitor/cli @capacitor/android@5
 
-    - run: npx cap init "LineageDB" "com.fajar.lineage" --web-dir www
+    - name: Init Capacitor
+      run: npx cap init "LineageDB" "com.fajar.lineage" --web-dir www
 
-    - run: npx cap add android
+    - name: Add Android
+      run: npx cap add android
 
-    - run: npx cap sync
+    - name: Sync Capacitor
+      run: npx cap sync
 
     - name: Build APK
       run: |
         cd android
+        chmod +x gradlew
         ./gradlew assembleDebug
 
-    - uses: actions/upload-artifact@v4
+    - name: Upload APK
+      uses: actions/upload-artifact@v4
       with:
-        name: apk
+        name: app-debug
         path: android/app/build/outputs/apk/debug/app-debug.apk
